@@ -10,13 +10,6 @@ class AppInputTheme {
     contentPadding: const EdgeInsets.only(top: 0, left: 20),
     enabledBorder: outlinedInputBorder(),
   );
-
-  static InputDecorationTheme darkInputTheme = InputDecorationTheme(
-    fillColor: dialogColorDarkTheme,
-    filled: true,
-    contentPadding: const EdgeInsets.only(top: 0, left: 20),
-    focusedBorder: outlinedInputBorder(),
-  );
 }
 
 OutlineInputBorder outlinedInputBorder() {

@@ -8,13 +8,6 @@ class AppCardTheme {
     elevation: 3,
     color: Colors.white,
     surfaceTintColor: Colors.white,
-    shadowColor: dialogColorDarkTheme,
-  );
-
-  static CardTheme darkCardTheme = CardTheme(
-    elevation: 3,
-    color: dialogColorDarkTheme,
-    surfaceTintColor: dialogColorDarkTheme,
-    shadowColor: Colors.white,
+    shadowColor: defaultLightColor,
   );
 }
