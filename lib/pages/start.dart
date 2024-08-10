@@ -14,7 +14,7 @@ class _StartPageState extends State<StartPage> {
   @override
   void initState() {
     super.initState();
-    // _moveNextPage();
+    _moveNextPage();
   }
 
   _moveNextPage() async {
@@ -27,14 +27,27 @@ class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Stack(
         children: [
-          SizedBox(
-            child: Image.asset("assets/images/logo.jpg"),
+          Center(child: Image.asset("assets/images/logo.jpg")),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Image.asset("assets/images/leaf.jpg", fit: BoxFit.cover),
+                const Positioned(
+                  bottom: 30,
+                  child: Text(
+                    'ISLEGE GÖRÄ KAMILLEŞ...',
+                    style: TextStyle(fontFamily: 'MarcellusSC', fontSize: 20),
+                  ),
+                ),
+              ],
+            ),
           ),
-          Image.asset("assets/images/leaf.jpg"),
         ],
       ),
     );
