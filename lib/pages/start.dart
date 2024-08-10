@@ -14,7 +14,7 @@ class _StartPageState extends State<StartPage> {
   @override
   void initState() {
     super.initState();
-    _moveNextPage();
+    // _moveNextPage();
   }
 
   _moveNextPage() async {
@@ -28,13 +28,14 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/images/logo.jpg"),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            child: Image.asset("assets/images/logo.jpg"),
+          ),
+          Image.asset("assets/images/leaf.jpg"),
+        ],
       ),
     );
   }
