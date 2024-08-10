@@ -18,7 +18,7 @@ class _StartPageState extends State<StartPage> {
   }
 
   _moveNextPage() async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 3));
     if (mounted) {
       goToPage(context, const HomePage(), true);
     }
@@ -33,7 +33,6 @@ class _StartPageState extends State<StartPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("assets/images/logo.jpg"),
-            Image.asset("assets/animated_icons/loading.gif", fit: BoxFit.cover),
           ],
         ),
       ),

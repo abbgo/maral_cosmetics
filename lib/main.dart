@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:maral_cosmetics/pages/home.dart';
+import 'package:maral_cosmetics/pages/start.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
 import 'package:maral_cosmetics/styles/theme/theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: AppTheme.lightTheme,
       locale: const Locale('tr'),
-      home: const HomePage(),
+      home: const StartPage(),
     );
   }
 }
