@@ -21,7 +21,7 @@ class AppInputTheme {
 
 OutlineInputBorder outlinedInputBorder() {
   return OutlineInputBorder(
-    borderSide: BorderSide(color: elevatedButtonColor),
+    borderSide: BorderSide(color: defaultColor),
     borderRadius: const BorderRadius.all(Radius.circular(20)),
   );
 }

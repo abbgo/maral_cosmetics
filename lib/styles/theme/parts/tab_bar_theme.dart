@@ -7,8 +7,8 @@ class AppTabBarTheme {
   static TabBarTheme lightTabBarTheme = TabBarTheme(
     labelPadding: const EdgeInsets.only(bottom: 10),
     labelStyle: const TextStyle(fontFamily: 'HeyWowRegular'),
-    labelColor: elevatedButtonColor,
-    indicatorColor: elevatedButtonColor,
+    labelColor: defaultColor,
+    indicatorColor: defaultColor,
     dividerColor: Colors.white,
   );
 
