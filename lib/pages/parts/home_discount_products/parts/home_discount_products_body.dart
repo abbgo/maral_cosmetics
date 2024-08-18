@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/home_discount_products/parts/home_discount_products_title.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class HomeDiscountProductsBody extends StatelessWidget {
@@ -12,22 +13,10 @@ class HomeDiscountProductsBody extends StatelessWidget {
         color: defaultLightColor,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Column(
+      child: const Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 8),
-            child: Text(
-              'Bayramcylyk mynasybetli Arzanladyslar',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: defaultColor,
-                fontFamily: 'Niconne',
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+          HomeDiscountProductsTitle(),
         ],
       ),
     );
