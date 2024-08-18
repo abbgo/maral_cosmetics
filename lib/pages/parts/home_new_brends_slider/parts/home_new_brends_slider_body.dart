@@ -10,15 +10,18 @@ class HomeNewBrendsSliderBody extends StatelessWidget {
       height: 90,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => ClipRRect(
-          borderRadius: BorderRadius.circular(10),
+        itemBuilder: (context, index) => Container(
+          margin: EdgeInsets.only(left: index == 0 ? 10 : 0),
           child: Stack(
             alignment: const Alignment(0, 0.8),
             children: [
-              Image.asset(
-                homeBrendSliders[index],
-                width: 140,
-                fit: BoxFit.cover,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  homeBrendSliders[index],
+                  width: 140,
+                  fit: BoxFit.cover,
+                ),
               ),
               Container(
                 width: 105,
