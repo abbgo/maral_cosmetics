@@ -29,10 +29,26 @@ class HomeDiscountProductButtons extends StatelessWidget {
                     color: defaultColor),
               ),
               const SizedBox(width: 10),
-              const Icon(Icons.favorite_outline, size: 16),
+              Container(
+                padding: const EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                  color: defaultLightColor,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+                child:
+                    Icon(Icons.favorite_outline, size: 16, color: defaultColor),
+              ),
             ],
           ),
-          const Icon(Icons.local_mall_outlined, size: 16),
+          Container(
+            padding: const EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              color: defaultLightColor,
+              borderRadius: BorderRadius.circular(2),
+            ),
+            child:
+                Icon(Icons.local_mall_outlined, size: 16, color: defaultColor),
+          ),
         ],
       ),
     );
