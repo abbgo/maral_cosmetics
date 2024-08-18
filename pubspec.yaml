@@ -98,6 +98,11 @@ flutter:
         - asset: assets/fonts/MarcellusSC.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+    - family: Niconne
+      fonts:
+        - asset: assets/fonts/Niconne.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
