@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_buttons.dart';
 import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_price.dart';
 
 class HomeDiscountProductCard extends StatelessWidget {
@@ -32,6 +33,7 @@ class HomeDiscountProductCard extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           const HomeDiscountProductPrice(),
+          const HomeDiscountProductButtons(),
         ],
       ),
     );
