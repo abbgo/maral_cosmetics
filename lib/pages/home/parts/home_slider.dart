@@ -9,7 +9,7 @@ class HomeSlider extends StatefulWidget {
 }
 
 class _HomeSliderState extends State<HomeSlider> {
-  final PageController _pageController = PageController(viewportFraction: 1.05);
+  final PageController _pageController = PageController();
 
   @override
   void dispose() {
@@ -21,16 +21,14 @@ class _HomeSliderState extends State<HomeSlider> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 200,
-      child: PageView.builder(
-        controller: _pageController,
-        pageSnapping: true,
-        itemCount: homeSliders.length,
-        itemBuilder: (context, index) => FractionallySizedBox(
-          widthFactor: 1 / _pageController.viewportFraction,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.asset(homeSliders[index], fit: BoxFit.cover),
-          ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: PageView.builder(
+          controller: _pageController,
+          pageSnapping: true,
+          itemCount: homeSliders.length,
+          itemBuilder: (context, index) =>
+              Image.asset(homeSliders[index], fit: BoxFit.cover),
         ),
       ),
     );
