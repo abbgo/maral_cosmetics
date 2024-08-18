@@ -10,7 +10,7 @@ class HomeNewBrendsSlider extends StatelessWidget {
     return const Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        HomeNewBrendsSliderTitle(),
+        HomeNewBrendsSliderTitle(text: 'In taze gosulanlar'),
         HomeNewBrendsSliderBody(),
       ],
     );

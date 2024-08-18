@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class HomeNewBrendsSliderTitle extends StatelessWidget {
-  const HomeNewBrendsSliderTitle({super.key});
+  const HomeNewBrendsSliderTitle({super.key, required this.text});
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class HomeNewBrendsSliderTitle extends StatelessWidget {
       title: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text('In taze gosulanlar', style: TextStyle(fontSize: 20)),
+          Text(text, style: const TextStyle(fontSize: 20)),
           const SizedBox(width: 10),
           Icon(Icons.chevron_right, color: defaultColor),
         ],
