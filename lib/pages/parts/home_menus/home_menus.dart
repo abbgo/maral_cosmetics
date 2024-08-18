@@ -58,6 +58,7 @@ class _HomeMenusState extends State<HomeMenus> {
           menuIndex: index,
           menuKey: menuKeys[index],
           scrollToItem: _scrollToItem,
+          menusLenght: homeMenus.length,
         ),
         separatorBuilder: (context, index) => const SizedBox(width: 10),
       ),
