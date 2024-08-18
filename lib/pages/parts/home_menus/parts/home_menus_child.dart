@@ -11,13 +11,14 @@ class HomeMenusChild extends ConsumerWidget {
     required this.menuIndex,
     required this.menuKey,
     required this.scrollToItem,
-    required this.menusLenght,
+    required this.isLast,
   });
 
   final String text;
-  final int menuIndex, menusLenght;
+  final int menuIndex;
   final GlobalKey menuKey;
   final Function(int index) scrollToItem;
+  final bool isLast;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,7 +37,7 @@ class HomeMenusChild extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
           margin: EdgeInsets.only(
             left: menuIndex == 0 ? 10 : 0,
-            right: menuIndex == menusLenght - 1 ? 10 : 0,
+            right: isLast ? 10 : 0,
           ),
           decoration: isActiveMenu
               ? innerShadowBoxDecoration
