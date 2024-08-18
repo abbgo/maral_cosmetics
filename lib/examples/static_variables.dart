@@ -13,7 +13,7 @@ List<String> homeBrendSliders = [
 ];
 
 List<String> homeDiscountProducts = [
-  "assets/examples/brend_slider_1.png",
-  "assets/examples/brend_slider_2.png",
-  "assets/examples/brend_slider_3.png",
+  "assets/examples/discount_product_1.png",
+  "assets/examples/discount_product_1.png",
+  "assets/examples/discount_product_1.png",
 ];
