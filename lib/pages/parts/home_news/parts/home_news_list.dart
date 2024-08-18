@@ -7,11 +7,14 @@ class HomeNewsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      shrinkWrap: true,
-      itemCount: homeNews.length,
-      itemBuilder: (context, index) => HomeNewsCard(image: homeNews[index]),
-      separatorBuilder: (context, index) => const SizedBox(height: 20),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: ListView.separated(
+        shrinkWrap: true,
+        itemCount: homeNews.length,
+        itemBuilder: (context, index) => HomeNewsCard(image: homeNews[index]),
+        separatorBuilder: (context, index) => const SizedBox(height: 20),
+      ),
     );
   }
 }
