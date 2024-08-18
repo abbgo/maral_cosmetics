@@ -21,7 +21,8 @@ class _HomeSliderState extends State<HomeSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       height: 200,
       child: Stack(
         children: [
