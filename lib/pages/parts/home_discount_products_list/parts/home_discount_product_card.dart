@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_price.dart';
 
 class HomeDiscountProductCard extends StatelessWidget {
   const HomeDiscountProductCard({super.key, required this.image});
@@ -29,6 +30,8 @@ class HomeDiscountProductCard extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: TextStyle(fontFamily: 'HeyWowRegular'),
           ),
+          const SizedBox(height: 10),
+          const HomeDiscountProductPrice(),
         ],
       ),
     );
