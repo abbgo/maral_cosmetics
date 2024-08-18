@@ -7,7 +7,8 @@ class HomeDiscountProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       height: 235,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
