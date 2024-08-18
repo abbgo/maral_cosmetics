@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/parts/home_menus.dart';
+import 'package:maral_cosmetics/pages/parts/home_menus/home_menus.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
