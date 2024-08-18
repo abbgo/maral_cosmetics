@@ -9,9 +9,13 @@ class HomeNewBrendsSliderBody extends StatelessWidget {
     return SizedBox(
       height: 90,
       child: ListView.separated(
+        itemCount: homeBrendSliders.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => Container(
-          margin: EdgeInsets.only(left: index == 0 ? 10 : 0),
+          margin: EdgeInsets.only(
+            left: index == 0 ? 10 : 0,
+            right: index == homeBrendSliders.length - 1 ? 10 : 0,
+          ),
           child: Stack(
             alignment: const Alignment(0, 0.8),
             children: [
@@ -40,7 +44,6 @@ class HomeNewBrendsSliderBody extends StatelessWidget {
           ),
         ),
         separatorBuilder: (context, index) => const SizedBox(width: 10),
-        itemCount: homeBrendSliders.length,
       ),
     );
   }
