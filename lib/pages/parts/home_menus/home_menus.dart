@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/home_menus/parts/home_menus_child.dart';
-import 'package:maral_cosmetics/static_variables/static_variables.dart';
+import 'package:maral_cosmetics/examples/static_variables.dart';
 
 class HomeMenus extends StatefulWidget {
   const HomeMenus({super.key});

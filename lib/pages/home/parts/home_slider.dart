@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/static_variables/static_variables.dart';
+import 'package:maral_cosmetics/examples/static_variables.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

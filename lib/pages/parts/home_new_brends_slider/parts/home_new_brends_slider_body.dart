@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/static_variables/static_variables.dart';
+import 'package:maral_cosmetics/examples/static_variables.dart';
 
 class HomeNewBrendsSliderBody extends StatelessWidget {
   const HomeNewBrendsSliderBody({super.key});

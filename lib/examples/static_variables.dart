@@ -11,3 +11,9 @@ List<String> homeBrendSliders = [
   "assets/examples/brend_slider_2.png",
   "assets/examples/brend_slider_3.png",
 ];
+
+List<String> homeDiscountProducts = [
+  "assets/examples/brend_slider_1.png",
+  "assets/examples/brend_slider_2.png",
+  "assets/examples/brend_slider_3.png",
+];
