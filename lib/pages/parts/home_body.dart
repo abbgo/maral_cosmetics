@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/home_menus.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -6,7 +7,9 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [],
+      children: const [
+        HomeMenus(),
+      ],
     );
   }
 }
