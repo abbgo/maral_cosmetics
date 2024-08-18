@@ -12,7 +12,7 @@ class AppTheme {
 
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'HeyWowRegular',
+    fontFamily: 'MarcellusSC',
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.white,
     textTheme: AppTextTheme.lightTextTheme,

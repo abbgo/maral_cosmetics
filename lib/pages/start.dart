@@ -42,7 +42,7 @@ class _StartPageState extends State<StartPage> {
                   bottom: 30,
                   child: Text(
                     'ISLEGE GÖRÄ KAMILLEŞ...',
-                    style: TextStyle(fontFamily: 'MarcellusSC', fontSize: 20),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
               ],
