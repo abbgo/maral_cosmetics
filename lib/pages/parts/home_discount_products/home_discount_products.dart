@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/home_discount_products/parts/home_discount_products_body.dart';
 import 'package:maral_cosmetics/pages/parts/home_new_brends_slider/parts/home_new_brends_slider_title.dart';
 
 class HomeDiscountProducts extends StatelessWidget {
@@ -10,6 +11,7 @@ class HomeDiscountProducts extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         HomeNewBrendsSliderTitle(text: 'Arzanladyslar'),
+        HomeDiscountProductsBody(),
       ],
     );
   }
