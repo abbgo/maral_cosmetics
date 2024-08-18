@@ -45,20 +45,18 @@ class _HomeMenusState extends State<HomeMenus> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
+      margin: const EdgeInsets.only(top: 10, bottom: 10),
       height: 40,
       child: ListView.separated(
         controller: _scrollController,
         scrollDirection: Axis.horizontal,
-        itemCount: homeMenus.length + 1,
-        itemBuilder: (context, index) => index < homeMenus.length
-            ? HomeMenusChild(
-                text: homeMenus[index],
-                menuIndex: index,
-                menuKey: menuKeys[index],
-                scrollToItem: _scrollToItem,
-              )
-            : const SizedBox(width: 10),
+        itemCount: homeMenus.length,
+        itemBuilder: (context, index) => HomeMenusChild(
+          text: homeMenus[index],
+          menuIndex: index,
+          menuKey: menuKeys[index],
+          scrollToItem: _scrollToItem,
+        ),
         separatorBuilder: (context, index) => const SizedBox(width: 10),
       ),
     );

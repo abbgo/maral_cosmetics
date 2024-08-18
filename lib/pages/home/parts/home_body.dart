@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/home/parts/home_slider.dart';
 import 'package:maral_cosmetics/pages/parts/home_menus/home_menus.dart';
 
 class HomeBody extends StatelessWidget {
@@ -6,10 +7,14 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        HomeMenus(),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: ListView(
+        children: const [
+          HomeMenus(),
+          HomeSlider(),
+        ],
+      ),
     );
   }
 }
