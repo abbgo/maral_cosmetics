@@ -11,12 +11,21 @@ class HomeDiscountProductButtons extends StatelessWidget {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.star),
-            Text('3.0'),
-            Icon(Icons.favorite),
+            Icon(
+              Icons.star,
+              size: 15,
+              color: Color(0xffFFBB00),
+            ),
+            SizedBox(width: 2),
+            Text(
+              '3.0',
+              style: TextStyle(fontSize: 12),
+            ),
+            SizedBox(width: 10),
+            Icon(Icons.favorite_outline, size: 15),
           ],
         ),
-        trailing: Icon(Icons.local_mall),
+        trailing: Icon(Icons.local_mall_outlined, size: 15),
       ),
     );
   }
