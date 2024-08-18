@@ -14,6 +14,7 @@ class HomeBody extends StatelessWidget {
         children: const [
           HomeMenus(),
           HomeSlider(),
+          SizedBox(height: 20),
           HomeNewBrendsSlider(),
         ],
       ),
