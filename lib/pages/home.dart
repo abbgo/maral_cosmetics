@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/home_app_bar_notification_button.dart';
+import 'package:maral_cosmetics/pages/parts/home_body.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: const Center(child: Text('Home Page')),
+      body: const HomeBody(),
     );
   }
 }
