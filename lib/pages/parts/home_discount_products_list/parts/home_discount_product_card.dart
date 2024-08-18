@@ -3,15 +3,22 @@ import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/ho
 import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_price.dart';
 
 class HomeDiscountProductCard extends StatelessWidget {
-  const HomeDiscountProductCard({super.key, required this.image});
+  const HomeDiscountProductCard({
+    super.key,
+    required this.image,
+    required this.isFisrt,
+    required this.isLast,
+  });
 
   final String image;
+  final bool isFisrt, isLast;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 235,
       width: 200,
+      margin: EdgeInsets.only(left: isFisrt ? 5 : 0, right: isLast ? 5 : 0),
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,

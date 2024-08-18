@@ -7,13 +7,17 @@ class HomeDiscountProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
+    return SizedBox(
       height: 250,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) =>
-            HomeDiscountProductCard(image: homeDiscountProducts[index]),
+        itemBuilder: (context, index) {
+          return HomeDiscountProductCard(
+            image: homeDiscountProducts[index],
+            isFisrt: index == 0,
+            isLast: index == homeDiscountProducts.length - 1,
+          );
+        },
         separatorBuilder: (context, index) => const SizedBox(width: 10),
         itemCount: homeDiscountProducts.length,
       ),
