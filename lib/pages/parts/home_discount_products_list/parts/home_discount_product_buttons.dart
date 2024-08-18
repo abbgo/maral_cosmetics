@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_button.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class HomeDiscountProductButtons extends StatelessWidget {
@@ -29,26 +30,10 @@ class HomeDiscountProductButtons extends StatelessWidget {
                     color: defaultColor),
               ),
               const SizedBox(width: 10),
-              Container(
-                padding: const EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                  color: defaultLightColor,
-                  borderRadius: BorderRadius.circular(2),
-                ),
-                child:
-                    Icon(Icons.favorite_outline, size: 16, color: defaultColor),
-              ),
+              const HomeDiscountProductButton(icon: Icons.favorite_outline),
             ],
           ),
-          Container(
-            padding: const EdgeInsets.all(3),
-            decoration: BoxDecoration(
-              color: defaultLightColor,
-              borderRadius: BorderRadius.circular(2),
-            ),
-            child:
-                Icon(Icons.local_mall_outlined, size: 16, color: defaultColor),
-          ),
+          const HomeDiscountProductButton(icon: Icons.local_mall_outlined),
         ],
       ),
     );
