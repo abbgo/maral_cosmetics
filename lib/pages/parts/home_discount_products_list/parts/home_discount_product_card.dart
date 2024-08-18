@@ -16,10 +16,18 @@ class HomeDiscountProductCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(image, fit: BoxFit.cover, height: 120),
+          ),
+          const SizedBox(height: 5),
+          const Text(
+            'FLORMAR Göz üçin galam Eyeliner Pencil (Ultra Black)',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontFamily: 'HeyWowRegular'),
           ),
         ],
       ),
