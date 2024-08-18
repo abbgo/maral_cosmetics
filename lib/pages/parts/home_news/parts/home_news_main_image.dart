@@ -6,11 +6,13 @@ class HomeNewsMainImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          const EdgeInsetsDirectional.symmetric(horizontal: 10, vertical: 20),
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
       child: Stack(
         children: [
-          Image.asset('assets/examples/news_main.png'),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset('assets/examples/news_main.png'),
+          ),
         ],
       ),
     );
