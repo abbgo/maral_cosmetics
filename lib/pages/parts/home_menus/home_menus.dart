@@ -50,13 +50,15 @@ class _HomeMenusState extends State<HomeMenus> {
       child: ListView.separated(
         controller: _scrollController,
         scrollDirection: Axis.horizontal,
-        itemCount: homeMenus.length,
-        itemBuilder: (context, index) => HomeMenusChild(
-          text: homeMenus[index],
-          menuIndex: index,
-          menuKey: menuKeys[index],
-          scrollToItem: _scrollToItem,
-        ),
+        itemCount: homeMenus.length + 1,
+        itemBuilder: (context, index) => index < homeMenus.length
+            ? HomeMenusChild(
+                text: homeMenus[index],
+                menuIndex: index,
+                menuKey: menuKeys[index],
+                scrollToItem: _scrollToItem,
+              )
+            : const SizedBox(width: 10),
         separatorBuilder: (context, index) => const SizedBox(width: 10),
       ),
     );
