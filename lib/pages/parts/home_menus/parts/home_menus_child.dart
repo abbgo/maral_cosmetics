@@ -7,15 +7,18 @@ class HomeMenusChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 27,
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.black),
-      ),
-      child: Center(
-        child: Text(text, style: const TextStyle(fontSize: 14)),
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        height: 27,
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.black),
+        ),
+        child: Center(
+          child: Text(text, style: const TextStyle(fontSize: 14)),
+        ),
       ),
     );
   }
