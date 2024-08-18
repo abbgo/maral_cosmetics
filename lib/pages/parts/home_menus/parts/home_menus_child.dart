@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/providers/pages/home.dart';
+import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:maral_cosmetics/styles/decorations.dart';
 
 class HomeMenusChild extends ConsumerWidget {
@@ -13,6 +14,7 @@ class HomeMenusChild extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     int selectedHomeMenu = ref.watch(selectedHomeMenuProvider);
+    bool isActiveMenu = selectedHomeMenu == menuIndex;
 
     return GestureDetector(
       onTap: () =>
@@ -20,14 +22,18 @@ class HomeMenusChild extends ConsumerWidget {
       child: Container(
         height: 27,
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-        decoration: selectedHomeMenu == menuIndex
+        decoration: isActiveMenu
             ? innerShadowBoxDecoration
             : BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: Colors.black),
               ),
         child: Center(
-          child: Text(text, style: const TextStyle(fontSize: 14)),
+          child: Text(
+            text,
+            style: TextStyle(
+                fontSize: 14, color: isActiveMenu ? defaultColor : null),
+          ),
         ),
       ),
     );
