@@ -20,7 +20,7 @@ class _HomeMenusState extends State<HomeMenus> {
     super.dispose();
   }
 
-  void scrollToItem(int index) {
+  void _scrollToItem(int index) {
     final keyContext = menuKeys[index].currentContext;
     if (keyContext != null) {
       // Get the position of the child relative to the screen
@@ -55,7 +55,7 @@ class _HomeMenusState extends State<HomeMenus> {
           text: homeMenus[index],
           menuIndex: index,
           menuKey: menuKeys[index],
-          scrollToItem: scrollToItem,
+          scrollToItem: _scrollToItem,
         ),
         separatorBuilder: (context, index) => const SizedBox(width: 10),
       ),
