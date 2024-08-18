@@ -7,12 +7,15 @@ class HomeDiscountProductsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        HomeNewBrendsSliderTitle(text: 'Arzanladyslar'),
-        HomeDiscountProductsBody(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          HomeNewBrendsSliderTitle(text: 'Arzanladyslar'),
+          HomeDiscountProductsBody(),
+        ],
+      ),
     );
   }
 }
