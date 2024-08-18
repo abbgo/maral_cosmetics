@@ -7,11 +7,15 @@ class HomeMenus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.only(left: 10),
       height: 40,
-      child: ListView(
+      child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        children: homeMenus.map((e) => HomeMenusChild(text: e)).toList(),
+        itemCount: homeMenus.length,
+        itemBuilder: (context, index) => HomeMenusChild(text: homeMenus[index]),
+        separatorBuilder: (BuildContext context, int index) =>
+            const SizedBox(width: 10),
       ),
     );
   }
