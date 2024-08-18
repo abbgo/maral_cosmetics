@@ -3,6 +3,7 @@ import 'package:maral_cosmetics/pages/parts/home_discount_products_list/home_dis
 import 'package:maral_cosmetics/pages/parts/home_new_brends_slider/home_new_brends_slider.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_slider.dart';
 import 'package:maral_cosmetics/pages/parts/home_menus/home_menus.dart';
+import 'package:maral_cosmetics/pages/parts/home_news/home_news.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -17,6 +18,8 @@ class HomeBody extends StatelessWidget {
         HomeNewBrendsSlider(),
         SizedBox(height: 20),
         HomeDiscountProductsList(),
+        SizedBox(height: 20),
+        HomeNews(),
       ],
     );
   }
