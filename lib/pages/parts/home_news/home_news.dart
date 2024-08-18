@@ -6,10 +6,13 @@ class HomeNews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        HomeNewBrendsSliderTitle(text: 'Habarlar'),
-      ],
+    return Container(
+      color: const Color(0xffF8F8F8),
+      child: const Column(
+        children: [
+          HomeNewBrendsSliderTitle(text: 'Habarlar'),
+        ],
+      ),
     );
   }
 }
