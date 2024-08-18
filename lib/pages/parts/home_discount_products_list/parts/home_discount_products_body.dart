@@ -10,7 +10,7 @@ class HomeDiscountProductsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 450,
+      height: 440,
       decoration: BoxDecoration(
         color: defaultLightColor,
         borderRadius: BorderRadius.circular(10),
