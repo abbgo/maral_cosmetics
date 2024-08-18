@@ -17,3 +17,9 @@ List<String> homeDiscountProducts = [
   "assets/examples/discount_product_1.png",
   "assets/examples/discount_product_1.png",
 ];
+
+List<String> homeNews = [
+  "assets/examples/news_1.png",
+  "assets/examples/news_2.png",
+  "assets/examples/news_3.png",
+];
