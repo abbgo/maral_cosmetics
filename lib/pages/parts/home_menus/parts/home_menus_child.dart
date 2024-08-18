@@ -32,7 +32,6 @@ class HomeMenusChild extends ConsumerWidget {
         },
         child: Container(
           key: menuKey,
-          height: 27,
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
           decoration: isActiveMenu
               ? innerShadowBoxDecoration

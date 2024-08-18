@@ -46,7 +46,9 @@ class _HomeMenusState extends State<HomeMenus> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 10, bottom: 10),
-      height: 40,
+      height: 50,
+      color: const Color(0xffFAF8F9),
+      padding: const EdgeInsets.symmetric(vertical: 5),
       child: ListView.separated(
         controller: _scrollController,
         scrollDirection: Axis.horizontal,
