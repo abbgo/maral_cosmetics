@@ -5,6 +5,14 @@ class HomeDiscountProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Harytlar');
+    return SizedBox(
+      height: 235,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => Text('Haryt'),
+        separatorBuilder: (context, index) => const SizedBox(width: 10),
+        itemCount: 3,
+      ),
+    );
   }
 }

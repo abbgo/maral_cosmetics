@@ -20,6 +20,7 @@ class HomeDiscountProductsBody extends StatelessWidget {
         children: [
           HomeDiscountProductsTitle(),
           HomeDiscountProductsTimer(),
+          SizedBox(height: 20),
           HomeDiscountProducts(),
         ],
       ),
