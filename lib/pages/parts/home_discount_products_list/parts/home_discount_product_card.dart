@@ -33,6 +33,7 @@ class HomeDiscountProductCard extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           const HomeDiscountProductPrice(),
+          const SizedBox(height: 5),
           const HomeDiscountProductButtons(),
         ],
       ),
