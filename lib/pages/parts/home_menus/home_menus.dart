@@ -13,7 +13,8 @@ class HomeMenus extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: homeMenus.length,
-        itemBuilder: (context, index) => HomeMenusChild(text: homeMenus[index]),
+        itemBuilder: (context, index) =>
+            HomeMenusChild(text: homeMenus[index], menuIndex: index),
         separatorBuilder: (BuildContext context, int index) =>
             const SizedBox(width: 10),
       ),
