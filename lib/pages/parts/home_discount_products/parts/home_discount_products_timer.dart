@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/styles/colors.dart';
 
 class HomeDiscountProductsTimer extends StatelessWidget {
   const HomeDiscountProductsTimer({super.key});
@@ -8,10 +9,13 @@ class HomeDiscountProductsTimer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
       decoration: BoxDecoration(
-        color: const Color(0xffA16F8A),
+        color: defaultColor.withOpacity(.2),
         borderRadius: BorderRadius.circular(10),
       ),
-      child: const Text('00 : 14 : 20'),
+      child: Text(
+        '00 : 14 : 20',
+        style: TextStyle(color: defaultColor, fontSize: 24),
+      ),
     );
   }
 }
