@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/home/parts/home_new_brends_slider.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_slider.dart';
 import 'package:maral_cosmetics/pages/parts/home_menus/home_menus.dart';
 
@@ -13,6 +14,7 @@ class HomeBody extends StatelessWidget {
         children: const [
           HomeMenus(),
           HomeSlider(),
+          HomeNewBrendsSlider(),
         ],
       ),
     );
