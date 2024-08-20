@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
+import 'package:maral_cosmetics/pages/parts/home_about_cosmetics/parts/home_about_cosmetics_card.dart';
 
 class HomeAboutCosmeticsList extends StatelessWidget {
   const HomeAboutCosmeticsList({super.key});
@@ -7,26 +8,11 @@ class HomeAboutCosmeticsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 105,
+      height: 120,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => Container(
-          color: const Color(0xffFDFDF9),
-          padding: const EdgeInsets.all(6),
-          child: Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(2),
-                child: Image.asset(
-                  homeAboutCosmetics[index],
-                  width: 95,
-                  height: 95,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ],
-          ),
-        ),
+        itemBuilder: (context, index) =>
+            HomeAboutCosmeticsCard(image: homeAboutCosmetics[index]),
         separatorBuilder: (context, index) => const SizedBox(width: 10),
         itemCount: homeAboutCosmetics.length,
       ),
