@@ -28,3 +28,9 @@ List<String> homeAboutCosmetics = [
   "assets/examples/about_cosmetics.png",
   "assets/examples/about_cosmetics.png",
 ];
+
+List<String> homeBrends = [
+  "assets/examples/brend_1.png",
+  "assets/examples/brend_2.png",
+  "assets/examples/brend_3.png",
+];
