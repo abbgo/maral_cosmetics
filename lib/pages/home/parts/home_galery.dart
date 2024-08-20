@@ -15,21 +15,20 @@ class HomeGalery extends StatelessWidget {
           height: 80,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemCount: homeBrends.length,
-            itemBuilder: (context, index) => ClipRRect(
-              borderRadius: BorderRadius.circular(6),
-              child: Container(
-                margin: EdgeInsets.only(
-                  left: index == 0 ? 10 : 0,
-                  right: index == homeBrends.length - 1 ? 10 : 0,
+            itemCount: homeGaleries.length,
+            itemBuilder: (context, index) => Container(
+              margin: EdgeInsets.only(
+                left: index == 0 ? 10 : 0,
+                right: index == homeGaleries.length - 1 ? 10 : 0,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Image.asset(
+                  homeGaleries[index],
+                  width: 140,
+                  height: 90,
+                  fit: BoxFit.cover,
                 ),
-                width: 130,
-                height: 80,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black),
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: Image.asset(homeBrends[index]),
               ),
             ),
             separatorBuilder: (context, index) => const SizedBox(width: 10),

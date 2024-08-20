@@ -34,3 +34,9 @@ List<String> homeBrends = [
   "assets/examples/brend_2.png",
   "assets/examples/brend_3.png",
 ];
+
+List<String> homeGaleries = [
+  "assets/examples/galery_1.png",
+  "assets/examples/galery_2.png",
+  "assets/examples/galery_3.png",
+];
