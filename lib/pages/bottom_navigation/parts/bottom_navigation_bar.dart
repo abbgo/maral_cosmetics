@@ -12,10 +12,10 @@ class BottomNavigationBarPart extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BottomNavigationBar(
       items: [
-        bottomNavigationBarItemMethod(Icons.travel_explore),
-        bottomNavigationBarItemMethod(Icons.travel_explore),
-        bottomNavigationBarItemMethod(Icons.travel_explore),
-        bottomNavigationBarItemMethod(Icons.travel_explore),
+        bottomNavigationBarItemMethod(Icons.home),
+        bottomNavigationBarItemMethod(Icons.shopping_bag),
+        bottomNavigationBarItemMethod(Icons.favorite),
+        bottomNavigationBarItemMethod(Icons.person),
       ],
       currentIndex: selectedIndex,
       onTap: (value) =>
