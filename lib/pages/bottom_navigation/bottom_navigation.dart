@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/pages/basket/basket.dart';
+import 'package:maral_cosmetics/pages/favorites/favorites.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_app_bar_notification_button.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_body.dart';
 import 'package:maral_cosmetics/providers/pages/bottom_navigation.dart';
@@ -15,7 +16,7 @@ class BottomNavigationPage extends ConsumerWidget {
     List<Widget> pages = [
       const HomeBody(),
       const BasketPage(),
-      const SearchProductPage(),
+      const FavoritesPage(),
       const ProfilePage(),
     ];
 
