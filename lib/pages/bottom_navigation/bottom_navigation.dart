@@ -4,6 +4,7 @@ import 'package:maral_cosmetics/pages/basket/basket.dart';
 import 'package:maral_cosmetics/pages/favorites/favorites.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_app_bar_notification_button.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_body.dart';
+import 'package:maral_cosmetics/pages/setting/setting.dart';
 import 'package:maral_cosmetics/providers/pages/bottom_navigation.dart';
 
 class BottomNavigationPage extends ConsumerWidget {
@@ -17,7 +18,7 @@ class BottomNavigationPage extends ConsumerWidget {
       const HomeBody(),
       const BasketPage(),
       const FavoritesPage(),
-      const ProfilePage(),
+      const SettingPage(),
     ];
 
     return Scaffold(
