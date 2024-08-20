@@ -18,7 +18,19 @@ class HomeBrends extends StatelessWidget {
             itemCount: homeBrends.length,
             itemBuilder: (context, index) => ClipRRect(
               borderRadius: BorderRadius.circular(6),
-              child: Image.asset(homeBrends[index], width: 100, height: 80),
+              child: Container(
+                margin: EdgeInsets.only(
+                  left: index == 0 ? 10 : 0,
+                  right: index == homeBrends.length - 1 ? 10 : 0,
+                ),
+                width: 130,
+                height: 80,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Image.asset(homeBrends[index]),
+              ),
             ),
             separatorBuilder: (context, index) => const SizedBox(width: 10),
           ),
