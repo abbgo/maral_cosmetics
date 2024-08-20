@@ -40,3 +40,11 @@ List<String> homeGaleries = [
   "assets/examples/galery_2.png",
   "assets/examples/galery_3.png",
 ];
+
+List<String> newBrends = [
+  "assets/examples/brend_slider_1.png",
+  "assets/examples/brend_slider_2.png",
+  "assets/examples/brend_slider_3.png",
+  "assets/examples/brend_slider_4.png",
+  "assets/examples/brend_slider_5.png",
+];
