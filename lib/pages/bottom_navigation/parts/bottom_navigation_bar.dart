@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/pages/bottom_navigation.dart';
 import 'package:maral_cosmetics/providers/pages/bottom_navigation.dart';
+import 'package:maral_cosmetics/styles/colors.dart';
 
 class BottomNavigationBarPart extends ConsumerWidget {
   const BottomNavigationBarPart({super.key, required this.selectedIndex});
@@ -11,8 +12,11 @@ class BottomNavigationBarPart extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       showSelectedLabels: false,
       showUnselectedLabels: false,
+      selectedIconTheme: IconThemeData(color: defaultColor),
+      unselectedIconTheme: IconThemeData(color: defaultColor),
       items: [
         bottomNavigationBarItemMethod(Icons.home, selectedIndex == 0),
         bottomNavigationBarItemMethod(Icons.shopping_bag, selectedIndex == 1),
