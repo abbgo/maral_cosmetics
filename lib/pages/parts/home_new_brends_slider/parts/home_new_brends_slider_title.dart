@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class HomeNewBrendsSliderTitle extends StatelessWidget {
-  const HomeNewBrendsSliderTitle({super.key, required this.text});
+  const HomeNewBrendsSliderTitle(
+      {super.key, required this.text, required this.onTap});
 
   final String text;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {},
+      onTap: onTap(),
       title: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
