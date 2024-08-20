@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_brends.dart';
+import 'package:maral_cosmetics/pages/home/parts/home_galery.dart';
 import 'package:maral_cosmetics/pages/parts/home_about_cosmetics/home_about_cosmetics.dart';
 import 'package:maral_cosmetics/pages/parts/home_discount_products_list/home_discount_products_list.dart';
 import 'package:maral_cosmetics/pages/parts/home_new_brends_slider/home_new_brends_slider.dart';
@@ -26,6 +27,8 @@ class HomeBody extends StatelessWidget {
         HomeAboutCosmetics(),
         SizedBox(height: 20),
         HomeBrends(),
+        SizedBox(height: 20),
+        HomeGalery(),
       ],
     );
   }
