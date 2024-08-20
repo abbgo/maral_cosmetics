@@ -14,19 +14,15 @@ class BottomNavigationBarPart extends ConsumerWidget {
       items: [
         bottomNavigationBarItemMethod(
           const Icon(Icons.travel_explore, size: 24),
-          Colors.black,
         ),
         bottomNavigationBarItemMethod(
           const Icon(Icons.favorite_border, size: 24),
-          Colors.black,
         ),
         bottomNavigationBarItemMethod(
           const Icon(Icons.shopping_bag_outlined, size: 24),
-          Colors.black,
         ),
         bottomNavigationBarItemMethod(
           const Icon(Icons.shopping_bag_outlined, size: 24),
-          Colors.black,
         ),
       ],
       currentIndex: selectedIndex,
