@@ -10,6 +10,7 @@ class HomeNewsList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: ListView.separated(
+        physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: homeNews.length,
         itemBuilder: (context, index) => HomeNewsCard(image: homeNews[index]),
