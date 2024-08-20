@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/pages/basket/basket.dart';
+import 'package:maral_cosmetics/pages/bottom_navigation/parts/bottom_navigation_bar.dart';
 import 'package:maral_cosmetics/pages/favorites/favorites.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_app_bar_notification_button.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_body.dart';
