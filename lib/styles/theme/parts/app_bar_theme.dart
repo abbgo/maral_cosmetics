@@ -10,6 +10,7 @@ class AppAppBarTheme {
     titleTextStyle: TextStyle(
       fontFamily: 'MarcellusSC',
       color: Colors.black,
+      fontSize: 20,
     ),
     centerTitle: true,
   );
