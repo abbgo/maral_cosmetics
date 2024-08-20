@@ -6,7 +6,10 @@ class NewBrendsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('In taze gosulanlar'),
+        centerTitle: false,
+      ),
       body: const Center(
         child: Text('New brends'),
       ),

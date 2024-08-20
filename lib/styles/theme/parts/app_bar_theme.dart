@@ -8,10 +8,8 @@ class AppAppBarTheme {
     elevation: 0,
     scrolledUnderElevation: 0,
     titleTextStyle: TextStyle(
-      fontFamily: 'HeyWowRegular',
+      fontFamily: 'MarcellusSC',
       color: Colors.black,
-      fontWeight: FontWeight.bold,
-      fontSize: 18,
     ),
     centerTitle: true,
   );
