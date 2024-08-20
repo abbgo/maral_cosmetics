@@ -7,11 +7,11 @@ class HomeNewBrendsSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        HomeNewBrendsSliderTitle(text: 'In taze gosulanlar'),
-        HomeNewBrendsSliderBody(),
+        HomeNewBrendsSliderTitle(text: 'In taze gosulanlar', onTap: () {}),
+        const HomeNewBrendsSliderBody(),
       ],
     );
   }

@@ -10,7 +10,7 @@ class HomeBrends extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const HomeNewBrendsSliderTitle(text: 'Hyzmatdas brendler'),
+        HomeNewBrendsSliderTitle(text: 'Hyzmatdas brendler', onTap: () {}),
         SizedBox(
           height: 80,
           child: ListView.separated(

@@ -10,11 +10,11 @@ class HomeNews extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: const Color(0xffF8F8F8),
-      child: const Column(
+      child: Column(
         children: [
-          HomeNewBrendsSliderTitle(text: 'Habarlar'),
-          HomeNewsMainImage(),
-          HomeNewsList(),
+          HomeNewBrendsSliderTitle(text: 'Habarlar', onTap: () {}),
+          const HomeNewsMainImage(),
+          const HomeNewsList(),
         ],
       ),
     );

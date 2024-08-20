@@ -10,7 +10,7 @@ class HomeGalery extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const HomeNewBrendsSliderTitle(text: 'Gallereya toplumy'),
+        HomeNewBrendsSliderTitle(text: 'Gallereya toplumy', onTap: () {}),
         SizedBox(
           height: 80,
           child: ListView.separated(

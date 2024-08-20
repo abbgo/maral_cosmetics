@@ -7,11 +7,11 @@ class HomeAboutCosmetics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        HomeNewBrendsSliderTitle(text: 'Kosmetika barada'),
-        HomeAboutCosmeticsList(),
+        HomeNewBrendsSliderTitle(text: 'Kosmetika barada', onTap: () {}),
+        const HomeAboutCosmeticsList(),
       ],
     );
   }

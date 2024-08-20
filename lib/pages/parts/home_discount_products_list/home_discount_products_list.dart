@@ -7,13 +7,13 @@ class HomeDiscountProductsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          HomeNewBrendsSliderTitle(text: 'Arzanladyslar'),
-          HomeDiscountProductsBody(),
+          HomeNewBrendsSliderTitle(text: 'Arzanladyslar', onTap: () {}),
+          const HomeDiscountProductsBody(),
         ],
       ),
     );
