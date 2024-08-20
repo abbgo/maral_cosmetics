@@ -6,12 +6,12 @@ class HomeNewBrendsSliderTitle extends StatelessWidget {
       {super.key, required this.text, required this.onTap});
 
   final String text;
-  final Function onTap;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: onTap(),
+      onTap: onTap,
       title: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
