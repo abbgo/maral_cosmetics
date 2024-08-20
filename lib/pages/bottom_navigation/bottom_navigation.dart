@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/pages/basket/basket.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_app_bar_notification_button.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_body.dart';
 import 'package:maral_cosmetics/providers/pages/bottom_navigation.dart';
@@ -13,25 +14,27 @@ class BottomNavigationPage extends ConsumerWidget {
 
     List<Widget> pages = [
       const HomeBody(),
-      const FavoritesPage(),
+      const BasketPage(),
       const SearchProductPage(),
       const ProfilePage(),
     ];
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset(
-              "assets/images/logo.jpg",
-              height: kToolbarHeight - 15,
-            ),
-            const HomeAppBarNotificationButton(),
-          ],
-        ),
-      ),
+      appBar: selectedIndex == 0
+          ? AppBar(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    "assets/images/logo.jpg",
+                    height: kToolbarHeight - 15,
+                  ),
+                  const HomeAppBarNotificationButton(),
+                ],
+              ),
+            )
+          : null,
       body: IndexedStack(
         index: selectedIndex,
         children: pages,
