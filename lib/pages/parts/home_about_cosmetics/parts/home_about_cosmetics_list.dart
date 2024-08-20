@@ -11,8 +11,11 @@ class HomeAboutCosmeticsList extends StatelessWidget {
       height: 120,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) =>
-            HomeAboutCosmeticsCard(image: homeAboutCosmetics[index]),
+        itemBuilder: (context, index) => HomeAboutCosmeticsCard(
+          image: homeAboutCosmetics[index],
+          leftMargin: index == 0 ? 10 : 0,
+          rightMargin: index == homeAboutCosmetics.length - 1 ? 10 : 0,
+        ),
         separatorBuilder: (context, index) => const SizedBox(width: 10),
         itemCount: homeAboutCosmetics.length,
       ),

@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 
 class HomeAboutCosmeticsCard extends StatelessWidget {
-  const HomeAboutCosmeticsCard({super.key, required this.image});
+  const HomeAboutCosmeticsCard(
+      {super.key,
+      required this.image,
+      required this.rightMargin,
+      required this.leftMargin});
 
   final String image;
+  final double rightMargin, leftMargin;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: const Color(0xffFDFDF9),
       padding: const EdgeInsets.all(6),
+      margin: EdgeInsets.only(left: leftMargin, right: rightMargin),
       width: 310,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
