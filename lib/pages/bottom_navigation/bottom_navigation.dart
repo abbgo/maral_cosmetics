@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_app_bar_notification_button.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_body.dart';
+import 'package:maral_cosmetics/providers/pages/bottom_navigation.dart';
 
 class BottomNavigationPage extends ConsumerWidget {
   const BottomNavigationPage({super.key});
