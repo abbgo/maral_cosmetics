@@ -23,3 +23,8 @@ List<String> homeNews = [
   "assets/examples/news_2.png",
   "assets/examples/news_3.png",
 ];
+
+List<String> homeAboutCosmetics = [
+  "assets/examples/about_cosmetics.png",
+  "assets/examples/about_cosmetics.png",
+];
