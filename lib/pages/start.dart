@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/bottom_navigation/bottom_navigation.dart';
-import 'package:maral_cosmetics/pages/home/home.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});

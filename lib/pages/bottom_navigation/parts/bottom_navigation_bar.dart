@@ -11,11 +11,13 @@ class BottomNavigationBarPart extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return BottomNavigationBar(
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
       items: [
-        bottomNavigationBarItemMethod(Icons.home),
-        bottomNavigationBarItemMethod(Icons.shopping_bag),
-        bottomNavigationBarItemMethod(Icons.favorite),
-        bottomNavigationBarItemMethod(Icons.person),
+        bottomNavigationBarItemMethod(Icons.home, selectedIndex == 0),
+        bottomNavigationBarItemMethod(Icons.shopping_bag, selectedIndex == 1),
+        bottomNavigationBarItemMethod(Icons.favorite, selectedIndex == 2),
+        bottomNavigationBarItemMethod(Icons.person, selectedIndex == 3),
       ],
       currentIndex: selectedIndex,
       onTap: (value) =>
