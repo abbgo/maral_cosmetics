@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/examples/static_variables.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/news/news.dart';
 import 'package:maral_cosmetics/pages/parts/home_new_brends_slider/parts/home_new_brends_slider_title.dart';
@@ -25,7 +26,7 @@ class HomeNews extends StatelessWidget {
             ),
           ),
           const HomeNewsMainImage(),
-          const HomeNewsList(),
+          HomeNewsList(images: homeNews),
         ],
       ),
     );

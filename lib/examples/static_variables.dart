@@ -54,3 +54,13 @@ List<String> discountProductCategories = [
   "Duty free duhylar",
   "Shampun"
 ];
+
+List<String> news = [
+  "assets/examples/news_1.png",
+  "assets/examples/news_2.png",
+  "assets/examples/news_3.png",
+  "assets/examples/news_4.png",
+  "assets/examples/news_5.png",
+  "assets/examples/news_6.png",
+  "assets/examples/news_7.png",
+];

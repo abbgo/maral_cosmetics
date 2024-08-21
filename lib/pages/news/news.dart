@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/examples/static_variables.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_list.dart';
 
 class NewsPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class NewsPage extends StatelessWidget {
       ),
       body: Container(
         color: const Color(0xffF8F8F8),
-        child: const HomeNewsList(),
+        child: HomeNewsList(images: news),
       ),
     );
   }
