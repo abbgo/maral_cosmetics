@@ -13,16 +13,17 @@ class NewsPage extends StatelessWidget {
         centerTitle: false,
         title: const Text('Habarlar'),
       ),
-      body: Container(
-        color: const Color(0xffF8F8F8),
-        child: ListView(
-          shrinkWrap: true,
-          children: [
-            HomeNewsList(images: news),
-            const HomeAboutCosmetics(),
-            const SizedBox(height: 20),
-          ],
-        ),
+      body: ListView(
+        shrinkWrap: true,
+        children: [
+          Container(
+            color: const Color(0xffF8F8F8),
+            child: HomeNewsList(images: news),
+          ),
+          const SizedBox(height: 20),
+          const HomeAboutCosmetics(),
+          const SizedBox(height: 20),
+        ],
       ),
     );
   }
