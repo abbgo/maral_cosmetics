@@ -25,7 +25,7 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
       height: 200,
       width: double.maxFinite,
       child: Stack(
-        alignment: const Alignment(0, 0),
+        alignment: const Alignment(0, 0.9),
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(5),
