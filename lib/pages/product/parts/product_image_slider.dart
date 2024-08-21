@@ -21,7 +21,7 @@ class ProductImageSlider extends StatelessWidget {
             child: PageView.builder(
               controller: pageController,
               pageSnapping: true,
-              itemCount: homeSliders.length,
+              itemCount: productSliders.length,
               itemBuilder: (context, index) =>
                   Image.asset(productSliders[index], fit: BoxFit.cover),
             ),
@@ -34,7 +34,7 @@ class ProductImageSlider extends StatelessWidget {
             ),
             child: SmoothPageIndicator(
               controller: pageController,
-              count: homeSliders.length,
+              count: productSliders.length,
               effect: WormEffect(
                 dotColor: Colors.white,
                 dotHeight: 8,
