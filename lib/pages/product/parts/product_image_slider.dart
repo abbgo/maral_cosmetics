@@ -3,21 +3,10 @@ import 'package:maral_cosmetics/examples/static_variables.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class ProductImageSlider extends StatefulWidget {
-  const ProductImageSlider({super.key});
+class ProductImageSlider extends StatelessWidget {
+  const ProductImageSlider({super.key, required this.pageController});
 
-  @override
-  State<ProductImageSlider> createState() => _ProductImageSliderState();
-}
-
-class _ProductImageSliderState extends State<ProductImageSlider> {
-  final PageController _pageController = PageController();
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +19,7 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
           ClipRRect(
             borderRadius: BorderRadius.circular(5),
             child: PageView.builder(
-              controller: _pageController,
+              controller: pageController,
               pageSnapping: true,
               itemCount: homeSliders.length,
               itemBuilder: (context, index) =>
@@ -44,7 +33,7 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
               borderRadius: BorderRadius.circular(10),
             ),
             child: SmoothPageIndicator(
-              controller: _pageController,
+              controller: pageController,
               count: homeSliders.length,
               effect: WormEffect(
                 dotColor: Colors.white,
