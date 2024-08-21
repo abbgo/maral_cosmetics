@@ -12,8 +12,27 @@ class OneNewsPage extends StatelessWidget {
         centerTitle: false,
         title: const Text('Habarlar'),
       ),
-      body: const Center(
-        child: Text('One news'),
+      body: ListView(
+        shrinkWrap: true,
+        children: [
+          Container(
+            color: const Color(0xffF8F8F8),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            child: Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: Image.asset(
+                    image,
+                    height: 200,
+                    width: double.maxFinite,
+                    fit: BoxFit.cover,
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
