@@ -4,7 +4,9 @@ import 'package:maral_cosmetics/examples/static_variables.dart';
 import 'package:maral_cosmetics/providers/pages/product.dart';
 
 class ProductImageList extends StatefulWidget {
-  const ProductImageList({super.key});
+  const ProductImageList({super.key, required this.pageController});
+
+  final PageController pageController;
 
   @override
   State<ProductImageList> createState() => _ProductImageListState();
@@ -58,8 +60,13 @@ class _ProductImageListState extends State<ProductImageList> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => GestureDetector(
                 key: menuKeys[index],
-                onTap: () {
+                onTap: () async {
                   ref.read(selectedProductImageProvider.notifier).state = index;
+                  await widget.pageController.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
                   _scrollToItem(index);
                 },
                 child: Stack(

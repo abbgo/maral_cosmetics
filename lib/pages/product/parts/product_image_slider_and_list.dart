@@ -24,7 +24,7 @@ class _ProductImageSliderAndListState extends State<ProductImageSliderAndList> {
     return Column(
       children: [
         ProductImageSlider(pageController: _pageController),
-        const ProductImageList(),
+        ProductImageList(pageController: _pageController),
       ],
     );
   }
