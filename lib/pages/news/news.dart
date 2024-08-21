@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
+import 'package:maral_cosmetics/pages/parts/home_about_cosmetics/home_about_cosmetics.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_list.dart';
 
 class NewsPage extends StatelessWidget {
@@ -14,7 +15,14 @@ class NewsPage extends StatelessWidget {
       ),
       body: Container(
         color: const Color(0xffF8F8F8),
-        child: HomeNewsList(images: news),
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            HomeNewsList(images: news),
+            const HomeAboutCosmetics(),
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
