@@ -25,32 +25,29 @@ class HomeMenusChild extends ConsumerWidget {
     int selectedHomeMenu = ref.watch(selectedHomeMenuProvider);
     bool isActiveMenu = selectedHomeMenu == menuIndex;
 
-    return AbsorbPointer(
-      absorbing: false,
-      child: GestureDetector(
-        onTap: () {
-          ref.read(selectedHomeMenuProvider.notifier).state = menuIndex;
-          scrollToItem(menuIndex);
-        },
-        child: Container(
-          key: menuKey,
-          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-          margin: EdgeInsets.only(
-            left: menuIndex == 0 ? 10 : 0,
-            right: isLast ? 10 : 0,
-          ),
-          decoration: isActiveMenu
-              ? innerShadowBoxDecoration
-              : BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.black),
-                ),
-          child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                  fontSize: 14, color: isActiveMenu ? defaultColor : null),
-            ),
+    return GestureDetector(
+      onTap: () {
+        ref.read(selectedHomeMenuProvider.notifier).state = menuIndex;
+        scrollToItem(menuIndex);
+      },
+      child: Container(
+        key: menuKey,
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+        margin: EdgeInsets.only(
+          left: menuIndex == 0 ? 10 : 0,
+          right: isLast ? 10 : 0,
+        ),
+        decoration: isActiveMenu
+            ? innerShadowBoxDecoration
+            : BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.black),
+              ),
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+                fontSize: 14, color: isActiveMenu ? defaultColor : null),
           ),
         ),
       ),
