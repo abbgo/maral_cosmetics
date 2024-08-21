@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/discount_products/parts/title_and_timer_part.dart';
 
 class DiscountProductsPage extends StatelessWidget {
   const DiscountProductsPage({super.key});
@@ -10,8 +11,13 @@ class DiscountProductsPage extends StatelessWidget {
         centerTitle: false,
         title: const Text('Arzanladyslar'),
       ),
-      body: const Center(
-        child: Text("body"),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: ListView(
+          children: const [
+            TitleAndTimerPart(),
+          ],
+        ),
       ),
     );
   }
