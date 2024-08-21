@@ -64,3 +64,11 @@ List<String> news = [
   "assets/examples/news_6.png",
   "assets/examples/news_7.png",
 ];
+
+List<String> productSliders = [
+  "assets/examples/product_slider_1.png",
+  "assets/examples/product_slider_2.png",
+  "assets/examples/product_slider_3.png",
+  "assets/examples/product_slider_4.png",
+  "assets/examples/product_slider_5.png",
+];
