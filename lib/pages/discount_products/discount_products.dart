@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_categories.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/title_and_timer_part.dart';
 
 class DiscountProductsPage extends StatelessWidget {
@@ -16,6 +17,8 @@ class DiscountProductsPage extends StatelessWidget {
         child: ListView(
           children: const [
             TitleAndTimerPart(),
+            SizedBox(height: 30),
+            DiscountProductsCategories(),
           ],
         ),
       ),
