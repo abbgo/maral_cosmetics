@@ -48,3 +48,9 @@ List<String> newBrends = [
   "assets/examples/brend_slider_4.png",
   "assets/examples/brend_slider_5.png",
 ];
+
+List<String> discountProductCategories = [
+  "El kremler",
+  "Duty free duhylar",
+  "Shampun"
+];
