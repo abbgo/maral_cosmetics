@@ -12,19 +12,24 @@ class NewBrendsCard extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
-          child: Image.asset(image, height: 120, fit: BoxFit.cover),
+          child: Image.asset(
+            image,
+            height: 120,
+            fit: BoxFit.cover,
+            width: double.maxFinite,
+          ),
         ),
         Container(
-          width: 105,
-          height: 20,
-          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 6),
+          width: 135,
+          height: 40,
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: Colors.white.withOpacity(.5),
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(3),
           ),
           child: const Text(
             'Customers Says',
-            style: TextStyle(fontSize: 10),
+            style: TextStyle(fontSize: 14),
           ),
         ),
       ],
