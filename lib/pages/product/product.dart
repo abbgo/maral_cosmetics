@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/helpers/functions/screen.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_buttons.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_data.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
@@ -13,13 +12,9 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(
-          left: 10,
-          top: screenProperties(context).topSafeArea,
-          right: 10,
-        ),
-        child: const Column(
-          children: [
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: ListView(
+          children: const [
             ProductPageAppBar(),
             ProductImageSliderAndList(),
             ProductData(),
