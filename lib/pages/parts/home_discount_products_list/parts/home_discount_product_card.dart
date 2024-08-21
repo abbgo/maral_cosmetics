@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_buttons.dart';
 import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_price.dart';
+import 'package:maral_cosmetics/styles/colors.dart';
 
 class HomeDiscountProductCard extends StatelessWidget {
   const HomeDiscountProductCard({
@@ -23,6 +24,10 @@ class HomeDiscountProductCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: defaultLightColor,
+          width: .5,
+        ),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
