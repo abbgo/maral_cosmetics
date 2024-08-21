@@ -19,6 +19,7 @@ class OneNewsPage extends StatelessWidget {
         children: [
           OneNewsContent(image: image),
           const HomeAboutCosmetics(),
+          const SizedBox(height: 20),
         ],
       ),
     );
