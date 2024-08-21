@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class OneNewsPage extends StatelessWidget {
-  const OneNewsPage({super.key});
+  const OneNewsPage({super.key, required this.image});
+
+  final String image;
 
   @override
   Widget build(BuildContext context) {

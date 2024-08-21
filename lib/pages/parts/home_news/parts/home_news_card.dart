@@ -15,7 +15,7 @@ class HomeNewsCard extends StatelessWidget {
         onTap: () => Navigator.push(
           context,
           CustomPageRoute(
-            child: const OneNewsPage(),
+            child: OneNewsPage(image: image),
             direction: AxisDirection.left,
           ),
         ),
