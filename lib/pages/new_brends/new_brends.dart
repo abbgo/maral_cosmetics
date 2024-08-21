@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
+import 'package:maral_cosmetics/pages/new_brends/parts/new_brends_card.dart';
 
 class NewBrendsPage extends StatelessWidget {
   const NewBrendsPage({super.key});
@@ -16,14 +17,8 @@ class NewBrendsPage extends StatelessWidget {
         child: ListView.separated(
           physics: const BouncingScrollPhysics(),
           itemCount: newBrends.length,
-          itemBuilder: (context, index) => ClipRRect(
-            borderRadius: BorderRadius.circular(6),
-            child: Image.asset(
-              newBrends[index],
-              height: 120,
-              fit: BoxFit.cover,
-            ),
-          ),
+          itemBuilder: (context, index) =>
+              NewBrendsCard(image: newBrends[index]),
           separatorBuilder: (context, index) => const SizedBox(height: 15),
         ),
       ),
