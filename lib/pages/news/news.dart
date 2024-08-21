@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_list.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({super.key});
@@ -10,8 +11,9 @@ class NewsPage extends StatelessWidget {
         centerTitle: false,
         title: const Text('Habarlar'),
       ),
-      body: const Center(
-        child: Text('news body'),
+      body: Container(
+        color: const Color(0xffF8F8F8),
+        child: const HomeNewsList(),
       ),
     );
   }
