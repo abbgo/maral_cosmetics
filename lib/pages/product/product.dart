@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/functions/screen.dart';
+import 'package:maral_cosmetics/pages/product/parts/product_image_slider.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_page_app_bar.dart';
 
 class ProductPage extends StatelessWidget {
@@ -16,9 +17,10 @@ class ProductPage extends StatelessWidget {
           top: screenProperties(context).topSafeArea,
           right: 10,
         ),
-        child: const Column(
+        child: Column(
           children: [
-            ProductPageAppBar(),
+            const ProductPageAppBar(),
+            ProductImageSlider(image: image),
           ],
         ),
       ),
