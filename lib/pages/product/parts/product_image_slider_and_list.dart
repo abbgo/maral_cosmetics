@@ -27,6 +27,7 @@ class _ProductImageSliderAndListState extends State<ProductImageSliderAndList> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         ProductImageSlider(
           pageController: _pageController,
