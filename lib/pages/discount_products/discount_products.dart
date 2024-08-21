@@ -12,15 +12,12 @@ class DiscountProductsPage extends StatelessWidget {
         centerTitle: false,
         title: const Text('Arzanladyslar'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: ListView(
-          children: const [
-            TitleAndTimerPart(),
-            SizedBox(height: 30),
-            DiscountProductsCategories(),
-          ],
-        ),
+      body: ListView(
+        children: const [
+          TitleAndTimerPart(),
+          SizedBox(height: 30),
+          DiscountProductsCategories(),
+        ],
       ),
     );
   }
