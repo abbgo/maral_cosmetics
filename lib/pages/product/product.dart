@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/styles/colors.dart';
+import 'package:maral_cosmetics/helpers/functions/screen.dart';
+import 'package:maral_cosmetics/pages/product/parts/product_page_app_bar.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key, required this.image});
@@ -9,25 +10,17 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: Container(
-            height: 32,
-            width: 32,
-            decoration: BoxDecoration(
-              color: defaultLightColor,
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Icon(
-              Icons.close,
-              color: defaultColor,
-            ),
-          ),
+      body: Padding(
+        padding: EdgeInsets.only(
+          left: 10,
+          top: screenProperties(context).topSafeArea,
+          right: 10,
         ),
-      ),
-      body: const Center(
-        child: Text('Haryt body'),
+        child: const Column(
+          children: [
+            ProductPageAppBar(),
+          ],
+        ),
       ),
     );
   }
