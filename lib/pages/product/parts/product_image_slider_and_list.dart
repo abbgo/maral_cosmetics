@@ -28,7 +28,11 @@ class _ProductImageSliderAndListState extends State<ProductImageSliderAndList> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ProductImageSlider(pageController: _pageController),
+        ProductImageSlider(
+          pageController: _pageController,
+          scrollController: _scrollController,
+          menuKeys: menuKeys,
+        ),
         ProductImageList(
           pageController: _pageController,
           scrollController: _scrollController,
