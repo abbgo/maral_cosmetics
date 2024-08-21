@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
-import 'package:maral_cosmetics/pages/one_news.dart';
+import 'package:maral_cosmetics/pages/one_news/one_news.dart';
 
 class HomeNewsCard extends StatelessWidget {
   const HomeNewsCard({super.key, required this.image});
