@@ -48,7 +48,10 @@ class HomeDiscountProductCard extends StatelessWidget {
               style: TextStyle(fontFamily: 'HeyWowRegular'),
             ),
             const SizedBox(height: 10),
-            const HomeDiscountProductPrice(),
+            const HomeDiscountProductPrice(
+              fontSizePrice: 12,
+              fontSizeOldPrice: 8,
+            ),
             const SizedBox(height: 5),
             const HomeDiscountProductButtons(),
           ],
