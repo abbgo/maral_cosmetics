@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/functions/screen.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_buttons.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_data.dart';
+import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image_slider_and_list.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_page_app_bar.dart';
 
@@ -24,6 +25,8 @@ class ProductPage extends StatelessWidget {
             ProductData(),
             SizedBox(height: 22),
             ProductButtons(),
+            SizedBox(height: 22),
+            ProductDescription(),
           ],
         ),
       ),
