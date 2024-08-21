@@ -18,10 +18,12 @@ class BottomNavigationBarPart extends ConsumerWidget {
       selectedIconTheme: IconThemeData(color: defaultColor),
       unselectedIconTheme: IconThemeData(color: defaultColor),
       items: [
-        bottomNavigationBarItemMethod(Icons.home, selectedIndex == 0),
-        bottomNavigationBarItemMethod(Icons.shopping_bag, selectedIndex == 1),
-        bottomNavigationBarItemMethod(Icons.favorite, selectedIndex == 2),
-        bottomNavigationBarItemMethod(Icons.person, selectedIndex == 3),
+        bottomNavigationBarItemMethod(Icons.home_outlined, selectedIndex == 0),
+        bottomNavigationBarItemMethod(
+            Icons.shopping_bag_outlined, selectedIndex == 1),
+        bottomNavigationBarItemMethod(
+            Icons.favorite_outline, selectedIndex == 2),
+        bottomNavigationBarItemMethod(Icons.person_outline, selectedIndex == 3),
       ],
       currentIndex: selectedIndex,
       onTap: (value) =>
