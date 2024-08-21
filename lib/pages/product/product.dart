@@ -22,6 +22,7 @@ class ProductPage extends StatelessWidget {
             ProductPageAppBar(),
             ProductImageSliderAndList(),
             ProductData(),
+            SizedBox(height: 22),
             ProductButtons(),
           ],
         ),
