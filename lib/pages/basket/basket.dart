@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/basket/parts/basket_product_count.dart';
+import 'package:maral_cosmetics/pages/basket/parts/basket_products_list.dart';
 
 class BasketPage extends StatelessWidget {
   const BasketPage({super.key});
@@ -12,6 +13,7 @@ class BasketPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           BasketProductCount(),
+          BasketProductsList(),
         ],
       ),
     );
