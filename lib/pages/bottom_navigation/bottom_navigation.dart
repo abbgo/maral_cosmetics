@@ -13,6 +13,7 @@ class BottomNavigationPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    Widget? titleWidget;
     int selectedIndex = ref.watch(selectedBottomIndexProvider);
 
     List<Widget> pages = [
@@ -22,13 +23,16 @@ class BottomNavigationPage extends ConsumerWidget {
       const SettingPage(),
     ];
 
+    switch (selectedIndex) {
+      case 0:
+        titleWidget = const HomeAppBarTitle();
+        break;
+      default:
+    }
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: /* selectedIndex == 0
-          ?*/
-          AppBar(
-        title: const HomeAppBarTitle(),
-      ),
+      appBar: AppBar(title: titleWidget),
       body: IndexedStack(
         index: selectedIndex,
         children: pages,
