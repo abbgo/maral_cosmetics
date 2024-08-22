@@ -10,16 +10,13 @@ class FavoriteAppBarTitle extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         const Text('Halanlarym'),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: defaultLightColor,
-            ),
-            child: Icon(Icons.delete_sweep, color: defaultColor),
+        Container(
+          padding: const EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            color: defaultLightColor,
           ),
+          child: Icon(Icons.delete_sweep, color: defaultColor),
         ),
       ],
     );
