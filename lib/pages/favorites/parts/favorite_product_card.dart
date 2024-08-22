@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_data.dart';
 import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_images_slider.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
@@ -18,6 +19,8 @@ class FavoriteProductCard extends StatelessWidget {
       child: Row(
         children: [
           FavoriteProductImagesSlider(images: images),
+          const SizedBox(width: 10),
+          const FavoriteProductData(),
         ],
       ),
     );
