@@ -24,7 +24,7 @@ class FavoriteProductCard extends StatelessWidget {
           children: [
             FavoriteProductImagesSlider(images: images),
             const SizedBox(width: 10),
-            const FavoriteProductData(),
+            const FavoriteProductData(forFavorite: true),
           ],
         ),
       ),
