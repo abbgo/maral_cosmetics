@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_images_slider.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class FavoriteProductCard extends StatelessWidget {
@@ -13,6 +14,11 @@ class FavoriteProductCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: defaultLightColor.withOpacity(.5),
         borderRadius: BorderRadius.circular(10),
+      ),
+      child: Row(
+        children: [
+          FavoriteProductImagesSlider(images: images),
+        ],
       ),
     );
   }
