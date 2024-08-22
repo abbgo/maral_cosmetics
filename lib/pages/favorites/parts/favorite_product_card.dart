@@ -13,7 +13,7 @@ class FavoriteProductCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: defaultLightColor.withOpacity(.5),
+        color: defaultLightColor.withOpacity(.2),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(

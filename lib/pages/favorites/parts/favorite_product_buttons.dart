@@ -7,6 +7,7 @@ class FavoriteProductButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,6 +26,28 @@ class FavoriteProductButtons extends StatelessWidget {
                 fontFamily: 'HeyWowRegular',
                 color: defaultColor,
               ),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+              decoration: BoxDecoration(
+                color: defaultLightColor.withOpacity(.8),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Icon(Icons.local_mall_outlined, color: defaultColor),
+            ),
+            const SizedBox(width: 10),
+            Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: defaultLightColor.withOpacity(.8),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Icon(Icons.favorite, color: defaultColor),
             ),
           ],
         ),
