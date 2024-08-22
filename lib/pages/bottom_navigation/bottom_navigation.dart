@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/pages/basket/basket.dart';
 import 'package:maral_cosmetics/pages/bottom_navigation/parts/bottom_navigation_bar.dart';
+import 'package:maral_cosmetics/pages/bottom_navigation/parts/favorite_app_bar_title.dart';
 import 'package:maral_cosmetics/pages/bottom_navigation/parts/home_app_bar_title.dart';
 import 'package:maral_cosmetics/pages/favorites/favorites.dart';
 import 'package:maral_cosmetics/pages/home/home_body.dart';
@@ -26,6 +27,9 @@ class BottomNavigationPage extends ConsumerWidget {
     switch (selectedIndex) {
       case 0:
         titleWidget = const HomeAppBarTitle();
+        break;
+      case 2:
+        titleWidget = const FavoriteAppBarTitle();
         break;
       default:
     }
