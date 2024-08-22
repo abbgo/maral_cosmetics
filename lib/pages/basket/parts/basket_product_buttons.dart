@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
-class FavoriteProductButtons extends StatelessWidget {
-  const FavoriteProductButtons({super.key});
+class BasketProductButtons extends StatelessWidget {
+  const BasketProductButtons({super.key});
 
   @override
   Widget build(BuildContext context) {

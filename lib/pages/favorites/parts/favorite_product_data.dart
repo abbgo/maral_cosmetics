@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/basket/parts/basket_product_buttons.dart';
 import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_buttons.dart';
 import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_price.dart';
 
@@ -28,7 +29,7 @@ class FavoriteProductData extends StatelessWidget {
           const SizedBox(height: 10),
           forFavorite
               ? const FavoriteProductButtons()
-              : const FavoriteProductButtons(),
+              : const BasketProductButtons(),
         ],
       ),
     );
