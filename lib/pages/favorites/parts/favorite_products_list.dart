@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
+import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_card.dart';
 
 class FavoriteProductsList extends StatelessWidget {
   const FavoriteProductsList({super.key});
@@ -9,7 +10,8 @@ class FavoriteProductsList extends StatelessWidget {
     return Expanded(
       child: ListView.separated(
         physics: const BouncingScrollPhysics(),
-        itemBuilder: (context, index) => const Text('some'),
+        itemBuilder: (context, index) =>
+            FavoriteProductCard(images: favoriteProducts[index]),
         separatorBuilder: (context, index) => const SizedBox(height: 10),
         itemCount: favoriteProducts.length,
       ),
