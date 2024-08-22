@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_count.dart';
+import 'package:maral_cosmetics/pages/favorites/parts/favorite_products_list.dart';
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
@@ -11,6 +12,7 @@ class FavoritesPage extends StatelessWidget {
       child: Column(
         children: [
           FavoriteProductCount(),
+          FavoriteProductsList(),
         ],
       ),
     );

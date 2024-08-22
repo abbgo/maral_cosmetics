@@ -72,3 +72,27 @@ List<String> productSliders = [
   "assets/examples/product_slider_4.png",
   "assets/examples/product_slider_5.png",
 ];
+
+List<String> favoriteProducts_1 = [
+  "assets/examples/favorite_product_1.png",
+  "assets/examples/favorite_product_2.png",
+  "assets/examples/favorite_product_3.png",
+];
+
+List<String> favoriteProducts_2 = [
+  "assets/examples/favorite_product_4.png",
+  "assets/examples/favorite_product_5.png",
+  "assets/examples/favorite_product_6.png",
+];
+
+List<String> favoriteProducts_3 = [
+  "assets/examples/favorite_product_7.png",
+  "assets/examples/favorite_product_8.png",
+  "assets/examples/favorite_product_9.png",
+];
+
+List<List<String>> favoriteProducts = [
+  favoriteProducts_1,
+  favoriteProducts_2,
+  favoriteProducts_3
+];
