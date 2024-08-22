@@ -10,6 +10,7 @@ class FavoritesPage extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FavoriteProductCount(),
           FavoriteProductsList(),

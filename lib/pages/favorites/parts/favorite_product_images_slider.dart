@@ -26,7 +26,7 @@ class _FavoriteProductImagesSliderState
   Widget build(BuildContext context) {
     return Expanded(
       child: SizedBox(
-        height: 90,
+        height: 100,
         child: Stack(
           alignment: const Alignment(0, 0.9),
           children: [
@@ -51,8 +51,8 @@ class _FavoriteProductImagesSliderState
                 count: widget.images.length,
                 effect: WormEffect(
                   dotColor: Colors.white,
-                  dotHeight: 8,
-                  dotWidth: 8,
+                  dotHeight: 5,
+                  dotWidth: 5,
                   activeDotColor: defaultColor,
                 ),
               ),
