@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_buttons.dart';
+import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_price.dart';
 
 class FavoriteProductData extends StatelessWidget {
   const FavoriteProductData({super.key});
@@ -15,8 +17,11 @@ class FavoriteProductData extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'HeyWowRegular',
               fontWeight: FontWeight.bold,
+              fontSize: 12,
             ),
           ),
+          HomeDiscountProductPrice(fontSizePrice: 10, fontSizeOldPrice: 8),
+          FavoriteProductButtons(),
         ],
       ),
     );
