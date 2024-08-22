@@ -13,6 +13,7 @@ class FavoritesPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FavoriteProductCount(),
+          SizedBox(height: 10),
           FavoriteProductsList(),
         ],
       ),
