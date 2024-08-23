@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/styles/colors.dart';
 
 class FullNameInput extends StatelessWidget {
   const FullNameInput({super.key});
@@ -8,6 +9,7 @@ class FullNameInput extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: TextFormField(
+        cursorColor: defaultColor,
         keyboardType: TextInputType.text,
         decoration: const InputDecoration(labelText: ' Doly Adynyz '),
       ),

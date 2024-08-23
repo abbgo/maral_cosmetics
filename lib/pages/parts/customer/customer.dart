@@ -11,6 +11,7 @@ class CustomerPart extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         PaymentTypeTitle(text: 'Satyn alyjy'),
+        SizedBox(height: 10),
         FullNameInput(),
       ],
     );
