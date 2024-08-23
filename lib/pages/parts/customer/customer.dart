@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/customer/parts/full_name_input.dart';
+import 'package:maral_cosmetics/pages/parts/customer/parts/phone_number_input.dart';
 import 'package:maral_cosmetics/pages/parts/payment_type/parts/payment_type_title.dart';
 
 class CustomerPart extends StatelessWidget {
@@ -13,6 +14,7 @@ class CustomerPart extends StatelessWidget {
         PaymentTypeTitle(text: 'Satyn alyjy'),
         SizedBox(height: 10),
         FullNameInput(),
+        PhoneNumberInput(),
       ],
     );
   }
