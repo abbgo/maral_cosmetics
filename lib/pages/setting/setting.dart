@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/setting/parts/app_version.dart';
+import 'package:maral_cosmetics/pages/setting/parts/notifications_setting.dart';
 import 'package:maral_cosmetics/pages/setting/parts/user_profile.dart';
 
 class SettingPage extends StatelessWidget {
@@ -17,6 +18,7 @@ class SettingPage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               UserProfile(),
+              NotificationsSetting(),
             ],
           ),
         ),
