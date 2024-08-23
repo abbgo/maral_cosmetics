@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/customer/customer.dart';
 import 'package:maral_cosmetics/pages/parts/delivery_time/delivery_time.dart';
 import 'package:maral_cosmetics/pages/parts/delivery_type/delivery_type.dart';
+import 'package:maral_cosmetics/pages/parts/payment_contact/payment_contact.dart';
 import 'package:maral_cosmetics/pages/parts/payment_type/payment_type.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
 
@@ -31,11 +32,11 @@ class _PaymentPageState extends State<PaymentPage> {
       body: ListView(
         controller: _scrollController,
         children: [
+          const PaymentType(),
+          const SizedBox(height: 20),
           const CustomerPart(),
           const SizedBox(height: 20),
           const DeliveryType(),
-          const SizedBox(height: 20),
-          const PaymentType(),
           const SizedBox(height: 20),
           const DeliveryTime(),
           const SizedBox(height: 20),
@@ -56,6 +57,8 @@ class _PaymentPageState extends State<PaymentPage> {
               scrollController: _scrollController,
             ),
           ),
+          const SizedBox(height: 20),
+          const PaymentContact(),
         ],
       ),
     );
