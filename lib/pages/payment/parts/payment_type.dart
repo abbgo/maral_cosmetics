@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/payment/parts/payment_type_title.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class PaymentType extends StatelessWidget {
@@ -9,27 +10,11 @@ class PaymentType extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            children: [
-              const Text(
-                '*',
-                style: TextStyle(fontSize: 20, color: Colors.red),
-              ),
-              const SizedBox(width: 5),
-              Text(
-                'Toleg gornusi',
-                style: TextStyle(
-                  fontFamily: 'HeyWowRegular',
-                  color: defaultColor,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(width: 10),
-              const Icon(Icons.error_outline, size: 16),
-            ],
-          ),
+        const PaymentTypeTitle(),
+        RadioListTile(
+          value: value,
+          groupValue: groupValue,
+          onChanged: onChanged,
         ),
       ],
     );
