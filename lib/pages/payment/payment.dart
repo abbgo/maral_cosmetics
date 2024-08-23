@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/payment/parts/payment_type.dart';
+import 'package:maral_cosmetics/pages/parts/payment_type/payment_type.dart';
 
 class PaymentPage extends StatelessWidget {
   const PaymentPage({super.key});

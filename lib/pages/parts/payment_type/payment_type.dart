@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/payment/parts/payment_type_tile.dart';
-import 'package:maral_cosmetics/pages/payment/parts/payment_type_title.dart';
+import 'package:maral_cosmetics/pages/parts/payment_type/payment_type_tile.dart';
+import 'package:maral_cosmetics/pages/parts/payment_type/payment_type_title.dart';
 
 class PaymentType extends StatelessWidget {
   const PaymentType({super.key});
