@@ -13,8 +13,18 @@ class PaymentType extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         const PaymentTypeTitle(),
-        PaymentTypeTile(paymentType: paymentType, value: 'cash'),
-        PaymentTypeTile(paymentType: paymentType, value: 'bank_card'),
+        PaymentTypeTile(
+          paymentType: paymentType,
+          value: 'cash',
+          title: 'Nagt',
+          subTitle: 'Sargydy alan wagtynyz nagt hasaplasmak',
+        ),
+        PaymentTypeTile(
+          paymentType: paymentType,
+          value: 'bank_card',
+          title: 'Bank karty',
+          subTitle: 'Toleg terminalyndan kart arkaly hasaplasmak',
+        ),
       ],
     );
   }
