@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/setting/parts/about_us.dart';
 import 'package:maral_cosmetics/pages/setting/parts/app_version.dart';
 import 'package:maral_cosmetics/pages/setting/parts/language_setting.dart';
 import 'package:maral_cosmetics/pages/setting/parts/my_orders.dart';
@@ -23,6 +24,7 @@ class SettingPage extends StatelessWidget {
               NotificationsSetting(),
               LanguageSetting(),
               MyOrders(),
+              AboutUs(),
             ],
           ),
         ),
