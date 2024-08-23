@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
-import 'package:maral_cosmetics/pages/payment/payment.dart';
+import 'package:maral_cosmetics/pages/payment.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class BasketBottomPart extends StatelessWidget {
