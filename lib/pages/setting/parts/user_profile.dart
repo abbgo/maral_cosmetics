@@ -9,7 +9,7 @@ class UserProfile extends StatelessWidget {
     return Card(
       color: defaultLightColor,
       child: ListTile(
-        leading: Icon(Icons.account_circle, color: defaultColor, size: 34),
+        leading: Icon(Icons.account_circle, color: defaultColor, size: 50),
         title: Text(
           'Ahmet',
           style: TextStyle(color: defaultColor, fontFamily: 'HeyWowRegular'),
