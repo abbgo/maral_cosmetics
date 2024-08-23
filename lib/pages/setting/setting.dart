@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/setting/parts/app_version.dart';
+import 'package:maral_cosmetics/pages/setting/parts/user_profile.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -14,7 +15,9 @@ class SettingPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: [],
+            children: [
+              UserProfile(),
+            ],
           ),
         ),
       ],
