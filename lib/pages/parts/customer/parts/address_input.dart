@@ -9,6 +9,8 @@ class AddressInput extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: TextFormField(
+        style: TextStyle(fontFamily: 'HeyWowRegular', color: defaultColor),
+        maxLines: 4,
         cursorColor: defaultColor,
         keyboardType: TextInputType.text,
         decoration: const InputDecoration(labelText: ' Salgynyz '),
