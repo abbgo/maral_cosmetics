@@ -14,24 +14,27 @@ class PaymentTypeTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RadioListTile(
-      controlAffinity: ListTileControlAffinity.trailing,
-      activeColor: defaultColor,
-      title: Text(
-        title,
-        style: TextStyle(
-          color: defaultColor,
-          fontFamily: 'HeyWowRegular',
-          fontSize: 16,
+    return Container(
+      color: paymentType == value ? defaultLightColor : null,
+      child: RadioListTile(
+        controlAffinity: ListTileControlAffinity.trailing,
+        activeColor: defaultColor,
+        title: Text(
+          title,
+          style: TextStyle(
+            color: defaultColor,
+            fontFamily: 'HeyWowRegular',
+            fontSize: 16,
+          ),
         ),
+        subtitle: Text(
+          subTitle,
+          style: const TextStyle(fontFamily: 'HeyWowRegular', fontSize: 14),
+        ),
+        value: value,
+        groupValue: paymentType,
+        onChanged: (value) {},
       ),
-      subtitle: Text(
-        subTitle,
-        style: const TextStyle(fontFamily: 'HeyWowRegular', fontSize: 14),
-      ),
-      value: value,
-      groupValue: paymentType,
-      onChanged: (value) {},
     );
   }
 }
