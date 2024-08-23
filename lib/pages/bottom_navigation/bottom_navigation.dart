@@ -35,12 +35,15 @@ class BottomNavigationPage extends ConsumerWidget {
       case 2:
         titleWidget = const FavoriteAppBarTitle();
         break;
+      case 3:
+        titleWidget = const Text('Sazlamalar');
+        break;
       default:
     }
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(title: titleWidget),
+      appBar: AppBar(title: titleWidget, centerTitle: false),
       body: IndexedStack(
         index: selectedIndex,
         children: pages,
