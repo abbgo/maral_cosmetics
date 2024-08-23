@@ -12,7 +12,7 @@ class PaymentType extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const PaymentTypeTitle(),
+        const PaymentTypeTitle(text: 'Toleg gornsui'),
         PaymentTypeTile(
           paymentType: paymentType,
           value: 'cash',

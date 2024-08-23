@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class PaymentTypeTitle extends StatelessWidget {
-  const PaymentTypeTitle({super.key});
+  const PaymentTypeTitle({super.key, required this.text});
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class PaymentTypeTitle extends StatelessWidget {
           ),
           const SizedBox(width: 5),
           Text(
-            'Toleg gornusi',
+            text,
             style: TextStyle(
               fontFamily: 'HeyWowRegular',
               color: defaultColor,
