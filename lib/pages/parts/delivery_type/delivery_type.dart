@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/delivery_type/parts/delivery_type_tile.dart';
-import 'package:maral_cosmetics/pages/parts/payment_type/parts/payment_type_tile.dart';
 import 'package:maral_cosmetics/pages/parts/payment_type/parts/payment_type_title.dart';
 
 class DeliveryType extends StatelessWidget {
@@ -8,23 +7,21 @@ class DeliveryType extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String paymentType = 'cash';
+    String deliveryType = 'standart';
 
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const PaymentTypeTitle(text: 'Eltip bermegin gornsui'),
+        const PaymentTypeTitle(text: 'Eltip bermegin gornusi'),
         DeliveryTypeTile(
-          paymentType: paymentType,
-          value: 'cash',
-          title: 'Nagt',
-          subTitle: 'Sargydy alan wagtynyz nagt hasaplasmak',
+          deliveryType: deliveryType,
+          value: 'standart',
+          title: 'Standart gornusi (10.00 man)',
         ),
         DeliveryTypeTile(
-          paymentType: paymentType,
-          value: 'bank_card',
-          title: 'Bank karty',
-          subTitle: 'Toleg terminalyndan kart arkaly hasaplasmak',
+          deliveryType: deliveryType,
+          value: 'myself',
+          title: 'Ozum baryp aljak',
         ),
       ],
     );

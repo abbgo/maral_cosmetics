@@ -4,18 +4,21 @@ import 'package:maral_cosmetics/styles/colors.dart';
 class DeliveryTypeTile extends StatelessWidget {
   const DeliveryTypeTile({
     super.key,
-    required this.paymentType,
+    required this.deliveryType,
     required this.value,
     required this.title,
-    required this.subTitle,
   });
 
-  final String paymentType, value, title, subTitle;
+  final String deliveryType, value, title;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: paymentType == value ? defaultLightColor : null,
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: defaultColor),
+      ),
       child: RadioListTile(
         controlAffinity: ListTileControlAffinity.trailing,
         activeColor: defaultColor,
@@ -27,12 +30,8 @@ class DeliveryTypeTile extends StatelessWidget {
             fontSize: 16,
           ),
         ),
-        subtitle: Text(
-          subTitle,
-          style: const TextStyle(fontFamily: 'HeyWowRegular', fontSize: 14),
-        ),
         value: value,
-        groupValue: paymentType,
+        groupValue: deliveryType,
         onChanged: (value) {},
       ),
     );
