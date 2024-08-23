@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/delivery_time/parts/delivery_times_dropdown_menu.dart';
 import 'package:maral_cosmetics/pages/parts/payment_type/parts/payment_type_title.dart';
 
 class DeliveryTime extends StatelessWidget {
@@ -10,6 +11,7 @@ class DeliveryTime extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         PaymentTypeTitle(text: 'Eltip bermegin wagty'),
+        DeliveryTimesDropdownMenu(),
       ],
     );
   }

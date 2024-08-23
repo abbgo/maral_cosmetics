@@ -102,3 +102,9 @@ List<List<String>> favoriteProducts = [
   favoriteProducts_2,
   favoriteProducts_3,
 ];
+
+List<String> deliveryTimes = [
+  "09:00 dan - 13:00 cenli",
+  "14:00 dan - 20:00 cenli",
+  "21:00 dan - 23:00 cenli",
+];
