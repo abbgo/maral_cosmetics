@@ -3,6 +3,7 @@ import 'package:maral_cosmetics/pages/parts/customer/customer.dart';
 import 'package:maral_cosmetics/pages/parts/delivery_time/delivery_time.dart';
 import 'package:maral_cosmetics/pages/parts/delivery_type/delivery_type.dart';
 import 'package:maral_cosmetics/pages/parts/payment_type/payment_type.dart';
+import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
 
 class PaymentPage extends StatelessWidget {
   const PaymentPage({super.key});
@@ -23,6 +24,8 @@ class PaymentPage extends StatelessWidget {
           DeliveryType(),
           SizedBox(height: 20),
           DeliveryTime(),
+          SizedBox(height: 20),
+          ProductDescription(),
         ],
       ),
     );
