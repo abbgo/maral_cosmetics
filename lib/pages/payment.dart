@@ -5,8 +5,21 @@ import 'package:maral_cosmetics/pages/parts/delivery_type/delivery_type.dart';
 import 'package:maral_cosmetics/pages/parts/payment_type/payment_type.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
 
-class PaymentPage extends StatelessWidget {
+class PaymentPage extends StatefulWidget {
   const PaymentPage({super.key});
+
+  @override
+  State<PaymentPage> createState() => _PaymentPageState();
+}
+
+class _PaymentPageState extends State<PaymentPage> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +29,18 @@ class PaymentPage extends StatelessWidget {
         title: const Text('Toleg'),
       ),
       body: ListView(
-        children: const [
-          PaymentType(),
-          SizedBox(height: 20),
-          CustomerPart(),
-          SizedBox(height: 20),
-          DeliveryType(),
-          SizedBox(height: 20),
-          DeliveryTime(),
-          SizedBox(height: 20),
+        controller: _scrollController,
+        children: [
+          const CustomerPart(),
+          const SizedBox(height: 20),
+          const DeliveryType(),
+          const SizedBox(height: 20),
+          const PaymentType(),
+          const SizedBox(height: 20),
+          const DeliveryTime(),
+          const SizedBox(height: 20),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: ProductDescription(
               title: 'Ulanyş şertleri',
               description:
@@ -39,6 +53,7 @@ class PaymentPage extends StatelessWidget {
             Адрес:
             г. Ашхабад, ул. 1972 (Ататюрка), 82
             ИНН 101211007415''',
+              scrollController: _scrollController,
             ),
           ),
         ],
