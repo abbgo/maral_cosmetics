@@ -20,6 +20,7 @@ class DeliveryTypeTile extends StatelessWidget {
         border: Border.all(color: defaultColor),
       ),
       child: RadioListTile(
+        dense: true,
         controlAffinity: ListTileControlAffinity.trailing,
         activeColor: defaultColor,
         title: Text(
