@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/customer/customer.dart';
+import 'package:maral_cosmetics/pages/parts/delivery_type/delivery_type.dart';
 import 'package:maral_cosmetics/pages/parts/payment_type/payment_type.dart';
 
 class PaymentPage extends StatelessWidget {
@@ -17,6 +18,8 @@ class PaymentPage extends StatelessWidget {
           PaymentType(),
           SizedBox(height: 20),
           CustomerPart(),
+          SizedBox(height: 20),
+          DeliveryType(),
         ],
       ),
     );
