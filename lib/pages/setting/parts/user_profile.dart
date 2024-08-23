@@ -18,6 +18,7 @@ class UserProfile extends StatelessWidget {
           '+993 63 509004',
           style: TextStyle(color: defaultColor, fontFamily: 'HeyWowRegular'),
         ),
+        trailing: Icon(Icons.logout, color: defaultColor),
       ),
     );
   }
