@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/payment_contact/parts/comment_input.dart';
+import 'package:maral_cosmetics/pages/parts/payment_contact/parts/contact_phones.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class PaymentContact extends StatelessWidget {
@@ -27,6 +28,7 @@ class PaymentContact extends StatelessWidget {
             ],
           ),
           const CommentInput(),
+          const ContactPhones(),
         ],
       ),
     );

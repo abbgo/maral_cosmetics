@@ -108,3 +108,9 @@ List<String> deliveryTimes = [
   "14:00 dan - 20:00 cenli",
   "21:00 dan - 23:00 cenli",
 ];
+
+List<String> contactPhones = [
+  "+993 62674323",
+  "+993 63345623",
+  "+993 63345623",
+];
