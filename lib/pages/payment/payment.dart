@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/customer/customer.dart';
 import 'package:maral_cosmetics/pages/parts/payment_type/payment_type.dart';
 
 class PaymentPage extends StatelessWidget {
@@ -14,6 +15,8 @@ class PaymentPage extends StatelessWidget {
       body: ListView(
         children: const [
           PaymentType(),
+          SizedBox(height: 20),
+          CustomerPart(),
         ],
       ),
     );
