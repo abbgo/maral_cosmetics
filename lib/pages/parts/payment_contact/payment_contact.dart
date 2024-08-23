@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/payment_contact/parts/comment_input.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class PaymentContact extends StatelessWidget {
@@ -6,12 +7,12 @@ class PaymentContact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
             children: [
               Text(
                 'Habarlasmak ucin',
@@ -25,8 +26,9 @@ class PaymentContact extends StatelessWidget {
               const Icon(Icons.error_outline, size: 16),
             ],
           ),
-        )
-      ],
+          const CommentInput(),
+        ],
+      ),
     );
   }
 }
