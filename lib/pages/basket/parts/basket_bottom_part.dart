@@ -4,7 +4,11 @@ import 'package:maral_cosmetics/pages/payment.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class BasketBottomPart extends StatelessWidget {
-  const BasketBottomPart({super.key});
+  const BasketBottomPart(
+      {super.key, required this.forBasket, required this.btnText});
+
+  final bool forBasket;
+  final String btnText;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +22,13 @@ class BasketBottomPart extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Text(
-            'Minimum sargyt 10 manat.Sargyt etmek ucin yene 30 manat gosmaly.',
-            style: TextStyle(fontFamily: 'HeyWowRegular'),
-          ),
-          const SizedBox(height: 10),
+          forBasket
+              ? const Text(
+                  'Minimum sargyt 10 manat.Sargyt etmek ucin yene 30 manat gosmaly.',
+                  style: TextStyle(fontFamily: 'HeyWowRegular'),
+                )
+              : const SizedBox(),
+          SizedBox(height: forBasket ? 10 : 0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -51,12 +57,12 @@ class BasketBottomPart extends StatelessWidget {
                     direction: AxisDirection.left,
                   ),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('Dowam et'),
-                    SizedBox(width: 10),
-                    Icon(Icons.arrow_forward, size: 20),
+                    Text(btnText),
+                    const SizedBox(width: 10),
+                    const Icon(Icons.arrow_forward, size: 20),
                   ],
                 ),
               ),

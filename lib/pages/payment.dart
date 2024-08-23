@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/basket/parts/basket_bottom_part.dart';
 import 'package:maral_cosmetics/pages/parts/customer/customer.dart';
 import 'package:maral_cosmetics/pages/parts/delivery_time/delivery_time.dart';
 import 'package:maral_cosmetics/pages/parts/delivery_type/delivery_type.dart';
@@ -59,6 +60,8 @@ class _PaymentPageState extends State<PaymentPage> {
           ),
           const SizedBox(height: 20),
           const PaymentContact(),
+          const SizedBox(height: 20),
+          const BasketBottomPart(forBasket: false, btnText: 'Sargyt et'),
         ],
       ),
     );

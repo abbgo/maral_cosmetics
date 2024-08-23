@@ -24,7 +24,7 @@ class BasketPage extends StatelessWidget {
             ),
           ),
         ),
-        BasketBottomPart(),
+        BasketBottomPart(forBasket: true, btnText: 'Dowam et'),
       ],
     );
   }
