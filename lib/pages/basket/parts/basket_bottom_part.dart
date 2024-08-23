@@ -50,13 +50,15 @@ class BasketBottomPart extends StatelessWidget {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: defaultColor),
-                onPressed: () => Navigator.push(
-                  context,
-                  CustomPageRoute(
-                    child: const PaymentPage(),
-                    direction: AxisDirection.left,
-                  ),
-                ),
+                onPressed: forBasket
+                    ? () => Navigator.push(
+                          context,
+                          CustomPageRoute(
+                            child: const PaymentPage(),
+                            direction: AxisDirection.left,
+                          ),
+                        )
+                    : () {},
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
