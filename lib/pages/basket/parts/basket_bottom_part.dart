@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
+import 'package:maral_cosmetics/pages/payment/payment.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class BasketBottomPart extends StatelessWidget {
@@ -42,7 +44,13 @@ class BasketBottomPart extends StatelessWidget {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: defaultColor),
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                  context,
+                  CustomPageRoute(
+                    child: const PaymentPage(),
+                    direction: AxisDirection.left,
+                  ),
+                ),
                 child: const Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
