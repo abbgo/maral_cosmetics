@@ -28,6 +28,7 @@ class PaymentContact extends StatelessWidget {
             ],
           ),
           const CommentInput(),
+          const SizedBox(height: 10),
           const ContactPhones(),
         ],
       ),
