@@ -6,7 +6,9 @@ import 'package:maral_cosmetics/pages/product/parts/product_image_slider_and_lis
 import 'package:maral_cosmetics/pages/product/parts/product_page_app_bar.dart';
 
 class ProductPage extends StatelessWidget {
-  const ProductPage({super.key});
+  const ProductPage({super.key, required this.forBasket});
+
+  final bool forBasket;
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +16,14 @@ class ProductPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: ListView(
-          children: const [
-            ProductPageAppBar(),
-            ProductImageSliderAndList(),
-            ProductData(),
-            SizedBox(height: 22),
-            ProductButtons(),
-            SizedBox(height: 22),
-            ProductDescription(),
+          children: [
+            const ProductPageAppBar(),
+            const ProductImageSliderAndList(),
+            const ProductData(),
+            const SizedBox(height: 22),
+            ProductButtons(forBasket: forBasket),
+            const SizedBox(height: 22),
+            const ProductDescription(),
           ],
         ),
       ),

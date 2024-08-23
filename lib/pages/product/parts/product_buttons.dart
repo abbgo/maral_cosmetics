@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class ProductButtons extends StatelessWidget {
-  const ProductButtons({super.key});
+  const ProductButtons({super.key, required this.forBasket});
+
+  final bool forBasket;
 
   @override
   Widget build(BuildContext context) {

@@ -19,7 +19,8 @@ class HomeDiscountProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => goToPage(context, const ProductPage(), false),
+      onTap: () =>
+          goToPage(context, const ProductPage(forBasket: false), false),
       child: Container(
         height: 235,
         width: 200,

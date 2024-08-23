@@ -13,7 +13,7 @@ class BasketProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => goToPage(context, const ProductPage(), false),
+      onTap: () => goToPage(context, const ProductPage(forBasket: true), false),
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
