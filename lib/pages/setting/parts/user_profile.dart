@@ -6,15 +6,18 @@ class UserProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(Icons.account_circle, color: defaultColor, size: 34),
-      title: Text(
-        'Ahmet',
-        style: TextStyle(color: defaultColor, fontFamily: 'HeyWowRegular'),
-      ),
-      subtitle: Text(
-        '+993 63 509004',
-        style: TextStyle(color: defaultColor, fontFamily: 'HeyWowRegular'),
+    return Card(
+      color: defaultLightColor,
+      child: ListTile(
+        leading: Icon(Icons.account_circle, color: defaultColor, size: 34),
+        title: Text(
+          'Ahmet',
+          style: TextStyle(color: defaultColor, fontFamily: 'HeyWowRegular'),
+        ),
+        subtitle: Text(
+          '+993 63 509004',
+          style: TextStyle(color: defaultColor, fontFamily: 'HeyWowRegular'),
+        ),
       ),
     );
   }
