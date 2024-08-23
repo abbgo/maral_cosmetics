@@ -5,6 +5,12 @@ class FullNameInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: TextFormField(
+        keyboardType: TextInputType.text,
+        decoration: const InputDecoration(labelText: ' Doly Adynyz '),
+      ),
+    );
   }
 }

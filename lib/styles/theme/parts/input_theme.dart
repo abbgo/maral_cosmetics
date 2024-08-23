@@ -9,12 +9,15 @@ class AppInputTheme {
     filled: true,
     contentPadding: const EdgeInsets.only(top: 0, left: 20),
     enabledBorder: outlinedInputBorder(),
+    focusedBorder: outlinedInputBorder(),
+    border: outlinedInputBorder(),
+    labelStyle: TextStyle(fontFamily: 'HeyWowRegular', color: defaultColor),
   );
 }
 
 OutlineInputBorder outlinedInputBorder() {
   return OutlineInputBorder(
     borderSide: BorderSide(color: defaultColor),
-    borderRadius: const BorderRadius.all(Radius.circular(20)),
+    borderRadius: const BorderRadius.all(Radius.circular(10)),
   );
 }
