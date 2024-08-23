@@ -46,7 +46,7 @@ class ProductDescription extends StatelessWidget {
       ),
       iconColor: defaultColor,
       collapsedIconColor: defaultColor,
-      backgroundColor: Colors.blueGrey.withOpacity(.1),
+      backgroundColor: const Color(0xffF8F8F8),
       childrenPadding: const EdgeInsets.all(20),
       title: Text(
         title,
