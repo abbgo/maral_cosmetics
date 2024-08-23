@@ -11,13 +11,10 @@ class PaymentPage extends StatelessWidget {
         centerTitle: false,
         title: const Text('Toleg'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: ListView(
-          children: const [
-            PaymentType(),
-          ],
-        ),
+      body: ListView(
+        children: const [
+          PaymentType(),
+        ],
       ),
     );
   }
