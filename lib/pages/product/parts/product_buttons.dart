@@ -44,20 +44,47 @@ class ProductButtons extends StatelessWidget {
               child: const Icon(Icons.favorite, color: Color(0xff9A4D76)),
             ),
             const SizedBox(width: 10),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xff9A4D76),
+            if (forBasket)
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 6),
+                decoration: BoxDecoration(
+                  color: defaultLightColor,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.remove, color: defaultColor),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Text(
+                        '10',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'HeyWowRegular',
+                          color: defaultColor,
+                        ),
+                      ),
+                    ),
+                    Icon(Icons.add, color: defaultColor),
+                  ],
+                ),
+              )
+            else
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff9A4D76),
+                ),
+                onPressed: () {},
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('Sebede yukle'),
+                    SizedBox(width: 10),
+                    Icon(Icons.local_mall_outlined),
+                  ],
+                ),
               ),
-              onPressed: () {},
-              child: const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text('Sebede yukle'),
-                  SizedBox(width: 10),
-                  Icon(Icons.local_mall_outlined),
-                ],
-              ),
-            ),
           ],
         ),
       ],
