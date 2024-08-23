@@ -3,6 +3,7 @@ import 'package:maral_cosmetics/pages/setting/parts/about_us.dart';
 import 'package:maral_cosmetics/pages/setting/parts/app_version.dart';
 import 'package:maral_cosmetics/pages/setting/parts/contact_us.dart';
 import 'package:maral_cosmetics/pages/setting/parts/language_setting.dart';
+import 'package:maral_cosmetics/pages/setting/parts/live_help.dart';
 import 'package:maral_cosmetics/pages/setting/parts/my_orders.dart';
 import 'package:maral_cosmetics/pages/setting/parts/notifications_setting.dart';
 import 'package:maral_cosmetics/pages/setting/parts/user_profile.dart';
@@ -27,6 +28,7 @@ class SettingPage extends StatelessWidget {
               MyOrders(),
               AboutUs(),
               ContactUs(),
+              LiveHelp(),
             ],
           ),
         ),
