@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/select_language/select_language.dart';
 
 showLanguageBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
-    builder: (context) => CallBottomSheet(shopPhones: shopPhones),
+    builder: (context) => const SelectLanguage(),
   );
 }
