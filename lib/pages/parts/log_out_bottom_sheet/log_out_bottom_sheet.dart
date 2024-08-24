@@ -16,7 +16,6 @@ class LogOutBottomSheet extends StatelessWidget {
       ),
       child: Wrap(
         alignment: WrapAlignment.center,
-        spacing: 40,
         children: [
           Container(
             margin: const EdgeInsets.only(top: 10),
