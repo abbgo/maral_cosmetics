@@ -10,11 +10,11 @@ class ContactPhonesListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       dense: false,
+      leading: Icon(Icons.call_outlined, color: defaultColor),
       title: Text(
         text,
         style: TextStyle(fontFamily: 'HeyWowRegular', color: defaultColor),
       ),
-      trailing: Icon(Icons.check, color: defaultColor),
     );
   }
 }

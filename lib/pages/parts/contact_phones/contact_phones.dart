@@ -27,9 +27,9 @@ class ContactPhones extends StatelessWidget {
               borderRadius: BorderRadius.circular(60),
             ),
           ),
-          const ContactPhonesListTile(text: 'Turkmen dili'),
+          const ContactPhonesListTile(text: '+993 62674323'),
           const Divider(color: Color(0xffD9D9D9)),
-          const ContactPhonesListTile(text: 'Rus dili'),
+          const ContactPhonesListTile(text: '+993 63345623'),
         ],
       ),
     );
