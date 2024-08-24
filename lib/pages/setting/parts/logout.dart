@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/bottom_sheets.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class LogoutPart extends StatelessWidget {
@@ -9,6 +10,7 @@ class LogoutPart extends StatelessWidget {
     return Card(
       color: const Color(0xfffee7e8),
       child: ListTile(
+        onTap: () => showLogOutBottomSheet(context),
         leading: Icon(Icons.logout, color: defaultColor),
         title: Text(
           'Ulgamdan cykmak',

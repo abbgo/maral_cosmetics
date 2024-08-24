@@ -15,3 +15,10 @@ showPhonesBottomSheet(BuildContext context) {
     builder: (context) => const ContactPhones(),
   );
 }
+
+showLogOutBottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (context) => const ContactPhones(),
+  );
+}
