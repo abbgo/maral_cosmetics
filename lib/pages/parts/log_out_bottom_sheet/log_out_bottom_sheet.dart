@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/parts/contact_phones/parts/contact_phones_list_tile.dart';
 
 class LogOutBottomSheet extends StatelessWidget {
   const LogOutBottomSheet({super.key});
@@ -7,7 +6,7 @@ class LogOutBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 40),
       decoration: const BoxDecoration(
         color: Color(0xffF8F2F5),
         borderRadius: BorderRadius.only(
@@ -17,6 +16,7 @@ class LogOutBottomSheet extends StatelessWidget {
       ),
       child: Wrap(
         alignment: WrapAlignment.center,
+        spacing: 40,
         children: [
           Container(
             margin: const EdgeInsets.only(top: 10),
@@ -27,9 +27,43 @@ class LogOutBottomSheet extends StatelessWidget {
               borderRadius: BorderRadius.circular(60),
             ),
           ),
-          const ContactPhonesListTile(text: '+993 62674323'),
-          const Divider(color: Color(0xffD9D9D9)),
-          const ContactPhonesListTile(text: '+993 63345623'),
+          const SizedBox(height: 40),
+          const Text(
+            'Siz hakykyatdanam cykmak isleyanizmi?',
+            style: TextStyle(
+                color: Color(0xff824D6A), fontFamily: 'HeyWowRegular'),
+          ),
+          const SizedBox(height: 40),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xffc2a1b3),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 55),
+                ),
+                onPressed: () => Navigator.pop(context),
+                child: const Text(
+                  'Yok',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff824D6A),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 55),
+                ),
+                onPressed: () {},
+                child: const Text(
+                  'Hawa',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
