@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
@@ -11,10 +13,40 @@ class HomeSlider extends StatefulWidget {
 }
 
 class _HomeSliderState extends State<HomeSlider> {
-  final PageController _pageController = PageController();
+  PageController _pageController = PageController();
+  int _currentPage = 0;
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(
+      initialPage: _currentPage,
+    );
+
+    // Start the auto-play timer
+    _startAutoPlay();
+  }
+
+  void _startAutoPlay() {
+    _timer = Timer.periodic(const Duration(seconds: 3), (Timer timer) {
+      if (_currentPage < homeSliders.length - 1) {
+        _currentPage++;
+      } else {
+        _currentPage = 0;
+      }
+
+      _pageController.animateToPage(
+        _currentPage,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeIn,
+      );
+    });
+  }
 
   @override
   void dispose() {
+    _timer.cancel();
     _pageController.dispose();
     super.dispose();
   }
@@ -34,6 +66,11 @@ class _HomeSliderState extends State<HomeSlider> {
               itemCount: homeSliders.length,
               itemBuilder: (context, index) =>
                   Image.asset(homeSliders[index], fit: BoxFit.cover),
+              onPageChanged: (index) {
+                setState(() {
+                  _currentPage = index;
+                });
+              },
             ),
           ),
           Positioned(
