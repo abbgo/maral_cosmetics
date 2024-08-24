@@ -8,7 +8,7 @@ class AboutUsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text('Biz barad'),
+        title: const Text('Biz barada'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
