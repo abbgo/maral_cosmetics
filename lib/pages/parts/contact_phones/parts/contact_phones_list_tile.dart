@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class ContactPhonesListTile extends StatelessWidget {
@@ -9,6 +10,7 @@ class ContactPhonesListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () => FlutterPhoneDirectCaller.callNumber(text),
       dense: false,
       leading: Icon(Icons.call_outlined, color: defaultColor),
       title: Text(
