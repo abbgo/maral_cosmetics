@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/bottom_sheets.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class ContactUs extends StatelessWidget {
@@ -9,6 +10,7 @@ class ContactUs extends StatelessWidget {
     return Card(
       color: defaultLightColor,
       child: ListTile(
+        onTap: () => showPhonesBottomSheet(context),
         leading: Icon(Icons.support_agent_outlined, color: defaultColor),
         title: Text(
           'Habarlasmak',

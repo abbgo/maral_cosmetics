@@ -7,3 +7,10 @@ showLanguageBottomSheet(BuildContext context) {
     builder: (context) => const SelectLanguage(),
   );
 }
+
+showPhonesBottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (context) => const SelectLanguage(),
+  );
+}
