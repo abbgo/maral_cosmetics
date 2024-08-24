@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
-import 'package:maral_cosmetics/pages/about_us/about_us.dart';
+import 'package:maral_cosmetics/pages/about_us.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class AboutUs extends StatelessWidget {
