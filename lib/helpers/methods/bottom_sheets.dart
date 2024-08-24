@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/contact_phones/contact_phones.dart';
+import 'package:maral_cosmetics/pages/parts/log_out_bottom_sheet/log_out_bottom_sheet.dart';
 import 'package:maral_cosmetics/pages/parts/select_language/select_language.dart';
 
 showLanguageBottomSheet(BuildContext context) {
@@ -19,6 +20,6 @@ showPhonesBottomSheet(BuildContext context) {
 showLogOutBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
-    builder: (context) => const ContactPhones(),
+    builder: (context) => const LogOutBottomSheet(),
   );
 }
