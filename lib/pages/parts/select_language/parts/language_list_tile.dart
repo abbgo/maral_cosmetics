@@ -9,6 +9,7 @@ class LanguageListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      dense: false,
       title: Text(
         text,
         style: TextStyle(fontFamily: 'HeyWowRegular', color: defaultColor),
