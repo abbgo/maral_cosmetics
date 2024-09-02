@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/news/parts/result_news.dart';
 import 'package:maral_cosmetics/pages/parts/home_about_cosmetics/home_about_cosmetics.dart';
-import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_list.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({super.key});
@@ -17,7 +17,7 @@ class NewsPage extends StatelessWidget {
         children: [
           Container(
             color: const Color(0xffF8F8F8),
-            child: const HomeNewsList(),
+            child: const ResultNewsPart(),
           ),
           const SizedBox(height: 20),
           const HomeAboutCosmetics(),
