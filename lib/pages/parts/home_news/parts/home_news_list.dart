@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/news.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_card.dart';
@@ -15,7 +16,7 @@ class HomeNewsList extends ConsumerWidget {
     bool hasNews = ref.watch(hasNewsProvider);
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 5),
       child: !hasNews
           ? const NoResult()
           : ListView.builder(
