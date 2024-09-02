@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:maral_cosmetics/models/image.dart';
 
 class NewsModel {
@@ -21,4 +22,19 @@ class NewsModel {
       content: json['content'],
     );
   }
+}
+
+class ResultNews extends Equatable {
+  final List<NewsModel>? newss;
+  final NewsModel? news;
+  final String error;
+
+  const ResultNews({this.newss, this.news, required this.error});
+
+  factory ResultNews.defaultResult() {
+    return const ResultNews(newss: null, news: null, error: '');
+  }
+
+  @override
+  List<Object?> get props => [newss, news, error];
 }
