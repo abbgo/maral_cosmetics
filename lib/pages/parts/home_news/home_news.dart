@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
-import 'package:maral_cosmetics/pages/news.dart';
+import 'package:maral_cosmetics/pages/news/news.dart';
 import 'package:maral_cosmetics/pages/parts/home_new_brends_slider/parts/home_new_brends_slider_title.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_main_image.dart';
 
