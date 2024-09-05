@@ -12,18 +12,19 @@ class NewsPage extends StatelessWidget {
         centerTitle: false,
         title: const Text('Habarlar'),
       ),
-      body: ListView(
-        shrinkWrap: true,
-        children: [
-          Container(
-            color: const Color(0xffF8F8F8),
-            child: const ResultNewsPart(),
-          ),
-          const SizedBox(height: 20),
-          const HomeAboutCosmetics(),
-          const SizedBox(height: 20),
-        ],
-      ),
+      body: const ResultNewsPart(),
+      // body: ListView(
+      //   shrinkWrap: true,
+      //   children: [
+      //     Container(
+      //       color: const Color(0xffF8F8F8),
+      //       child: const ResultNewsPart(),
+      //     ),
+      //     const SizedBox(height: 20),
+      //     const HomeAboutCosmetics(),
+      //     const SizedBox(height: 20),
+      //   ],
+      // ),
     );
   }
 }

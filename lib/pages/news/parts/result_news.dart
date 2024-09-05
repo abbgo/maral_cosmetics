@@ -24,8 +24,8 @@ class ResultNewsPart extends ConsumerWidget {
           !hasNews
               ? const NoResult()
               : ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
+                  // physics: const NeverScrollableScrollPhysics(),
+                  // shrinkWrap: true,
                   itemBuilder: (context, index) {
                     final page = index ~/ pageSize + 1;
                     final indexInPage = index % pageSize;
