@@ -49,6 +49,7 @@ dependencies:
   smooth_page_indicator: ^1.2.0+3
   flutter_phone_direct_caller: ^2.1.1
   flutter_blurhash: ^0.8.2
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

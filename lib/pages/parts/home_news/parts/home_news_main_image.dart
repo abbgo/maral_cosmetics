@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeNewsMainImage extends StatelessWidget {
+class HomeNewsMainImage extends ConsumerWidget {
   const HomeNewsMainImage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
       child: Stack(
