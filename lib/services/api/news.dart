@@ -7,7 +7,7 @@ import 'package:maral_cosmetics/models/news.dart';
 
 class NewsApiService {
   // fetch news -------------------------------------------------------
-  Future<List<NewsModel>> fetchNews({
+  Future<ResultNews> fetchNews({
     required int page,
     required String search,
   }) async {
@@ -24,13 +24,29 @@ class NewsApiService {
       var jsonData = json.decode(response.body);
 
       if (response.statusCode == 200 && jsonData['success']) {
-        if (jsonData['data']['rows'] == null) return [];
+        int count = jsonData['data']['count'] as int;
+        int pageCount = jsonData['data']['pageCount'] as int;
+
+        if (jsonData['data']['rows'] == []) {
+          return ResultNews(
+            newss: const [],
+            count: count,
+            pageCount: pageCount,
+            error: '',
+          );
+        }
+
         var data = jsonData['data']['rows'] as List;
-        return data
-            .map<NewsModel>((propJson) => NewsModel.fromJson(propJson))
-            .toList();
+        return ResultNews(
+          newss: data
+              .map<NewsModel>((propJson) => NewsModel.fromJson(propJson))
+              .toList(),
+          count: count,
+          pageCount: pageCount,
+          error: '',
+        );
       }
-      return [];
+      return const ResultNews(newss: [], count: 0, pageCount: 0, error: '');
     } catch (e) {
       rethrow;
     }

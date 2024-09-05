@@ -7,25 +7,29 @@ final newsApiProvider = Provider<NewsApiService>((ref) => NewsApiService());
 
 var fetchNewsProvider = FutureProvider.autoDispose.family<ResultNews, int>(
   (ref, arg) async {
-    ref.read(loadNewsProvider.notifier).state = true;
+    if (arg == 1) {
+      ref.read(loadNewsProvider.notifier).state = true;
+    }
     ResultNews result = ResultNews.defaultResult();
 
     try {
       String search = await ref.watch(newsSearchProvider);
 
-      List<NewsModel> newss =
+      ResultNews resultNews =
           await ref.read(newsApiProvider).fetchNews(page: arg, search: search);
 
       if (search != '') {
-        ref.read(hasNewsProvider.notifier).state = newss.isNotEmpty;
+        ref.read(hasNewsProvider.notifier).state = resultNews.newss!.isNotEmpty;
       }
 
-      result = ResultNews(newss: newss, error: '');
+      result = resultNews;
     } catch (e) {
       result = ResultNews(error: e.toString());
     }
 
-    ref.read(loadNewsProvider.notifier).state = false;
+    if (arg == 1) {
+      ref.read(loadNewsProvider.notifier).state = false;
+    }
     return result;
   },
 );

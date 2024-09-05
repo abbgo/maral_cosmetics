@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:maral_cosmetics/helpers/functions/screen.dart';
 import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/news.dart';
+import 'package:maral_cosmetics/pages/parts/home_about_cosmetics/home_about_cosmetics.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_card.dart';
 import 'package:maral_cosmetics/pages/parts/no_result.dart';
 import 'package:maral_cosmetics/providers/api/news.dart';
@@ -16,6 +16,7 @@ class ResultNewsPart extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     bool hasNews = ref.watch(hasNewsProvider);
     bool load = ref.watch(loadNewsProvider);
+    bool showLast = false;
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
@@ -24,8 +25,6 @@ class ResultNewsPart extends ConsumerWidget {
           !hasNews
               ? const NoResult()
               : ListView.builder(
-                  // physics: const NeverScrollableScrollPhysics(),
-                  // shrinkWrap: true,
                   itemBuilder: (context, index) {
                     final page = index ~/ pageSize + 1;
                     final indexInPage = index % pageSize;
@@ -45,22 +44,31 @@ class ResultNewsPart extends ConsumerWidget {
                           return null;
                         }
 
+                        if (page == response.pageCount &&
+                            (indexInPage + 1) == response.newss!.length) {
+                          showLast = true;
+                        } else {
+                          showLast = false;
+                        }
+
                         NewsModel news = response.newss![indexInPage];
-                        return HomeNewsCard(news: news);
+                        return showLast
+                            ? Column(
+                                children: [
+                                  HomeNewsCard(news: news),
+                                  const SizedBox(height: 20),
+                                  const HomeAboutCosmetics(),
+                                  const SizedBox(height: 20),
+                                ],
+                              )
+                            : HomeNewsCard(news: news);
                       },
                       error: (error, stackTrace) => errorMethod(error),
                       loading: () => null,
                     );
                   },
                 ),
-          load
-              ? Container(
-                  height: screenProperties(context).height,
-                  width: screenProperties(context).width,
-                  color: Colors.white.withOpacity(.2),
-                  child: loadWidget,
-                )
-              : const SizedBox(),
+          load ? loadWidget : const SizedBox(),
         ],
       ),
     );
