@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
+import 'package:maral_cosmetics/models/default_param.dart';
 import 'package:maral_cosmetics/models/news.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_card.dart';
 import 'package:maral_cosmetics/providers/api/news.dart';
@@ -20,8 +21,10 @@ class HomeNewsList extends ConsumerWidget {
           final page = index ~/ pageSize + 1;
           final indexInPage = index % pageSize;
 
+          DefaultParams arg = DefaultParams(page: page, pageSize: pageSize);
+
           final AsyncValue<ResultNews> resultNews =
-              ref.watch(fetchNewsProvider(page));
+              ref.watch(fetchNewsProvider(arg));
 
           return resultNews.when(
             skipLoadingOnRefresh: true,

@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:maral_cosmetics/models/news.dart';
-import 'package:maral_cosmetics/providers/api/news.dart';
 
-class HomeNewsMainImage extends ConsumerWidget {
+class HomeNewsMainImage extends StatelessWidget {
   const HomeNewsMainImage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    AsyncValue<ResultNews> resultNews = ref.watch(fetchNewsProvider(1));
-
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
       child: Stack(
