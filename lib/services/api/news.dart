@@ -15,7 +15,7 @@ class NewsApiService {
       queryParameters: {
         'pageSize': pageSize.toString(),
         'page': '$page',
-        'search': search
+        'search': search,
       },
     );
 

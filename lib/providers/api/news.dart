@@ -7,9 +7,6 @@ final newsApiProvider = Provider<NewsApiService>((ref) => NewsApiService());
 
 var fetchNewsProvider = FutureProvider.autoDispose.family<ResultNews, int>(
   (ref, arg) async {
-    if (arg == 1) {
-      ref.read(loadNewsProvider.notifier).state = true;
-    }
     ResultNews result = ResultNews.defaultResult();
 
     try {
@@ -27,9 +24,7 @@ var fetchNewsProvider = FutureProvider.autoDispose.family<ResultNews, int>(
       result = ResultNews(error: e.toString());
     }
 
-    if (arg == 1) {
-      ref.read(loadNewsProvider.notifier).state = false;
-    }
+    ref.read(loadNewsProvider.notifier).state = false;
     return result;
   },
 );

@@ -15,8 +15,7 @@ class ResultNewsPart extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     bool hasNews = ref.watch(hasNewsProvider);
-    bool load = ref.watch(loadNewsProvider);
-    bool showLast = false;
+    final bool loading = ref.watch(loadNewsProvider);
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
@@ -44,12 +43,8 @@ class ResultNewsPart extends ConsumerWidget {
                           return null;
                         }
 
-                        if (page == response.pageCount &&
-                            (indexInPage + 1) == response.newss!.length) {
-                          showLast = true;
-                        } else {
-                          showLast = false;
-                        }
+                        bool showLast = page == response.pageCount &&
+                            (indexInPage + 1) == response.newss!.length;
 
                         NewsModel news = response.newss![indexInPage];
                         return showLast
@@ -64,11 +59,20 @@ class ResultNewsPart extends ConsumerWidget {
                             : HomeNewsCard(news: news);
                       },
                       error: (error, stackTrace) => errorMethod(error),
-                      loading: () => null,
+                      loading: () {
+                        if (!loading) {
+                          Future.delayed(
+                            const Duration(),
+                            () => ref.read(loadNewsProvider.notifier).state =
+                                true,
+                          );
+                        }
+                        return null;
+                      },
                     );
                   },
                 ),
-          load ? loadWidget : const SizedBox(),
+          loading ? loadWidget : const SizedBox(),
         ],
       ),
     );
