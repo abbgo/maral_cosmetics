@@ -9,6 +9,7 @@ class NewsApiService {
   // fetch news -------------------------------------------------------
   Future<ResultNews> fetchNews({
     required int page,
+    required int pageSize,
     required String search,
   }) async {
     Uri uri = Uri.parse('$apiUrl/news/all').replace(
