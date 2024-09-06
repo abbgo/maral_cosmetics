@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
-import 'package:maral_cosmetics/pages/parts/home_new_brends_slider/parts/home_new_brends_slider_title.dart';
+import 'package:maral_cosmetics/pages/parts/home_title.dart';
 
 class HomeGalery extends StatelessWidget {
   const HomeGalery({super.key});
@@ -10,7 +10,7 @@ class HomeGalery extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        HomeNewBrendsSliderTitle(text: 'Gallereya toplumy', onTap: () {}),
+        HomeTitle(text: 'Gallereya toplumy', onTap: () {}),
         SizedBox(
           height: 80,
           child: ListView.separated(

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
-class HomeNewBrendsSliderTitle extends StatelessWidget {
-  const HomeNewBrendsSliderTitle(
-      {super.key, required this.text, required this.onTap});
+class HomeTitle extends StatelessWidget {
+  const HomeTitle({super.key, required this.text, required this.onTap});
 
   final String text;
   final Function() onTap;

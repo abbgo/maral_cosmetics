@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/discount_products/discount_products.dart';
 import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_products_body.dart';
-import 'package:maral_cosmetics/pages/parts/home_new_brends_slider/parts/home_new_brends_slider_title.dart';
+import 'package:maral_cosmetics/pages/parts/home_title.dart';
 
 class HomeDiscountProductsList extends StatelessWidget {
   const HomeDiscountProductsList({super.key});
@@ -14,7 +14,7 @@ class HomeDiscountProductsList extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          HomeNewBrendsSliderTitle(
+          HomeTitle(
             text: 'Arzanladyslar',
             onTap: () => Navigator.push(
               context,
