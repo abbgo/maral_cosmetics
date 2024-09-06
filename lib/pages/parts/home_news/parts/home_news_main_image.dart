@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
+import 'package:maral_cosmetics/helpers/functions/converter.dart';
+import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
+import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/news.dart';
 
 class HomeNewsMainImage extends StatelessWidget {
@@ -13,9 +17,18 @@ class HomeNewsMainImage extends StatelessWidget {
       child: Stack(
         alignment: const Alignment(-0.85, 0.85),
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.asset('assets/examples/news_main.png'),
+          SizedBox(
+            height: 200,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: BlurHash(
+                errorBuilder: (context, error, stackTrace) => loadWidget,
+                curve: Curves.easeOut,
+                hash: news.image.hashblur,
+                image: '$pathUrl/${news.image.url}',
+                imageFit: BoxFit.cover,
+              ),
+            ),
           ),
           Container(
             width: 175,
@@ -24,16 +37,16 @@ class HomeNewsMainImage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               color: Colors.white.withOpacity(.5),
             ),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Customers Says about our Servise',
-                  style: TextStyle(fontSize: 14),
+                  news.title,
+                  style: const TextStyle(fontSize: 14),
                 ),
                 Text(
-                  '04.08.2024',
-                  style: TextStyle(
+                  formatDate(news.createdAt),
+                  style: const TextStyle(
                     fontSize: 12,
                     fontFamily: 'HeyWowRegular',
                     fontStyle: FontStyle.italic,
