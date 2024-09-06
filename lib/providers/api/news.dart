@@ -6,8 +6,7 @@ import 'package:maral_cosmetics/services/api/news.dart';
 
 final newsApiProvider = Provider<NewsApiService>((ref) => NewsApiService());
 
-var fetchNewsProvider =
-    FutureProvider.autoDispose.family<ResultNews, DefaultParams>(
+var fetchNewsProvider = FutureProvider.family<ResultNews, DefaultParams>(
   (ref, arg) async {
     ResultNews result = ResultNews.defaultResult();
 
