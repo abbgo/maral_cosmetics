@@ -5,6 +5,7 @@ import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/models/default_param.dart';
 import 'package:maral_cosmetics/models/news.dart';
 import 'package:maral_cosmetics/pages/news/news.dart';
+import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_list.dart';
 import 'package:maral_cosmetics/pages/parts/home_title.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_main_image.dart';
 import 'package:maral_cosmetics/providers/api/news.dart';
@@ -38,7 +39,7 @@ class HomeNews extends ConsumerWidget {
                 ),
               ),
               HomeNewsMainImage(news: response.newss!.first),
-              // const HomeNewsList(),
+              HomeNewsList(newss: response.newss!.sublist(1)),
             ],
           ),
         );
