@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
+import 'package:maral_cosmetics/helpers/functions/converter.dart';
+import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
+import 'package:maral_cosmetics/helpers/static_data.dart';
+import 'package:maral_cosmetics/models/news.dart';
 
 class OneNewsContent extends StatelessWidget {
-  const OneNewsContent({super.key, required this.image});
+  const OneNewsContent({super.key, required this.news});
 
-  final String image;
+  final NewsModel news;
 
   @override
   Widget build(BuildContext context) {
@@ -13,30 +18,33 @@ class OneNewsContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: Image.asset(
-              image,
-              height: 200,
-              width: double.maxFinite,
-              fit: BoxFit.cover,
+          SizedBox(
+            height: 200,
+            width: double.maxFinite,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: BlurHash(
+                errorBuilder: (context, error, stackTrace) => loadWidget,
+                curve: Curves.easeOut,
+                hash: news.image.hashblur,
+                image: '$pathUrl/${news.image.url}',
+                imageFit: BoxFit.cover,
+              ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
-            child: Text(
-              'Customers Says about our Servise fact that at its layout.',
-            ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Text(news.title),
           ),
-          const Text(
-            'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. ',
-            style: TextStyle(fontFamily: 'HeyWowRegular'),
+          Text(
+            removeHtmlTags(news.content),
+            style: const TextStyle(fontFamily: 'HeyWowRegular'),
             textAlign: TextAlign.start,
           ),
           const SizedBox(height: 10),
-          const Text(
-            '04.08.2024',
-            style: TextStyle(
+          Text(
+            formatDate(news.createdAt),
+            style: const TextStyle(
               fontFamily: 'HeyWowRegular',
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,

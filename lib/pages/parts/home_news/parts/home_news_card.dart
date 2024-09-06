@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:maral_cosmetics/helpers/functions/converter.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/news.dart';
+import 'package:maral_cosmetics/pages/one_news/one_news.dart';
 
 class HomeNewsCard extends StatelessWidget {
   const HomeNewsCard({super.key, required this.news});
@@ -15,13 +17,13 @@ class HomeNewsCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: GestureDetector(
-        // onTap: () => Navigator.push(
-        //   context,
-        //   CustomPageRoute(
-        //     child: OneNewsPage(image: image),
-        //     direction: AxisDirection.left,
-        //   ),
-        // ),
+        onTap: () => Navigator.push(
+          context,
+          CustomPageRoute(
+            child: OneNewsPage(news: news),
+            direction: AxisDirection.left,
+          ),
+        ),
         child: SizedBox(
           height: 105,
           child: Row(

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/models/news.dart';
 import 'package:maral_cosmetics/pages/one_news/parts/one_news_content.dart';
 import 'package:maral_cosmetics/pages/parts/home_about_cosmetics/home_about_cosmetics.dart';
 
 class OneNewsPage extends StatelessWidget {
-  const OneNewsPage({super.key, required this.image});
+  const OneNewsPage({super.key, required this.news});
 
-  final String image;
+  final NewsModel news;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class OneNewsPage extends StatelessWidget {
       body: ListView(
         shrinkWrap: true,
         children: [
-          OneNewsContent(image: image),
+          OneNewsContent(news: news),
           const HomeAboutCosmetics(),
           const SizedBox(height: 20),
         ],
