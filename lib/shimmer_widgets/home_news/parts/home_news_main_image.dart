@@ -12,7 +12,7 @@ class HomeNewsMainImageShimmer extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.asset('assets/examples/news_main.png'),
+            child: Container(height: 200, color: Colors.black),
           ),
           Container(
             width: 175,

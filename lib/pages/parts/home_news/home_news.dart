@@ -9,6 +9,7 @@ import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_list.dart'
 import 'package:maral_cosmetics/pages/parts/home_title.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/parts/home_news_main_image.dart';
 import 'package:maral_cosmetics/providers/api/news.dart';
+import 'package:maral_cosmetics/shimmer_widgets/home_news/home_news.dart';
 
 class HomeNews extends ConsumerWidget {
   const HomeNews({super.key});
@@ -45,7 +46,7 @@ class HomeNews extends ConsumerWidget {
         );
       },
       error: (error, stackTrace) => errorMethod(error),
-      loading: () => loadWidget,
+      loading: () => const HomeNewsShimmer(),
     );
   }
 }

@@ -14,38 +14,31 @@ class HomeNewsCardShimmer extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(5),
-              child: SizedBox(
-                height: 100,
-                width: 120,
-              ),
+              child: Container(height: 100, width: 120, color: Colors.black),
             ),
             const SizedBox(width: 10),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'some',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                  Container(
+                    color: Colors.black,
+                    height: 20,
+                    width: double.maxFinite,
                   ),
-                  Text(
-                    'some',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontFamily: 'HeyWowRegular',
-                      fontSize: 12,
-                    ),
+                  const SizedBox(height: 5),
+                  Container(
+                    color: Colors.black,
+                    height: 20,
+                    width: double.maxFinite,
                   ),
-                  Text(
-                    'some',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontFamily: 'HeyWowRegular',
-                      fontStyle: FontStyle.italic,
-                    ),
+                  const SizedBox(height: 5),
+                  Container(
+                    color: Colors.black,
+                    height: 20,
+                    width: double.maxFinite,
                   ),
+                  const SizedBox(height: 5),
                 ],
               ),
             ),
