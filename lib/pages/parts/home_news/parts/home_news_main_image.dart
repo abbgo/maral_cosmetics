@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/models/news.dart';
 
 class HomeNewsMainImage extends StatelessWidget {
-  const HomeNewsMainImage({super.key});
+  const HomeNewsMainImage({super.key, required this.news});
+
+  final NewsModel news;
 
   @override
   Widget build(BuildContext context) {
