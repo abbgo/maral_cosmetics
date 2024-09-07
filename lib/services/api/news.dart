@@ -12,7 +12,7 @@ class NewsApiService {
     required int pageSize,
     required String search,
   }) async {
-    Uri uri = Uri.parse('$apiUrl/news/all').replace(
+    Uri uri = Uri.parse('$apiUrl/api/news/all').replace(
       queryParameters: {
         'pageSize': pageSize.toString(),
         'page': '$page',

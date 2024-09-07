@@ -12,14 +12,13 @@ class BrandApiService {
     required int pageSize,
     required String search,
   }) async {
-    Uri uri = Uri.parse('$apiUrl/news/all').replace(
+    Uri uri = Uri.parse('$apiUrl/category/brands').replace(
       queryParameters: {
         'pageSize': pageSize.toString(),
         'page': '$page',
         'search': search,
       },
     );
-
     try {
       Response response = await http.get(uri);
       var jsonData = json.decode(response.body);
