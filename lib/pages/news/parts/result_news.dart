@@ -47,11 +47,11 @@ class ResultNewsPart extends ConsumerWidget {
                           return null;
                         }
 
-                        bool showLast = page == response.pageCount &&
+                        bool isLast = page == response.pageCount &&
                             (indexInPage + 1) == response.newss!.length;
 
                         NewsModel news = response.newss![indexInPage];
-                        return showLast
+                        return isLast
                             ? Column(
                                 children: [
                                   HomeNewsCard(news: news),
