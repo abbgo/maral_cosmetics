@@ -11,6 +11,7 @@ class NewsApiService {
     required int page,
     required int pageSize,
     required String search,
+    required String lang,
   }) async {
     Uri uri = Uri.parse('$apiUrl/api/news/all').replace(
       queryParameters: {
@@ -21,7 +22,8 @@ class NewsApiService {
     );
 
     try {
-      Response response = await http.get(uri);
+      Response response =
+          await http.get(uri, headers: {'Accept-Language': lang});
       var jsonData = json.decode(response.body);
 
       if (response.statusCode == 200 && jsonData['success']) {

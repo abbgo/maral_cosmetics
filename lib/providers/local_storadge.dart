@@ -6,5 +6,5 @@ late SharedPreferences prefs;
 final langProvider = createPrefProvider<String>(
   prefs: (_) => prefs,
   prefKey: "lang",
-  defaultValue: 'tr',
+  defaultValue: 'tk',
 );
