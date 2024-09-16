@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:maral_cosmetics/models/image.dart';
 
 class AboutCosmetic {
@@ -19,4 +20,39 @@ class AboutCosmetic {
       createdAt: json['createdAt'],
     );
   }
+}
+
+class ResultAboutCosmetic extends Equatable {
+  final List<AboutCosmetic>? aboutCosmetics;
+  final AboutCosmetic? aboutCosmetic;
+  final int? count;
+  final int? pageCount;
+  final String error;
+
+  const ResultAboutCosmetic({
+    this.aboutCosmetics,
+    this.aboutCosmetic,
+    this.count,
+    this.pageCount,
+    required this.error,
+  });
+
+  factory ResultAboutCosmetic.defaultResult() {
+    return const ResultAboutCosmetic(
+      aboutCosmetics: null,
+      aboutCosmetic: null,
+      count: null,
+      pageCount: null,
+      error: '',
+    );
+  }
+
+  @override
+  List<Object?> get props => [
+        aboutCosmetics,
+        aboutCosmetic,
+        count,
+        pageCount,
+        error,
+      ];
 }
