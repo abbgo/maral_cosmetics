@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:maral_cosmetics/models/image.dart';
 
 class Gallery {
@@ -12,4 +13,19 @@ class Gallery {
       image: BlurImage.fromJson(json['image']),
     );
   }
+}
+
+class ResultGallery extends Equatable {
+  final List<Gallery>? galleries;
+  final int? pageCount;
+  final String error;
+
+  const ResultGallery({this.galleries, this.pageCount, required this.error});
+
+  factory ResultGallery.defaultResult() {
+    return const ResultGallery(galleries: null, pageCount: null, error: '');
+  }
+
+  @override
+  List<Object?> get props => [galleries, pageCount, error];
 }

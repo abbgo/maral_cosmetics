@@ -26,18 +26,16 @@ class NewsModel {
 
 class ResultNews extends Equatable {
   final List<NewsModel>? newss;
-  final NewsModel? news;
   final int? count;
   final int? pageCount;
   final String error;
 
   const ResultNews(
-      {this.newss, this.news, this.count, this.pageCount, required this.error});
+      {this.newss, this.count, this.pageCount, required this.error});
 
   factory ResultNews.defaultResult() {
     return const ResultNews(
       newss: null,
-      news: null,
       count: null,
       pageCount: null,
       error: '',
@@ -45,5 +43,5 @@ class ResultNews extends Equatable {
   }
 
   @override
-  List<Object?> get props => [newss, news, count, pageCount, error];
+  List<Object?> get props => [newss, count, pageCount, error];
 }
