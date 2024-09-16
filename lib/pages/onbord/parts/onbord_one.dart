@@ -4,7 +4,9 @@ import 'package:maral_cosmetics/pages/onbord/parts/onbord_indicator.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class OnbordOne extends StatelessWidget {
-  const OnbordOne({super.key});
+  const OnbordOne({super.key, required this.pageController});
+
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +43,18 @@ class OnbordOne extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 53),
-              CircleAvatar(
-                radius: 34,
-                backgroundColor: defaultColor,
-                child: Icon(Icons.adaptive.arrow_forward, color: Colors.white),
+              GestureDetector(
+                onTap: () => pageController.animateToPage(
+                  1,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeIn,
+                ),
+                child: CircleAvatar(
+                  radius: 34,
+                  backgroundColor: defaultColor,
+                  child:
+                      Icon(Icons.adaptive.arrow_forward, color: Colors.white),
+                ),
               ),
             ],
           ),

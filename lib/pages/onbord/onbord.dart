@@ -23,9 +23,9 @@ class _OnbordPageState extends State<OnbordPage> {
     return Scaffold(
       body: PageView(
         controller: pageController,
-        children: const [
-          OnbordOne(),
-          OnbordTwo(),
+        children: [
+          OnbordOne(pageController: pageController),
+          const OnbordTwo(),
         ],
       ),
     );
