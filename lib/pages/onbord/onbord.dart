@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/onbord/parts/onbord_one.dart';
+import 'package:maral_cosmetics/pages/onbord/parts/onbord_two.dart';
 
 class OnbordPage extends StatefulWidget {
   const OnbordPage({super.key});
@@ -21,7 +23,10 @@ class _OnbordPageState extends State<OnbordPage> {
     return Scaffold(
       body: PageView(
         controller: pageController,
-        children: [],
+        children: const [
+          OnbordOne(),
+          OnbordTwo(),
+        ],
       ),
     );
   }
