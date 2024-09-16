@@ -43,7 +43,7 @@ class BottomNavigationPage extends ConsumerWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(title: titleWidget, centerTitle: false),
+      appBar: AppBar(title: titleWidget, centerTitle: false, leading: null),
       body: IndexedStack(
         index: selectedIndex,
         children: pages,

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/functions/screen.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
+import 'package:maral_cosmetics/pages/bottom_navigation/bottom_navigation.dart';
 import 'package:maral_cosmetics/pages/onbord/parts/onbord_one.dart';
 import 'package:maral_cosmetics/pages/onbord/parts/onbord_two.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
@@ -25,9 +28,9 @@ class _OnbordPageState extends State<OnbordPage> {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
+          SizedBox(
+            height: screenProperties(context).height * .8,
             child: PageView(
-              // physics:const NeverScrollableScrollPhysics(),
               controller: pageController,
               children: [
                 OnbordOne(pageController: pageController),
@@ -57,11 +60,19 @@ class _OnbordPageState extends State<OnbordPage> {
               ),
               const SizedBox(height: 50),
               GestureDetector(
-                onTap: () => pageController.animateToPage(
-                  1,
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeIn,
-                ),
+                onTap: () => pageController.page == 0
+                    ? pageController.animateToPage(
+                        1,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeIn,
+                      )
+                    : Navigator.pushReplacement(
+                        context,
+                        CustomPageRoute(
+                          child: const BottomNavigationPage(),
+                          direction: AxisDirection.left,
+                        ),
+                      ),
                 child: CircleAvatar(
                   radius: 34,
                   backgroundColor: defaultColor,
@@ -71,7 +82,6 @@ class _OnbordPageState extends State<OnbordPage> {
               ),
             ],
           ),
-          const SizedBox(height: 40),
         ],
       ),
     );
