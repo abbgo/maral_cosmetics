@@ -27,6 +27,7 @@ class _OnbordPageState extends State<OnbordPage> {
         children: [
           Expanded(
             child: PageView(
+              physics: const NeverScrollableScrollPhysics(),
               controller: pageController,
               children: [
                 OnbordOne(pageController: pageController),
