@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/onbord/parts/onbord_indicator.dart';
 import 'package:maral_cosmetics/pages/onbord/parts/onbord_one.dart';
 import 'package:maral_cosmetics/pages/onbord/parts/onbord_two.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnbordPage extends StatefulWidget {
   const OnbordPage({super.key});
@@ -27,7 +27,7 @@ class _OnbordPageState extends State<OnbordPage> {
         children: [
           Expanded(
             child: PageView(
-              physics: const NeverScrollableScrollPhysics(),
+              // physics:const NeverScrollableScrollPhysics(),
               controller: pageController,
               children: [
                 OnbordOne(pageController: pageController),
@@ -37,15 +37,25 @@ class _OnbordPageState extends State<OnbordPage> {
           ),
           Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  OnbordIndicator(color: defaultColor),
-                  const SizedBox(width: 5),
-                  OnbordIndicator(color: defaultLightColor),
-                ],
+              SmoothPageIndicator(
+                controller: pageController,
+                count: 2,
+                effect: CustomizableEffect(
+                  dotDecoration: DotDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    width: 22,
+                    height: 4,
+                    color: defaultLightColor,
+                  ),
+                  activeDotDecoration: DotDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    width: 22,
+                    height: 4,
+                    color: defaultColor,
+                  ),
+                ),
               ),
-              const SizedBox(height: 53),
+              const SizedBox(height: 50),
               GestureDetector(
                 onTap: () => pageController.animateToPage(
                   1,
@@ -61,6 +71,7 @@ class _OnbordPageState extends State<OnbordPage> {
               ),
             ],
           ),
+          const SizedBox(height: 40),
         ],
       ),
     );

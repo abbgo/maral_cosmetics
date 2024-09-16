@@ -9,7 +9,6 @@ class OnbordOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(
@@ -20,7 +19,6 @@ class OnbordOne extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 17),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 'collection of treatments',
