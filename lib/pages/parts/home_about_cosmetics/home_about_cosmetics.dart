@@ -25,7 +25,6 @@ class HomeAboutCosmetics extends ConsumerWidget {
           height: 120,
           child: Stack(
             children: [
-              // HomeAboutCosmeticsList(),
               ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
@@ -52,7 +51,6 @@ class HomeAboutCosmetics extends ConsumerWidget {
 
                       AboutCosmetic aboutCosmetic =
                           response.aboutCosmetics![indexInPage];
-                      // return Text(aboutCosmetic.id);
 
                       return HomeAboutCosmeticsCard(
                         aboutCosmetic: aboutCosmetic,
