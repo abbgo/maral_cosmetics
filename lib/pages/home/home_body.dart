@@ -29,7 +29,7 @@ class HomeBody extends StatelessWidget {
         HomeBrands(),
         SizedBox(height: 20),
         HomeGalery(),
-        SizedBox(height: 60),
+        SizedBox(height: 20),
       ],
     );
   }
