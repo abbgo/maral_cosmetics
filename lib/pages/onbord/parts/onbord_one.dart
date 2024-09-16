@@ -9,6 +9,7 @@ class OnbordOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(
           "assets/images/onbord_1.png",
@@ -38,7 +39,13 @@ class OnbordOne extends StatelessWidget {
                   const SizedBox(width: 5),
                   OnbordIndicator(color: defaultLightColor),
                 ],
-              )
+              ),
+              const SizedBox(height: 53),
+              CircleAvatar(
+                radius: 34,
+                backgroundColor: defaultColor,
+                child: Icon(Icons.adaptive.arrow_forward, color: Colors.white),
+              ),
             ],
           ),
         ),
