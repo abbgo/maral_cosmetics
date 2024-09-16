@@ -2,10 +2,11 @@ import 'dart:convert';
 
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:http/http.dart' as http;
+import 'package:maral_cosmetics/models/about_cosmetic.dart';
 
 class AboutCosmeticApiService {
   // fetch about cosmetcis -------------------------------------------------------
-  Future<ResultNews> fetcAboutCosmetics({
+  Future<ResultAboutCosmetic> fetcAboutCosmetics({
     required int page,
     required int pageSize,
     required String search,
@@ -29,8 +30,8 @@ class AboutCosmeticApiService {
         int pageCount = jsonData['data']['pageCount'] as int;
 
         if (jsonData['data']['rows'] == []) {
-          return ResultNews(
-            newss: const [],
+          return ResultAboutCosmetic(
+            aboutCosmetics: const [],
             count: count,
             pageCount: pageCount,
             error: '',
@@ -38,16 +39,22 @@ class AboutCosmeticApiService {
         }
 
         var data = jsonData['data']['rows'] as List;
-        return ResultNews(
-          newss: data
-              .map<NewsModel>((propJson) => NewsModel.fromJson(propJson))
+        return ResultAboutCosmetic(
+          aboutCosmetics: data
+              .map<AboutCosmetic>(
+                  (propJson) => AboutCosmetic.fromJson(propJson))
               .toList(),
           count: count,
           pageCount: pageCount,
           error: '',
         );
       }
-      return const ResultNews(newss: [], count: 0, pageCount: 0, error: '');
+      return const ResultAboutCosmetic(
+        aboutCosmetics: [],
+        count: 0,
+        pageCount: 0,
+        error: '',
+      );
     } catch (e) {
       rethrow;
     }
