@@ -8,3 +8,9 @@ final langProvider = createPrefProvider<String>(
   prefKey: "lang",
   defaultValue: 'tk',
 );
+
+final isFirstTimeProvider = createPrefProvider<bool>(
+  prefs: (_) => prefs,
+  prefKey: "is_first_time",
+  defaultValue: true,
+);

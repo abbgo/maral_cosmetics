@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
-import 'package:maral_cosmetics/pages/onbord/onbord.dart';
+import 'package:maral_cosmetics/pages/home.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -20,8 +20,7 @@ class _StartPageState extends State<StartPage> {
   _moveNextPage() async {
     await Future.delayed(const Duration(seconds: 3));
     if (mounted) {
-      // goToPage(context, const BottomNavigationPage(), true);
-      goToPage(context, const OnbordPage(), true);
+      goToPage(context, const HomePage(), true);
     }
   }
 

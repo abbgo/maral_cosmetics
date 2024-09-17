@@ -52,7 +52,6 @@ class HomeAboutCosmeticsCard extends StatelessWidget {
                   style: const TextStyle(fontSize: 14),
                 ),
                 Text(
-                  // 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long established fact ...',
                   removeHtmlTags(aboutCosmetic.content),
                   maxLines: 4,
                   overflow: TextOverflow.ellipsis,

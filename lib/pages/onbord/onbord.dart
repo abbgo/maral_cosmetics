@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/functions/screen.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/bottom_navigation/bottom_navigation.dart';
 import 'package:maral_cosmetics/pages/onbord/parts/onbord_one.dart';
 import 'package:maral_cosmetics/pages/onbord/parts/onbord_two.dart';
+import 'package:maral_cosmetics/providers/local_storadge.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -59,25 +61,33 @@ class _OnbordPageState extends State<OnbordPage> {
                 ),
               ),
               const SizedBox(height: 50),
-              GestureDetector(
-                onTap: () => pageController.page == 0
-                    ? pageController.animateToPage(
+              Consumer(
+                builder: (context, ref, child) => GestureDetector(
+                  onTap: () {
+                    if (pageController.page == 0) {
+                      pageController.animateToPage(
                         1,
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeIn,
-                      )
-                    : Navigator.pushReplacement(
-                        context,
-                        CustomPageRoute(
-                          child: const BottomNavigationPage(),
-                          direction: AxisDirection.left,
-                        ),
+                      );
+                      return;
+                    }
+
+                    ref.read(isFirstTimeProvider.notifier).update(false);
+                    Navigator.pushReplacement(
+                      context,
+                      CustomPageRoute(
+                        child: const BottomNavigationPage(),
+                        direction: AxisDirection.left,
                       ),
-                child: CircleAvatar(
-                  radius: 34,
-                  backgroundColor: defaultColor,
-                  child:
-                      Icon(Icons.adaptive.arrow_forward, color: Colors.white),
+                    );
+                  },
+                  child: CircleAvatar(
+                    radius: 34,
+                    backgroundColor: defaultColor,
+                    child:
+                        Icon(Icons.adaptive.arrow_forward, color: Colors.white),
+                  ),
                 ),
               ),
             ],
