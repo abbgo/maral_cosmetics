@@ -2,13 +2,15 @@ import 'package:equatable/equatable.dart';
 import 'package:maral_cosmetics/models/image.dart';
 
 class AboutCosmetic {
-  final String id, author, createdAt;
+  final String id, author, title, content, createdAt;
   final BlurImage image;
 
   AboutCosmetic({
     required this.id,
     required this.image,
     required this.author,
+    required this.title,
+    required this.content,
     required this.createdAt,
   });
 
@@ -17,6 +19,8 @@ class AboutCosmetic {
       id: json['id'],
       image: BlurImage.fromJson(json['image']),
       author: json['author'],
+      title: json['title'],
+      content: json['content'],
       createdAt: json['createdAt'],
     );
   }
