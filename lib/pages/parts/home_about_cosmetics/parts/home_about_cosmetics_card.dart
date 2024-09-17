@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
+import 'package:maral_cosmetics/helpers/functions/converter.dart';
 import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/about_cosmetic.dart';
@@ -40,21 +41,25 @@ class HomeAboutCosmeticsCard extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 5),
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Customers Says about our Servise',
+                  aboutCosmetic.title,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 14),
+                  style: const TextStyle(fontSize: 14),
                 ),
                 Text(
-                  'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long established fact ...',
+                  // 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long established fact ...',
+                  removeHtmlTags(aboutCosmetic.content),
                   maxLines: 4,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontFamily: 'HeyWowRegular', fontSize: 10),
+                  style: const TextStyle(
+                    fontFamily: 'HeyWowRegular',
+                    fontSize: 10,
+                  ),
                 ),
               ],
             ),
