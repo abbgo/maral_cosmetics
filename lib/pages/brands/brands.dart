@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/brands/parts/result_brands.dart';
 
 class BrandsPage extends StatelessWidget {
   const BrandsPage({super.key});
@@ -16,6 +17,7 @@ class BrandsPage extends StatelessWidget {
           ),
         ),
       ),
+      body: const ResultBrandsPart(),
     );
   }
 }
