@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/functions/screen.dart';
 
 class OnbordOne extends StatelessWidget {
-  const OnbordOne({super.key, required this.pageController});
-
-  final PageController pageController;
+  const OnbordOne({super.key});
 
   @override
   Widget build(BuildContext context) {

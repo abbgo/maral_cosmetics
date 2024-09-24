@@ -36,10 +36,11 @@ class _OnbordPageState extends State<OnbordPage> {
             SizedBox(
               height: screenProperties(context).height * .8,
               child: PageView(
+                physics: const NeverScrollableScrollPhysics(),
                 controller: pageController,
                 children: [
-                  OnbordOne(pageController: pageController),
-                  const OnbordTwo(),
+                  const OnbordOne(),
+                  OnbordTwo(pageController: pageController),
                 ],
               ),
             ),
