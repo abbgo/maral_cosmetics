@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
@@ -21,7 +20,7 @@ class ContactPhones extends StatelessWidget {
         children: contactPhones
             .map(
               (e) => GestureDetector(
-                onTap: () => FlutterPhoneDirectCaller.callNumber(e.toString()),
+                // onTap: () => FlutterPhoneDirectCaller.callNumber(e.toString()),
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
