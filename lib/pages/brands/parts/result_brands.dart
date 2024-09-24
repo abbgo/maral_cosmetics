@@ -4,6 +4,7 @@ import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/brand.dart';
 import 'package:maral_cosmetics/models/default_param.dart';
+import 'package:maral_cosmetics/pages/brands/parts/brand_card.dart';
 import 'package:maral_cosmetics/pages/parts/no_result.dart';
 import 'package:maral_cosmetics/providers/api/brand.dart';
 import 'package:maral_cosmetics/providers/pages/brands.dart';
@@ -28,9 +29,9 @@ class ResultBrandsPart extends ConsumerWidget {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 2,
+                      // crossAxisSpacing: 2,
                       mainAxisSpacing: 8,
-                      mainAxisExtent: 310,
+                      // mainAxisExtent: 50,
                     ),
                     itemBuilder: (context, index) {
                       final page = index ~/ pageSize + 1;
@@ -54,7 +55,7 @@ class ResultBrandsPart extends ConsumerWidget {
                           }
 
                           Brand brand = response.brands![indexInPage];
-                          return Text(brand.name);
+                          return BrandCard(brand: brand);
                         },
                         error: (error, stackTrace) => errorMethod(error),
                         loading: () {
