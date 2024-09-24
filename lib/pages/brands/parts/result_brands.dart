@@ -22,50 +22,54 @@ class ResultBrandsPart extends ConsumerWidget {
         children: [
           !hasNews
               ? const NoResult()
-              : GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 2,
-                    mainAxisSpacing: 8,
-                    mainAxisExtent: 310,
+              : Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 2,
+                      mainAxisSpacing: 8,
+                      mainAxisExtent: 310,
+                    ),
+                    itemBuilder: (context, index) {
+                      final page = index ~/ pageSize + 1;
+                      final indexInPage = index % pageSize;
+
+                      DefaultParams arg =
+                          DefaultParams(page: page, pageSize: pageSize);
+
+                      final resultBrands = ref.watch(fetchBrandsProvider(arg));
+
+                      return resultBrands.when(
+                        skipLoadingOnRefresh: true,
+                        skipLoadingOnReload: true,
+                        skipError: true,
+                        data: (response) {
+                          if (response.error != '') {
+                            return null;
+                          }
+                          if (indexInPage >= response.brands!.length) {
+                            return null;
+                          }
+
+                          Brand brand = response.brands![indexInPage];
+                          return Text(brand.name);
+                        },
+                        error: (error, stackTrace) => errorMethod(error),
+                        loading: () {
+                          if (!loading) {
+                            Future.delayed(
+                              const Duration(),
+                              () => ref.read(loadBrandProvider.notifier).state =
+                                  true,
+                            );
+                          }
+                          return null;
+                        },
+                      );
+                    },
                   ),
-                  itemBuilder: (context, index) {
-                    final page = index ~/ pageSize + 1;
-                    final indexInPage = index % pageSize;
-
-                    DefaultParams arg =
-                        DefaultParams(page: page, pageSize: pageSize);
-
-                    final resultBrands = ref.watch(fetchBrandsProvider(arg));
-
-                    return resultBrands.when(
-                      skipLoadingOnRefresh: true,
-                      skipLoadingOnReload: true,
-                      skipError: true,
-                      data: (response) {
-                        if (response.error != '') {
-                          return null;
-                        }
-                        if (indexInPage >= response.brands!.length) {
-                          return null;
-                        }
-
-                        Brand brand = response.brands![indexInPage];
-                        return Text(brand.name);
-                      },
-                      error: (error, stackTrace) => errorMethod(error),
-                      loading: () {
-                        if (!loading) {
-                          Future.delayed(
-                            const Duration(),
-                            () => ref.read(loadBrandProvider.notifier).state =
-                                true,
-                          );
-                        }
-                        return null;
-                      },
-                    );
-                  },
                 ),
           loading ? loadWidget : const SizedBox(),
         ],
