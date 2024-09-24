@@ -7,7 +7,8 @@ import 'package:maral_cosmetics/services/api/news.dart';
 
 final newsApiProvider = Provider<NewsApiService>((ref) => NewsApiService());
 
-var fetchNewsProvider = FutureProvider.family<ResultNews, DefaultParams>(
+var fetchNewsProvider =
+    FutureProvider.autoDispose.family<ResultNews, DefaultParams>(
   (ref, arg) async {
     ResultNews result = ResultNews.defaultResult();
     String lang = await ref.watch(langProvider);
