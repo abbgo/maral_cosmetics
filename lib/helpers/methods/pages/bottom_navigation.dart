@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 
 BottomNavigationBarItem bottomNavigationBarItemMethod(
-  IconData icon,
-  bool isSelected,
-) {
+    IconData icon, String text, bool isSelected) {
   return BottomNavigationBarItem(
-    label: '',
-    icon: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, size: 24),
-        isSelected
-            ? Image.asset('assets/images/point.png')
-            : const SizedBox(height: 4),
-      ],
+    label: text,
+    icon: Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+      decoration: BoxDecoration(
+        color: isSelected ? const Color(0xfff6e4ed) : null,
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
+      ),
+      child: Icon(icon, size: 24),
     ),
-    backgroundColor: const Color(0xffF1E0E9),
+    backgroundColor: const Color(0xffFFF1F8),
   );
 }

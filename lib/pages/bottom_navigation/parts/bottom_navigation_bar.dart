@@ -13,17 +13,37 @@ class BottomNavigationBarPart extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
-      selectedIconTheme: IconThemeData(color: defaultColor),
-      unselectedIconTheme: IconThemeData(color: defaultColor),
+      selectedLabelStyle: const TextStyle(
+        fontFamily: 'HeyWowRegular',
+        fontSize: 12,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        fontFamily: 'HeyWowRegular',
+        fontSize: 12,
+      ),
+      selectedItemColor: const Color(0xff82516C),
+      unselectedItemColor: const Color(0xff82516C),
       items: [
-        bottomNavigationBarItemMethod(Icons.home_outlined, selectedIndex == 0),
         bottomNavigationBarItemMethod(
-            Icons.shopping_bag_outlined, selectedIndex == 1),
+          selectedIndex == 0 ? Icons.home : Icons.home_outlined,
+          'Home',
+          selectedIndex == 0,
+        ),
         bottomNavigationBarItemMethod(
-            Icons.favorite_outline, selectedIndex == 2),
-        bottomNavigationBarItemMethod(Icons.person_outline, selectedIndex == 3),
+          selectedIndex == 1 ? Icons.shopping_bag : Icons.shopping_bag_outlined,
+          'Shop',
+          selectedIndex == 1,
+        ),
+        bottomNavigationBarItemMethod(
+          selectedIndex == 2 ? Icons.favorite : Icons.favorite_outline,
+          'Favorites',
+          selectedIndex == 2,
+        ),
+        bottomNavigationBarItemMethod(
+          selectedIndex == 3 ? Icons.person : Icons.person_outline,
+          'Profile',
+          selectedIndex == 3,
+        ),
       ],
       currentIndex: selectedIndex,
       onTap: (value) =>
