@@ -24,26 +24,34 @@ class _OnbordPageState extends State<OnbordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: screenProperties(context).height * .8,
-            child: PageView(
-              controller: pageController,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/vector.jpg"),
+            fit: BoxFit.fitHeight,
+          ),
+        ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: screenProperties(context).height * .8,
+              child: PageView(
+                controller: pageController,
+                children: [
+                  OnbordOne(pageController: pageController),
+                  const OnbordTwo(),
+                ],
+              ),
+            ),
+            Column(
               children: [
-                OnbordOne(pageController: pageController),
-                const OnbordTwo(),
+                OnbordIndicator(pageController: pageController),
+                const SizedBox(height: 50),
+                OnbordNextButton(pageController: pageController),
               ],
             ),
-          ),
-          Column(
-            children: [
-              OnbordIndicator(pageController: pageController),
-              const SizedBox(height: 50),
-              OnbordNextButton(pageController: pageController),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
