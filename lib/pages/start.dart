@@ -37,12 +37,16 @@ class _StartPageState extends State<StartPage> {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Image.asset("assets/images/leaf.jpg", fit: BoxFit.cover),
+                Image.asset(
+                  "assets/images/traced.png",
+                  fit: BoxFit.cover,
+                  color: const Color(0xffF2CFE2),
+                ),
                 const Positioned(
                   bottom: 30,
                   child: Text(
                     'ISLEGE GÖRÄ KAMILLEŞ...',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, color: Color(0xffA16F8A)),
                   ),
                 ),
               ],
