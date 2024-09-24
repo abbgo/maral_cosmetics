@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/brand.dart';
 import 'package:maral_cosmetics/models/default_param.dart';
+import 'package:maral_cosmetics/pages/brands/brands.dart';
 import 'package:maral_cosmetics/pages/parts/home_brands/parts/brand_image.dart';
 import 'package:maral_cosmetics/pages/parts/home_title.dart';
 import 'package:maral_cosmetics/providers/api/brand.dart';
@@ -19,7 +21,16 @@ class HomeBrands extends ConsumerWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        HomeTitle(text: 'Hyzmatdas brendler', onTap: () {}),
+        HomeTitle(
+          text: 'Hyzmatdas brendler',
+          onTap: () => Navigator.push(
+            context,
+            CustomPageRoute(
+              child: const BrandsPage(),
+              direction: AxisDirection.left,
+            ),
+          ),
+        ),
         SizedBox(
           height: 80,
           child: Stack(
