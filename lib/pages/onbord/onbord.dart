@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/functions/screen.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/bottom_navigation/bottom_navigation.dart';
+import 'package:maral_cosmetics/pages/onbord/parts/onbord_indicator.dart';
 import 'package:maral_cosmetics/pages/onbord/parts/onbord_one.dart';
 import 'package:maral_cosmetics/pages/onbord/parts/onbord_two.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
@@ -42,24 +43,7 @@ class _OnbordPageState extends State<OnbordPage> {
           ),
           Column(
             children: [
-              SmoothPageIndicator(
-                controller: pageController,
-                count: 2,
-                effect: CustomizableEffect(
-                  dotDecoration: DotDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    width: 22,
-                    height: 4,
-                    color: defaultLightColor,
-                  ),
-                  activeDotDecoration: DotDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    width: 22,
-                    height: 4,
-                    color: defaultColor,
-                  ),
-                ),
-              ),
+              OnbordIndicator(pageController: pageController),
               const SizedBox(height: 50),
               Consumer(
                 builder: (context, ref, child) => GestureDetector(
