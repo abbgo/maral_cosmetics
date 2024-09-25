@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/gallery/parts/result_gallery_part.dart';
 
 class GalleryPage extends StatelessWidget {
   const GalleryPage({super.key});
@@ -16,6 +17,7 @@ class GalleryPage extends StatelessWidget {
           ),
         ),
       ),
+      body: const ResultGalleryPart(),
     );
   }
 }
