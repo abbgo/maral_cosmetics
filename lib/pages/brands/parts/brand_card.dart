@@ -13,18 +13,31 @@ class BrandCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 150,
-          child: BlurHash(
-            errorBuilder: (context, error, stackTrace) => loadWidget,
-            curve: Curves.easeOut,
-            hash: brand.logo.hashblur,
-            image: '$pathUrl/${brand.logo.url}',
-            imageFit: BoxFit.cover,
+          height: 140,
+          // width: 150,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(6),
+            child: BlurHash(
+              errorBuilder: (context, error, stackTrace) => loadWidget,
+              curve: Curves.easeOut,
+              hash: brand.logo.hashblur,
+              image: '$pathUrl/${brand.logo.url}',
+              imageFit: BoxFit.cover,
+            ),
           ),
         ),
-        Text(brand.name),
+        Text(
+          brand.name,
+          textAlign: TextAlign.start,
+          style: const TextStyle(
+            fontFamily: 'HeyWowRegular',
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ],
     );
   }

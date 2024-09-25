@@ -29,9 +29,8 @@ class ResultBrandsPart extends ConsumerWidget {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      // crossAxisSpacing: 2,
-                      mainAxisSpacing: 8,
-                      // mainAxisExtent: 50,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 10,
                     ),
                     itemBuilder: (context, index) {
                       final page = index ~/ pageSize + 1;
