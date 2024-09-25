@@ -24,13 +24,14 @@ class ResultBrandsPart extends ConsumerWidget {
           !hasNews
               ? const NoResult()
               : Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.only(left: 18, top: 18, right: 18),
                   child: GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 20,
+                      crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
+                      mainAxisExtent: 190,
                     ),
                     itemBuilder: (context, index) {
                       final page = index ~/ pageSize + 1;
