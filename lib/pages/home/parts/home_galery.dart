@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/default_param.dart';
 import 'package:maral_cosmetics/models/gallery.dart';
+import 'package:maral_cosmetics/pages/gallery/gallery.dart';
 import 'package:maral_cosmetics/pages/parts/home_title.dart';
 import 'package:maral_cosmetics/providers/api/gallery.dart';
 import 'package:maral_cosmetics/providers/pages/galleries.dart';
@@ -19,7 +21,16 @@ class HomeGalery extends ConsumerWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        HomeTitle(text: 'Gallereya toplumy', onTap: () {}),
+        HomeTitle(
+          text: 'Gallereya toplumy',
+          onTap: () => Navigator.push(
+            context,
+            CustomPageRoute(
+              child: const GalleryPage(),
+              direction: AxisDirection.left,
+            ),
+          ),
+        ),
         SizedBox(
           height: 80,
           child: Stack(
