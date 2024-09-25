@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/parts/app_bar.dart';
 import 'package:maral_cosmetics/pages/gallery/parts/result_gallery_part.dart';
 
 class GalleryPage extends StatelessWidget {
@@ -9,13 +10,7 @@ class GalleryPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Gallereya toplumy'),
-        bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(4),
-          child: Divider(
-            thickness: 4,
-            color: Color(0xffF5F5F5),
-          ),
-        ),
+        bottom: appBarBottomMethod(),
       ),
       body: const ResultGalleryPart(),
     );
