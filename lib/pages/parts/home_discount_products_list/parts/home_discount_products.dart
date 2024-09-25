@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
-import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_card.dart';
+import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/product_card.dart';
 
 class HomeDiscountProducts extends StatelessWidget {
   const HomeDiscountProducts({super.key});
@@ -12,7 +12,7 @@ class HomeDiscountProducts extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return HomeDiscountProductCard(
+          return ProductCard(
             image: homeDiscountProducts[index],
             isFisrt: index == 0,
             isLast: index == homeDiscountProducts.length - 1,

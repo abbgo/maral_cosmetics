@@ -22,7 +22,7 @@ class ProductData extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const HomeDiscountProductPrice(
+            const ProductStartAndPrice(
               fontSizePrice: 16,
               fontSizeOldPrice: 12,
             ),
