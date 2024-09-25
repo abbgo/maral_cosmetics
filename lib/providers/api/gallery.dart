@@ -8,7 +8,7 @@ final galleryApiProvider =
     Provider<GalleryApiService>((ref) => GalleryApiService());
 
 var fetchGalleriesProvider =
-    FutureProvider.family<ResultGallery, DefaultParams>(
+    FutureProvider.autoDispose.family<ResultGallery, DefaultParams>(
   (ref, arg) async {
     ResultGallery result = ResultGallery.defaultResult();
 
