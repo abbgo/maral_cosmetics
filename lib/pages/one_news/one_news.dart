@@ -12,16 +12,25 @@ class OneNewsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
         title: const Text('Habarlar'),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(4),
+          child: Divider(
+            thickness: 4,
+            color: Color(0xffF5F5F5),
+          ),
+        ),
       ),
-      body: ListView(
-        shrinkWrap: true,
-        children: [
-          OneNewsContent(news: news),
-          const HomeAboutCosmetics(),
-          const SizedBox(height: 20),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            OneNewsContent(news: news),
+            const HomeAboutCosmetics(),
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
