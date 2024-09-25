@@ -18,26 +18,23 @@ class BrandImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(6),
-      child: Container(
-        margin: EdgeInsets.only(
-          left: isFirst ? 10 : 5,
-          right: isLast ? 10 : 5,
-        ),
-        width: 130,
-        height: 80,
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
-          borderRadius: BorderRadius.circular(6),
-        ),
-        child: BlurHash(
-          errorBuilder: (context, error, stackTrace) => loadWidget,
-          curve: Curves.easeOut,
-          hash: brand.logo.hashblur,
-          image: '$pathUrl/${brand.logo.url}',
-          imageFit: BoxFit.cover,
-        ),
+    return Container(
+      margin: EdgeInsets.only(
+        left: isFirst ? 10 : 5,
+        right: isLast ? 10 : 5,
+      ),
+      width: 130,
+      height: 80,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black),
+        borderRadius: BorderRadius.circular(6),
+      ),
+      child: BlurHash(
+        errorBuilder: (context, error, stackTrace) => loadWidget,
+        curve: Curves.easeOut,
+        hash: brand.logo.hashblur,
+        image: '$pathUrl/${brand.logo.url}',
+        imageFit: BoxFit.cover,
       ),
     );
   }
