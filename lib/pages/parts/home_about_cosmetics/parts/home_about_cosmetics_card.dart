@@ -27,7 +27,7 @@ class HomeAboutCosmeticsCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(2),
+            borderRadius: BorderRadius.circular(4),
             child: SizedBox(
               width: 105,
               height: 105,
