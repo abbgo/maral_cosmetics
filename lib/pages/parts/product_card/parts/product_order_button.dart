@@ -6,7 +6,7 @@ class ProductOrderButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 25,
+      height: 30,
       width: double.maxFinite,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(

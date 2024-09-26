@@ -22,7 +22,6 @@ class ProductCard extends StatelessWidget {
       onTap: () =>
           goToPage(context, const ProductPage(forBasket: false), false),
       child: Container(
-        height: 275,
         width: 160,
         margin: EdgeInsets.only(left: isFisrt ? 5 : 0, right: isLast ? 5 : 0),
         padding: const EdgeInsets.all(5),
@@ -34,23 +33,23 @@ class ProductCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             ProductImage(image: image),
-            const SizedBox(height: 5),
-            const Expanded(
-              child: Column(
-                children: [
-                  Text(
-                    'FLORMAR Göz üçin galam Eyeliner Pencil (Ultra Black)',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontFamily: 'HeyWowRegular', fontSize: 12),
-                  ),
-                  ProductStartAndPrice(
-                    fontSizePrice: 12,
-                    fontSizeOldPrice: 8,
-                  ),
-                  ProductOrderButton(),
-                ],
-              ),
+            const SizedBox(height: 10),
+            const Column(
+              children: [
+                Text(
+                  'FLORMAR Göz üçin galam Eyeliner Pencil (Ultra Black)',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontFamily: 'HeyWowRegular', fontSize: 12),
+                ),
+                SizedBox(height: 5),
+                ProductStartAndPrice(
+                  fontSizePrice: 12,
+                  fontSizeOldPrice: 8,
+                ),
+                SizedBox(height: 5),
+                ProductOrderButton(),
+              ],
             ),
           ],
         ),
