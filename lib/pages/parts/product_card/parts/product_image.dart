@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/product_image.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_favorite_button.dart';
 
 class ProductImage extends StatelessWidget {
   const ProductImage({super.key, required this.image});
@@ -25,25 +26,7 @@ class ProductImage extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
-          right: 5,
-          top: 5,
-          child: GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: const Icon(
-                Icons.favorite_outline,
-                color: Color(0xff824D6A),
-                size: 22,
-              ),
-            ),
-          ),
-        ),
+        const ProductFavoriteButton(),
       ],
     );
   }
