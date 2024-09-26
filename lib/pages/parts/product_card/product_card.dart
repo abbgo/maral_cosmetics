@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_image.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_order_button.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_start_and_price.dart';
 import 'package:maral_cosmetics/pages/product/product.dart';
@@ -32,10 +33,7 @@ class ProductCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(image, fit: BoxFit.cover, height: 140),
-            ),
+            ProductImage(image: image),
             const SizedBox(height: 5),
             const Expanded(
               child: Column(
