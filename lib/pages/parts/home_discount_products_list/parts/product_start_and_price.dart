@@ -11,23 +11,44 @@ class ProductStartAndPrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          '500.00 man',
-          style: TextStyle(
-            fontSize: fontSizePrice,
-            fontFamily: 'HeyWowRegular',
-            color: defaultColor,
-          ),
+        Row(
+          children: [
+            const Icon(
+              Icons.star,
+              size: 16,
+              color: Color(0xffFFBB00),
+            ),
+            const SizedBox(width: 2),
+            Text(
+              '3.0',
+              style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'HeyWowRegular',
+                  color: defaultColor),
+            ),
+          ],
         ),
-        const SizedBox(width: 5),
-        Text(
-          '500.00 man',
-          style: TextStyle(
-            fontSize: fontSizeOldPrice,
-            fontFamily: 'HeyWowRegular',
-          ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              '500.00 man',
+              style: TextStyle(
+                fontSize: fontSizePrice,
+                fontFamily: 'HeyWowRegular',
+                color: defaultColor,
+              ),
+            ),
+            Text(
+              '500.00 man',
+              style: TextStyle(
+                fontSize: fontSizeOldPrice,
+                fontFamily: 'HeyWowRegular',
+              ),
+            ),
+          ],
         ),
       ],
     );
