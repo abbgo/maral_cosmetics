@@ -19,6 +19,7 @@ class DIscountPageAppBarBottom extends StatelessWidget {
               DiscountProductsFilterButton(),
             ],
           ),
+          SizedBox(height: 16),
           Divider(thickness: 4, color: Color(0xffF5F5F5)),
         ],
       ),
