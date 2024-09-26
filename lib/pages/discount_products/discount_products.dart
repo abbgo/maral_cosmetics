@@ -17,7 +17,7 @@ class DiscountProductsPage extends StatelessWidget {
         ),
       ),
       body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.only(left: 20, top: 20, right: 20),
         child: Column(
           children: [
             TitleAndTimerPart(),
