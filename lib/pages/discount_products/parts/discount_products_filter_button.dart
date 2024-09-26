@@ -15,8 +15,15 @@ class DiscountProductsFilterButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/filter.png'),
-            const Text('Filtrele'),
+            Image.asset('assets/images/filter.png', color: Colors.black),
+            const SizedBox(width: 10),
+            const Text(
+              'Filtrele',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: 'HeyWowRegular',
+              ),
+            ),
           ],
         ),
       ),
