@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_app_bar_bottom.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_gridview.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/title_and_timer_part.dart';
 
@@ -9,8 +10,11 @@ class DiscountProductsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
         title: const Text('Arzanladyslar'),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(80),
+          child: DIscountPageAppBarBottom(),
+        ),
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
