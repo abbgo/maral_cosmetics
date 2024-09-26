@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/parts/product_image.dart';
 
 class ProductImage extends StatelessWidget {
   const ProductImage({super.key, required this.image});
@@ -18,37 +19,9 @@ class ProductImage extends StatelessWidget {
           left: 5,
           child: Row(
             children: [
-              Container(
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: const Text(
-                  '54%',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.white,
-                    fontFamily: 'HeyWowRegular',
-                  ),
-                ),
-              ),
+              imageIconMethod('54%', Colors.red),
               const SizedBox(width: 2),
-              Container(
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: const Text(
-                  'Taze',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.white,
-                    fontFamily: 'HeyWowRegular',
-                  ),
-                ),
-              ),
+              imageIconMethod('Taze', Colors.green),
             ],
           ),
         ),
