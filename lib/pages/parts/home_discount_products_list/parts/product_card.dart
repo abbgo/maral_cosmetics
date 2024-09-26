@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
-import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_buttons.dart';
+import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/product_order_button.dart';
 import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/product_start_and_price.dart';
 import 'package:maral_cosmetics/pages/product/product.dart';
 
@@ -54,7 +54,7 @@ class ProductCard extends StatelessWidget {
                     fontSizeOldPrice: 8,
                   ),
                   SizedBox(height: 5),
-                  HomeDiscountProductButtons(),
+                  ProductOrderButton(),
                 ],
               ),
             ),
