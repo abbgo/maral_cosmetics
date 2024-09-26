@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/home_discount_product_price.dart';
+import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/product_start_and_price.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class ProductData extends StatelessWidget {
