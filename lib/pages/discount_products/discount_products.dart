@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_categories.dart';
+import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_gridview.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/title_and_timer_part.dart';
 
 class DiscountProductsPage extends StatelessWidget {
@@ -12,12 +12,15 @@ class DiscountProductsPage extends StatelessWidget {
         centerTitle: false,
         title: const Text('Arzanladyslar'),
       ),
-      body: ListView(
-        children: const [
-          TitleAndTimerPart(),
-          SizedBox(height: 30),
-          DiscountProductsCategories(),
-        ],
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            TitleAndTimerPart(),
+            SizedBox(height: 30),
+            DiscountProductsGridview(),
+          ],
+        ),
       ),
     );
   }
