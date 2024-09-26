@@ -17,16 +17,17 @@ class ProductStartAndPrice extends StatelessWidget {
           children: [
             const Icon(
               Icons.star,
-              size: 16,
+              size: 14,
               color: Color(0xffFFBB00),
             ),
             const SizedBox(width: 2),
             Text(
               '3.0',
               style: TextStyle(
-                  fontSize: 14,
-                  fontFamily: 'HeyWowRegular',
-                  color: defaultColor),
+                fontSize: 12,
+                fontFamily: 'HeyWowRegular',
+                color: defaultColor,
+              ),
             ),
           ],
         ),
