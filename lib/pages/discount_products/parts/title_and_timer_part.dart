@@ -6,22 +6,27 @@ class TitleAndTimerPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
+    return Container(
+      height: 95,
+      width: double.maxFinite,
+      decoration: BoxDecoration(
+        color: const Color(0xffFBEAF3),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: Text(
-              'Bayramcylyk mynasybetli Arzanladyslar',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                color: defaultColor,
-                fontFamily: 'Niconne',
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+          Text(
+            'Bayramcylyk mynasybetli Arzanladyslar',
+            textAlign: TextAlign.start,
+            style: TextStyle(
+              color: defaultColor,
+              fontFamily: 'Niconne',
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
           ),
+          const SizedBox(height: 10),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 7),
             decoration: BoxDecoration(
