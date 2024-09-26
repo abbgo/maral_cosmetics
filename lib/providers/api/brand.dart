@@ -6,8 +6,7 @@ import 'package:maral_cosmetics/services/api/brand.dart';
 
 final brandApiProvider = Provider<BrandApiService>((ref) => BrandApiService());
 
-var fetchBrandsProvider =
-    FutureProvider.autoDispose.family<ResultBrands, DefaultParams>(
+var fetchBrandsProvider = FutureProvider.family<ResultBrands, DefaultParams>(
   (ref, arg) async {
     ResultBrands result = ResultBrands.defaultResult();
 
