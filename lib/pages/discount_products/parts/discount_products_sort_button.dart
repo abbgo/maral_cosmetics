@@ -10,14 +10,14 @@ class DiscountProductsSortButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: const Color(0xffE0E0E0)),
+          border: Border.all(color: const Color(0xffE0E0E0), width: 1.5),
         ),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.swap_vert),
-            SizedBox(width: 10),
-            Text(
+            Image.asset('assets/images/sort.png'),
+            const SizedBox(width: 10),
+            const Text(
               'Tertiple',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
