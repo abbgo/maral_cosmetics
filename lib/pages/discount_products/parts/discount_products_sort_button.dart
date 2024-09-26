@@ -14,7 +14,16 @@ class DiscountProductsSortButton extends StatelessWidget {
         ),
         child: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Icon(Icons.swap_vert), Text('Tertiple')],
+          children: [
+            Icon(Icons.swap_vert),
+            Text(
+              'Tertiple',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: 'HeyWowRegular',
+              ),
+            )
+          ],
         ),
       ),
     );
