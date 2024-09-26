@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
-import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/product_order_button.dart';
-import 'package:maral_cosmetics/pages/parts/home_discount_products_list/parts/product_start_and_price.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_order_button.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_start_and_price.dart';
 import 'package:maral_cosmetics/pages/product/product.dart';
 
 class ProductCard extends StatelessWidget {
