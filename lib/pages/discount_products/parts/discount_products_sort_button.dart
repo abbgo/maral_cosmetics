@@ -16,6 +16,7 @@ class DiscountProductsSortButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.swap_vert),
+            SizedBox(width: 10),
             Text(
               'Tertiple',
               style: TextStyle(
