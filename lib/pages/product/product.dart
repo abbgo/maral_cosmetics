@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_buttons.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_data.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
-import 'package:maral_cosmetics/pages/product/parts/product_image_slider_and_list.dart';
+import 'package:maral_cosmetics/pages/product/parts/product_image.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_page_app_bar.dart';
 
 class ProductPage extends StatefulWidget {
@@ -31,7 +31,7 @@ class _ProductPageState extends State<ProductPage> {
         child: ListView(
           children: [
             const ProductPageAppBar(),
-            const ProductImageSliderAndList(),
+            const ProductImage(),
             const ProductData(),
             const SizedBox(height: 22),
             ProductButtons(forBasket: widget.forBasket),

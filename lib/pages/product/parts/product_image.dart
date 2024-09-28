@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_favorite_button.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image_slider.dart';
 
-class ProductImageSliderAndList extends StatefulWidget {
-  const ProductImageSliderAndList({super.key});
+class ProductImage extends StatefulWidget {
+  const ProductImage({super.key});
 
   @override
-  State<ProductImageSliderAndList> createState() =>
-      _ProductImageSliderAndListState();
+  State<ProductImage> createState() => _ProductImageState();
 }
 
-class _ProductImageSliderAndListState extends State<ProductImageSliderAndList> {
+class _ProductImageState extends State<ProductImage> {
   final PageController _pageController = PageController();
 
   @override
