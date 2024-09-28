@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/basket/parts/basket_product_buttons.dart';
 import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_buttons.dart';
-import 'package:maral_cosmetics/pages/parts/product_card/parts/product_start_and_price.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_star_and_price.dart';
 
 class FavoriteProductData extends StatelessWidget {
   const FavoriteProductData({super.key, required this.forFavorite});
@@ -24,7 +24,7 @@ class FavoriteProductData extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          const ProductStartAndPrice(fontSizePrice: 10, fontSizeOldPrice: 8),
+          const ProductStarAndPrice(fontSizePrice: 10, fontSizeOldPrice: 8),
           const SizedBox(height: 10),
           forFavorite
               ? const FavoriteProductButtons()

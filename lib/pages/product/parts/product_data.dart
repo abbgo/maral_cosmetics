@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:maral_cosmetics/pages/parts/product_card/parts/product_start_and_price.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_star_and_price.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class ProductData extends StatelessWidget {
@@ -22,7 +22,7 @@ class ProductData extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const ProductStartAndPrice(
+            const ProductStarAndPrice(
               fontSizePrice: 16,
               fontSizeOldPrice: 12,
             ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
-class ProductStartAndPrice extends StatelessWidget {
-  const ProductStartAndPrice(
+class ProductStarAndPrice extends StatelessWidget {
+  const ProductStarAndPrice(
       {super.key, required this.fontSizePrice, required this.fontSizeOldPrice});
 
   final double fontSizePrice;
