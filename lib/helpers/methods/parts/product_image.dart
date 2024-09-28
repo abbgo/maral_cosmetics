@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Container imageIconMethod(String text, Color color) {
+Container imageIconMethod(String text, Color color, double textSize) {
   return Container(
     padding: const EdgeInsets.all(4),
     decoration: BoxDecoration(
@@ -9,8 +9,8 @@ Container imageIconMethod(String text, Color color) {
     ),
     child: Text(
       text,
-      style: const TextStyle(
-        fontSize: 12,
+      style: TextStyle(
+        fontSize: textSize,
         color: Colors.white,
         fontFamily: 'HeyWowRegular',
       ),

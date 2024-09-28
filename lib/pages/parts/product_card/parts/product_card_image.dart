@@ -20,9 +20,9 @@ class ProductCardImage extends StatelessWidget {
           left: 5,
           child: Row(
             children: [
-              imageIconMethod('54%', Colors.red),
+              imageIconMethod('54%', Colors.red, 12),
               const SizedBox(width: 2),
-              imageIconMethod('Taze', Colors.green),
+              imageIconMethod('Taze', Colors.green, 12),
             ],
           ),
         ),
