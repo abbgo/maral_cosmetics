@@ -5,15 +5,15 @@ import 'package:maral_cosmetics/providers/pages/product.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class ProductImageSlider extends StatefulWidget {
+class ProductImageSlider extends ConsumerStatefulWidget {
   const ProductImageSlider({super.key});
 
   @override
-  State<ProductImageSlider> createState() => _ProductImageSliderState();
+  ConsumerState<ProductImageSlider> createState() => _ProductImageSliderState();
 }
 
-class _ProductImageSliderState extends State<ProductImageSlider> {
-  final PageController _pageController = PageController();
+class _ProductImageSliderState extends ConsumerState<ProductImageSlider> {
+  PageController _pageController = PageController();
 
   @override
   void dispose() {
@@ -23,25 +23,24 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
 
   @override
   Widget build(BuildContext context) {
+    int selectedProductImage = ref.watch(selectedProductImageProvider);
+    _pageController = PageController(initialPage: selectedProductImage);
     return SizedBox(
       height: 280,
       width: double.infinity,
       child: Stack(
         alignment: const Alignment(0, 0.9),
         children: [
-          Consumer(
-            builder: (context, ref, child) => ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: PageView.builder(
-                onPageChanged: (value) {
-                  ref.read(selectedProductImageProvider.notifier).state = value;
-                },
-                controller: _pageController,
-                pageSnapping: true,
-                itemCount: productSliders.length,
-                itemBuilder: (context, index) =>
-                    Image.asset(productSliders[index], fit: BoxFit.cover),
-              ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(5),
+            child: PageView.builder(
+              onPageChanged: (value) =>
+                  ref.read(selectedProductImageProvider.notifier).state = value,
+              controller: _pageController,
+              pageSnapping: true,
+              itemCount: productSliders.length,
+              itemBuilder: (context, index) =>
+                  Image.asset(productSliders[index], fit: BoxFit.cover),
             ),
           ),
           Container(
