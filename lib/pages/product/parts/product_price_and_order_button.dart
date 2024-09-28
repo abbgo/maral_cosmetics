@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_prices.dart';
 
 class ProductPriceAndOrderButton extends StatelessWidget {
   const ProductPriceAndOrderButton({super.key});
@@ -11,8 +12,10 @@ class ProductPriceAndOrderButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         color: const Color(0xffF8F8F8),
       ),
-      child: Row(
-        children: [],
+      child: const Row(
+        children: [
+          ProductPrices(fontSizePrice: 20, fontSizeOldPrice: 16),
+        ],
       ),
     );
   }

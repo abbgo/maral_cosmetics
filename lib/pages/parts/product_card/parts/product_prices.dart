@@ -19,13 +19,16 @@ class ProductPrices extends StatelessWidget {
             fontSize: fontSizePrice,
             fontFamily: 'HeyWowRegular',
             color: defaultColor,
+            fontWeight: FontWeight.bold,
           ),
         ),
         Text(
           '500.00 man',
           style: TextStyle(
+            decoration: TextDecoration.lineThrough,
             fontSize: fontSizeOldPrice,
             fontFamily: 'HeyWowRegular',
+            color: const Color(0xffACACAC),
           ),
         ),
       ],
