@@ -34,7 +34,15 @@ class _ProductPageState extends State<ProductPage> {
             const ProductImage(),
             const SizedBox(height: 12),
             const ProductCategoriesAndStar(),
-            const SizedBox(height: 22),
+            const SizedBox(height: 12),
+            const Text(
+              'FLORMAR Göz üçin galam Eyeliner Pencil (Ultra Black)',
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
             ProductButtons(forBasket: widget.forBasket),
             const SizedBox(height: 22),
             ProductDescription(
