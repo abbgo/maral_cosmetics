@@ -42,7 +42,7 @@ class ProductImageSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 280,
       width: double.maxFinite,
       child: Stack(
         alignment: const Alignment(0, 0.9),
