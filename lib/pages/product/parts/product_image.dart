@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_favorite_button.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image_slider.dart';
+import 'package:maral_cosmetics/pages/product/parts/product_image_zoom_button.dart';
 
 class ProductImage extends StatefulWidget {
   const ProductImage({super.key});
@@ -24,6 +25,7 @@ class _ProductImageState extends State<ProductImage> {
       children: [
         ProductImageSlider(pageController: _pageController),
         const ProductFavoriteButton(top: 10, right: 10),
+        const ProductImageZoomButton(),
       ],
     );
   }
