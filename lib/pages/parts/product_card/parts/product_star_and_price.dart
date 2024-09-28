@@ -14,7 +14,7 @@ class ProductStarAndPrice extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const ProductStar(),
+        const ProductStar(starSize: 14, textSize: 12),
         ProductPrices(
           fontSizePrice: fontSizePrice,
           fontSizeOldPrice: fontSizeOldPrice,

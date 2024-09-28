@@ -2,22 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class ProductStar extends StatelessWidget {
-  const ProductStar({super.key});
+  const ProductStar(
+      {super.key, required this.textSize, required this.starSize});
+
+  final double textSize, starSize;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(
+        Icon(
           Icons.star,
-          size: 14,
-          color: Color(0xffFFBB00),
+          size: starSize,
+          color: const Color(0xffFFBB00),
         ),
         const SizedBox(width: 2),
         Text(
           '3.0',
           style: TextStyle(
-            fontSize: 12,
+            fontSize: textSize,
             fontFamily: 'HeyWowRegular',
             color: defaultColor,
           ),
