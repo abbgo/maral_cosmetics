@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/app_bar.dart';
+import 'package:maral_cosmetics/pages/new_products/parts/count_new_products.dart';
 import 'package:maral_cosmetics/pages/new_products/parts/new_products_gridview.dart';
 
 class NewProductsPage extends StatelessWidget {
@@ -14,7 +15,13 @@ class NewProductsPage extends StatelessWidget {
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
-        child: NewProductsGridview(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CountNewProducts(),
+            NewProductsGridview(),
+          ],
+        ),
       ),
     );
   }
