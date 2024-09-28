@@ -5,10 +5,21 @@ import 'package:maral_cosmetics/providers/pages/product.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class ProductImageSlider extends StatelessWidget {
-  const ProductImageSlider({super.key, required this.pageController});
+class ProductImageSlider extends StatefulWidget {
+  const ProductImageSlider({super.key});
 
-  final PageController pageController;
+  @override
+  State<ProductImageSlider> createState() => _ProductImageSliderState();
+}
+
+class _ProductImageSliderState extends State<ProductImageSlider> {
+  final PageController _pageController = PageController();
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +36,7 @@ class ProductImageSlider extends StatelessWidget {
                 onPageChanged: (value) {
                   ref.read(selectedProductImageProvider.notifier).state = value;
                 },
-                controller: pageController,
+                controller: _pageController,
                 pageSnapping: true,
                 itemCount: productSliders.length,
                 itemBuilder: (context, index) =>
@@ -40,7 +51,7 @@ class ProductImageSlider extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: SmoothPageIndicator(
-              controller: pageController,
+              controller: _pageController,
               count: productSliders.length,
               effect: WormEffect(
                 dotColor: Colors.white,

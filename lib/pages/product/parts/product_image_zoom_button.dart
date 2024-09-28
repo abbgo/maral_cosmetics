@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/pages/product.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class ProductImageZoomButton extends StatelessWidget {
@@ -10,7 +11,7 @@ class ProductImageZoomButton extends StatelessWidget {
       right: 10,
       bottom: 10,
       child: GestureDetector(
-        onTap: () {},
+        onTap: () => showProductImages(context),
         child: Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(

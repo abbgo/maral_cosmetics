@@ -3,29 +3,16 @@ import 'package:maral_cosmetics/pages/parts/product_card/parts/product_favorite_
 import 'package:maral_cosmetics/pages/product/parts/product_image_slider.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image_zoom_button.dart';
 
-class ProductImage extends StatefulWidget {
+class ProductImage extends StatelessWidget {
   const ProductImage({super.key});
 
   @override
-  State<ProductImage> createState() => _ProductImageState();
-}
-
-class _ProductImageState extends State<ProductImage> {
-  final PageController _pageController = PageController();
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Stack(
+    return const Stack(
       children: [
-        ProductImageSlider(pageController: _pageController),
-        const ProductFavoriteButton(top: 10, right: 10),
-        const ProductImageZoomButton(),
+        ProductImageSlider(),
+        ProductFavoriteButton(top: 10, right: 10),
+        ProductImageZoomButton(),
       ],
     );
   }
