@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_star.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class ProductStarAndPrice extends StatelessWidget {
@@ -13,24 +14,7 @@ class ProductStarAndPrice extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            const Icon(
-              Icons.star,
-              size: 14,
-              color: Color(0xffFFBB00),
-            ),
-            const SizedBox(width: 2),
-            Text(
-              '3.0',
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: 'HeyWowRegular',
-                color: defaultColor,
-              ),
-            ),
-          ],
-        ),
+        const ProductStar(),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
