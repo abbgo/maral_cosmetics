@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/styles/colors.dart';
 
 class ProductStar extends StatelessWidget {
   const ProductStar({super.key});
