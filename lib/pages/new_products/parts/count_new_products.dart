@@ -11,8 +11,9 @@ class CountNewProducts extends StatelessWidget {
         TextSpan(
           text: 'Harytlaryn sany: ',
           style: TextStyle(
-            fontFamily: 'HeyWowRegular',
+            fontFamily: 'Inter',
             fontWeight: FontWeight.bold,
+            fontSize: 16,
           ),
           children: [
             TextSpan(
