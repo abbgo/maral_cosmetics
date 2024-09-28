@@ -32,6 +32,7 @@ class _ProductPageState extends State<ProductPage> {
           children: [
             const ProductPageAppBar(),
             const ProductImage(),
+            const SizedBox(height: 12),
             const ProductCategoriesAndStar(),
             const SizedBox(height: 22),
             ProductButtons(forBasket: widget.forBasket),
