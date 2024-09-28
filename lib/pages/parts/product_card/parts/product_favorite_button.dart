@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ProductFavoriteButton extends StatelessWidget {
-  const ProductFavoriteButton({super.key});
+  const ProductFavoriteButton(
+      {super.key, required this.right, required this.top});
+
+  final double right, top;
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      right: 5,
-      top: 5,
+      right: right,
+      top: top,
       child: GestureDetector(
         onTap: () {},
         child: Container(

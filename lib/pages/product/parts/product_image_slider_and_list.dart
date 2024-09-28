@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_favorite_button.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image_slider.dart';
 
 class ProductImageSliderAndList extends StatefulWidget {
@@ -23,6 +24,7 @@ class _ProductImageSliderAndListState extends State<ProductImageSliderAndList> {
     return Stack(
       children: [
         ProductImageSlider(pageController: _pageController),
+        const ProductFavoriteButton(top: 10, right: 10),
       ],
     );
   }

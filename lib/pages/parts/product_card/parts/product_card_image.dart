@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/product_image.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_favorite_button.dart';
 
-class ProductImage extends StatelessWidget {
-  const ProductImage({super.key, required this.image});
+class ProductCardImage extends StatelessWidget {
+  const ProductCardImage({super.key, required this.image});
 
   final String image;
 
@@ -26,7 +26,7 @@ class ProductImage extends StatelessWidget {
             ],
           ),
         ),
-        const ProductFavoriteButton(),
+        const ProductFavoriteButton(top: 5, right: 5),
       ],
     );
   }

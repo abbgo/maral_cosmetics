@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
-import 'package:maral_cosmetics/pages/parts/product_card/parts/product_image.dart';
+import 'package:maral_cosmetics/pages/parts/product_card/parts/product_card_image.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_order_button.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_start_and_price.dart';
 import 'package:maral_cosmetics/pages/product/product.dart';
@@ -34,7 +34,7 @@ class ProductCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ProductImage(image: image),
+            ProductCardImage(image: image),
             const SizedBox(height: 10),
             const Column(
               children: [
