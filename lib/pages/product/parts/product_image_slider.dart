@@ -25,7 +25,7 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 280,
-      width: double.maxFinite,
+      width: double.infinity,
       child: Stack(
         alignment: const Alignment(0, 0.9),
         children: [
