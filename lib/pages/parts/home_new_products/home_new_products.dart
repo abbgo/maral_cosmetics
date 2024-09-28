@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/parts/home_new_products/parts/home_new_products_body.dart';
+import 'package:maral_cosmetics/pages/parts/home_new_products/parts/home_new_products_result.dart';
 import 'package:maral_cosmetics/pages/parts/home_title.dart';
 
 class HomeNewProducts extends StatelessWidget {
@@ -14,7 +14,7 @@ class HomeNewProducts extends StatelessWidget {
           text: 'In taze gosulanlar',
           onTap: () {},
         ),
-        const HomeNewProductsBody(),
+        const HomeNewProductsResult(),
       ],
     );
   }

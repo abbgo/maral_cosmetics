@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
 
-class HomeNewProductsBody extends StatelessWidget {
-  const HomeNewProductsBody({super.key});
+class HomeNewProductsResult extends StatelessWidget {
+  const HomeNewProductsResult({super.key});
 
   @override
   Widget build(BuildContext context) {
