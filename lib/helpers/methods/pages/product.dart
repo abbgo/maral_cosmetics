@@ -40,3 +40,22 @@ showProductImages(BuildContext context) {
     },
   );
 }
+
+Container productCategoryButtonMethod(
+    String text, Color color, Color? textColor) {
+  return Container(
+    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(6),
+      color: color,
+    ),
+    child: Text(
+      text,
+      style: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 12,
+        color: textColor,
+      ),
+    ),
+  );
+}

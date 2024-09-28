@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_buttons.dart';
-import 'package:maral_cosmetics/pages/product/parts/product_data.dart';
+import 'package:maral_cosmetics/pages/product/parts/product_categories_and_star.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_page_app_bar.dart';
@@ -32,7 +32,7 @@ class _ProductPageState extends State<ProductPage> {
           children: [
             const ProductPageAppBar(),
             const ProductImage(),
-            const ProductData(),
+            const ProductCategoriesAndStar(),
             const SizedBox(height: 22),
             ProductButtons(forBasket: widget.forBasket),
             const SizedBox(height: 22),
