@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/product/parts/product_buttons.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_categories_and_star.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_page_app_bar.dart';
+import 'package:maral_cosmetics/pages/product/parts/product_price_and_order_button.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key, required this.forBasket});
@@ -43,8 +43,9 @@ class _ProductPageState extends State<ProductPage> {
                 fontSize: 18,
               ),
             ),
-            ProductButtons(forBasket: widget.forBasket),
-            const SizedBox(height: 22),
+            const SizedBox(height: 12),
+            const ProductPriceAndOrderButton(),
+            const SizedBox(height: 12),
             ProductDescription(
               title: 'Dusundirilisi',
               description:
