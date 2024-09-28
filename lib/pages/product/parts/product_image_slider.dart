@@ -6,38 +6,9 @@ import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductImageSlider extends StatelessWidget {
-  const ProductImageSlider({
-    super.key,
-    required this.pageController,
-    required this.scrollController,
-    required this.menuKeys,
-  });
+  const ProductImageSlider({super.key, required this.pageController});
 
   final PageController pageController;
-  final ScrollController scrollController;
-  final List<GlobalKey> menuKeys;
-
-  void _scrollToItem(int index, BuildContext context) {
-    final keyContext = menuKeys[index].currentContext;
-    if (keyContext != null) {
-      // Get the position of the child relative to the screen
-      final box = keyContext.findRenderObject() as RenderBox;
-      final position = box.localToGlobal(Offset.zero);
-
-      // Get the screen width
-      final screenWidth = MediaQuery.of(context).size.width;
-
-      // Calculate the scroll offset if the item is off-screen
-      if (position.dx < 0 || position.dx + box.size.width > screenWidth) {
-        double offset = scrollController.offset + position.dx;
-        scrollController.animateTo(
-          offset,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInOut,
-        );
-      }
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +23,6 @@ class ProductImageSlider extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
               child: PageView.builder(
                 onPageChanged: (value) {
-                  _scrollToItem(value, context);
                   ref.read(selectedProductImageProvider.notifier).state = value;
                 },
                 controller: pageController,

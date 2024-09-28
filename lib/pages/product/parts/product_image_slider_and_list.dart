@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/examples/static_variables.dart';
-import 'package:maral_cosmetics/pages/product/parts/product_image_list.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image_slider.dart';
 
 class ProductImageSliderAndList extends StatefulWidget {
@@ -13,14 +11,10 @@ class ProductImageSliderAndList extends StatefulWidget {
 
 class _ProductImageSliderAndListState extends State<ProductImageSliderAndList> {
   final PageController _pageController = PageController();
-  final ScrollController _scrollController = ScrollController();
-  final List<GlobalKey> menuKeys =
-      List.generate(productSliders.length, (index) => GlobalKey());
 
   @override
   void dispose() {
     _pageController.dispose();
-    _scrollController.dispose();
     super.dispose();
   }
 
@@ -29,16 +23,7 @@ class _ProductImageSliderAndListState extends State<ProductImageSliderAndList> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        ProductImageSlider(
-          pageController: _pageController,
-          scrollController: _scrollController,
-          menuKeys: menuKeys,
-        ),
-        ProductImageList(
-          pageController: _pageController,
-          scrollController: _scrollController,
-          menuKeys: menuKeys,
-        ),
+        ProductImageSlider(pageController: _pageController),
       ],
     );
   }
