@@ -8,8 +8,21 @@ import 'package:maral_cosmetics/pages/home/parts/home_slider.dart';
 import 'package:maral_cosmetics/pages/parts/home_menus/home_menus.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/home_news.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
   const HomeBody({super.key});
+
+  @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
+  PageController pageController = PageController();
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,22 +30,28 @@ class HomeBody extends StatelessWidget {
       children: [
         const HomeMenus(),
         Expanded(
-          child: ListView(
-            children: const [
-              HomeSlider(),
-              SizedBox(height: 20),
-              HomeNewProducts(),
-              SizedBox(height: 20),
-              HomeDiscountProductsList(),
-              SizedBox(height: 20),
-              HomeNews(),
-              SizedBox(height: 20),
-              HomeAboutCosmetics(),
-              SizedBox(height: 20),
-              HomeBrands(),
-              SizedBox(height: 20),
-              HomeGalery(),
-              SizedBox(height: 20),
+          child: PageView(
+            controller: pageController,
+            children: [
+              ListView(
+                children: const [
+                  HomeSlider(),
+                  SizedBox(height: 20),
+                  HomeNewProducts(),
+                  SizedBox(height: 20),
+                  HomeDiscountProductsList(),
+                  SizedBox(height: 20),
+                  HomeNews(),
+                  SizedBox(height: 20),
+                  HomeAboutCosmetics(),
+                  SizedBox(height: 20),
+                  HomeBrands(),
+                  SizedBox(height: 20),
+                  HomeGalery(),
+                  SizedBox(height: 20),
+                ],
+              ),
+              const Center(child: Text('Categories page')),
             ],
           ),
         ),
