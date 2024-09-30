@@ -10,8 +10,24 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
+      shape: const Border.symmetric(),
+      tilePadding: const EdgeInsets.all(0),
+      childrenPadding: const EdgeInsets.all(0),
+      backgroundColor: const Color(0xfffffafc),
       leading: CategoryCardImage(image: category.image),
-      title: Text(category.name),
+      title: Text(
+        category.name,
+        style: const TextStyle(
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.bold,
+          fontSize: 16,
+        ),
+      ),
+      children: category.subcategories
+          .map(
+            (e) => ListTile(title: Text(e.name)),
+          )
+          .toList(),
     );
   }
 }
