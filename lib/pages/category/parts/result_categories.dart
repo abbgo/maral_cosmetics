@@ -16,13 +16,12 @@ class ResultCategories extends ConsumerWidget {
     bool hasData = ref.watch(hasCategoriesProvider);
     final bool loading = ref.watch(loadCategoryProvider);
 
-    return Stack(
-      children: [
-        !hasData
-            ? const NoResult()
-            : Padding(
-                padding: const EdgeInsets.only(left: 18, top: 18, right: 18),
-                child: ListView.builder(
+    return Expanded(
+      child: Stack(
+        children: [
+          !hasData
+              ? const NoResult()
+              : ListView.builder(
                   itemBuilder: (context, index) {
                     final page = index ~/ pageSize + 1;
                     final indexInPage = index % pageSize;
@@ -64,9 +63,9 @@ class ResultCategories extends ConsumerWidget {
                     );
                   },
                 ),
-              ),
-        loading ? loadWidget : const SizedBox(),
-      ],
+          loading ? loadWidget : const SizedBox(),
+        ],
+      ),
     );
   }
 }
