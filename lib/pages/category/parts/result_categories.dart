@@ -4,6 +4,7 @@ import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/category.dart';
 import 'package:maral_cosmetics/models/default_param.dart';
+import 'package:maral_cosmetics/pages/parts/category_card/category_card.dart';
 import 'package:maral_cosmetics/pages/parts/no_result.dart';
 import 'package:maral_cosmetics/providers/api/category.dart';
 import 'package:maral_cosmetics/providers/pages/categories.dart';
@@ -46,7 +47,7 @@ class ResultCategories extends ConsumerWidget {
 
                         CategoryModel category =
                             response.categories![indexInPage];
-                        return Text(category.name);
+                        return CategoryCard(category: category);
                       },
                       error: (error, stackTrace) => errorMethod(error),
                       loading: () {
