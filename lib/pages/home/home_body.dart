@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/category/category.dart';
 import 'package:maral_cosmetics/pages/parts/home_brands/home_brands.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_galery.dart';
 import 'package:maral_cosmetics/pages/parts/home_about_cosmetics/home_about_cosmetics.dart';
@@ -51,7 +52,7 @@ class _HomeBodyState extends State<HomeBody> {
                   SizedBox(height: 20),
                 ],
               ),
-              const Center(child: Text('Categories page')),
+              const CategoryPage(),
             ],
           ),
         ),
