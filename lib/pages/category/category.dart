@@ -9,8 +9,10 @@ class CategoryPage extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Kategoriya'),
+          SizedBox(height: 10),
           ResultCategories(),
         ],
       ),
