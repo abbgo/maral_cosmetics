@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/models/category.dart';
 import 'package:maral_cosmetics/models/default_param.dart';
+import 'package:maral_cosmetics/providers/pages/categories.dart';
 import 'package:maral_cosmetics/services/api/category.dart';
 
 final categoryApiProvider =
@@ -12,7 +13,7 @@ var fetchCategoriesProvider =
     ResultCategory result = ResultCategory.defaultResult();
 
     try {
-      String search = await ref.watch(brandSearchProvider);
+      String search = await ref.watch(categorySearchProvider);
 
       ResultCategory resultBrands =
           await ref.read(categoryApiProvider).fetchCategories(
@@ -22,8 +23,8 @@ var fetchCategoriesProvider =
               );
 
       if (search != '') {
-        ref.read(hasBrandsProvider.notifier).state =
-            resultBrands.brands!.isNotEmpty;
+        ref.read(hasCategoriesProvider.notifier).state =
+            resultBrands.categories!.isNotEmpty;
       }
 
       result = resultBrands;
@@ -31,7 +32,7 @@ var fetchCategoriesProvider =
       result = ResultCategory(error: e.toString());
     }
 
-    ref.read(loadBrandProvider.notifier).state = false;
+    ref.read(loadCategoryProvider.notifier).state = false;
     return result;
   },
 );
