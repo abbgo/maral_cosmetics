@@ -55,7 +55,6 @@ class _PaymentPageState extends State<PaymentPage> {
             Адрес:
             г. Ашхабад, ул. 1972 (Ататюрка), 82
             ИНН 101211007415''',
-              scrollController: _scrollController,
             ),
           ),
           const SizedBox(height: 20),
