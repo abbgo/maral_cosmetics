@@ -13,23 +13,29 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        HomeMenus(),
-        HomeSlider(),
-        SizedBox(height: 20),
-        HomeNewProducts(),
-        SizedBox(height: 20),
-        HomeDiscountProductsList(),
-        SizedBox(height: 20),
-        HomeNews(),
-        SizedBox(height: 20),
-        HomeAboutCosmetics(),
-        SizedBox(height: 20),
-        HomeBrands(),
-        SizedBox(height: 20),
-        HomeGalery(),
-        SizedBox(height: 20),
+    return Column(
+      children: [
+        const HomeMenus(),
+        Expanded(
+          child: ListView(
+            children: const [
+              HomeSlider(),
+              SizedBox(height: 20),
+              HomeNewProducts(),
+              SizedBox(height: 20),
+              HomeDiscountProductsList(),
+              SizedBox(height: 20),
+              HomeNews(),
+              SizedBox(height: 20),
+              HomeAboutCosmetics(),
+              SizedBox(height: 20),
+              HomeBrands(),
+              SizedBox(height: 20),
+              HomeGalery(),
+              SizedBox(height: 20),
+            ],
+          ),
+        ),
       ],
     );
   }
