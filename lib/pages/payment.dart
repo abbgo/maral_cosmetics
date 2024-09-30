@@ -7,21 +7,8 @@ import 'package:maral_cosmetics/pages/parts/payment_contact/payment_contact.dart
 import 'package:maral_cosmetics/pages/parts/payment_type/payment_type.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
 
-class PaymentPage extends StatefulWidget {
+class PaymentPage extends StatelessWidget {
   const PaymentPage({super.key});
-
-  @override
-  State<PaymentPage> createState() => _PaymentPageState();
-}
-
-class _PaymentPageState extends State<PaymentPage> {
-  final ScrollController _scrollController = ScrollController();
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,18 +18,17 @@ class _PaymentPageState extends State<PaymentPage> {
         title: const Text('Toleg'),
       ),
       body: ListView(
-        controller: _scrollController,
-        children: [
-          const PaymentType(),
-          const SizedBox(height: 20),
-          const CustomerPart(),
-          const SizedBox(height: 20),
-          const DeliveryType(),
-          const SizedBox(height: 20),
-          const DeliveryTime(),
-          const SizedBox(height: 20),
+        children: const [
+          PaymentType(),
+          SizedBox(height: 20),
+          CustomerPart(),
+          SizedBox(height: 20),
+          DeliveryType(),
+          SizedBox(height: 20),
+          DeliveryTime(),
+          SizedBox(height: 20),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: ProductDescription(
               title: 'Ulanyş şertleri',
               description:
@@ -57,10 +43,10 @@ class _PaymentPageState extends State<PaymentPage> {
             ИНН 101211007415''',
             ),
           ),
-          const SizedBox(height: 20),
-          const PaymentContact(),
-          const SizedBox(height: 20),
-          const BasketBottomPart(forBasket: false, btnText: 'Sargyt et'),
+          SizedBox(height: 20),
+          PaymentContact(),
+          SizedBox(height: 20),
+          BasketBottomPart(forBasket: false, btnText: 'Sargyt et'),
         ],
       ),
     );
