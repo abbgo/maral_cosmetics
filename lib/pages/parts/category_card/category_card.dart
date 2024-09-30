@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/models/category.dart';
 import 'package:maral_cosmetics/pages/parts/category_card/parts/category_card_image.dart';
+import 'package:maral_cosmetics/pages/parts/category_card/parts/sub_category_card.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({super.key, required this.category});
@@ -24,9 +25,7 @@ class CategoryCard extends StatelessWidget {
         ),
       ),
       children: category.subcategories
-          .map(
-            (e) => ListTile(title: Text(e.name)),
-          )
+          .map((e) => SubCategoryCard(subcategory: e))
           .toList(),
     );
   }
