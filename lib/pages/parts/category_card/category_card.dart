@@ -16,6 +16,11 @@ class CategoryCard extends StatelessWidget {
       childrenPadding: const EdgeInsets.all(0),
       backgroundColor: const Color(0xfffffafc),
       leading: CategoryCardImage(image: category.image),
+      trailing: AnimatedRotation(
+        turns: _isExpanded ? 0.25 : 0.0,
+        duration: const Duration(milliseconds: 300),
+        child: const Icon(Icons.arrow_drop_down),
+      ),
       title: Text(
         category.name,
         style: const TextStyle(
