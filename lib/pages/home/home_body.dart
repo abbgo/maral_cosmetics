@@ -28,7 +28,7 @@ class _HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const HomeMenus(),
+        HomeMenus(pageController: pageController),
         Expanded(
           child: PageView(
             controller: pageController,

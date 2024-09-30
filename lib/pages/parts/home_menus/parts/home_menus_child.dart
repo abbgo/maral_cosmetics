@@ -12,6 +12,7 @@ class HomeMenusChild extends ConsumerWidget {
     required this.menuKey,
     required this.scrollToItem,
     required this.isLast,
+    required this.pageController,
   });
 
   final String text;
@@ -19,6 +20,7 @@ class HomeMenusChild extends ConsumerWidget {
   final GlobalKey menuKey;
   final Function(int index) scrollToItem;
   final bool isLast;
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,6 +30,11 @@ class HomeMenusChild extends ConsumerWidget {
     return GestureDetector(
       onTap: () {
         ref.read(selectedHomeMenuProvider.notifier).state = menuIndex;
+        pageController.animateToPage(
+          menuIndex,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.linear,
+        );
         scrollToItem(menuIndex);
       },
       child: Container(

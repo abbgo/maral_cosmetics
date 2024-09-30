@@ -3,7 +3,9 @@ import 'package:maral_cosmetics/pages/parts/home_menus/parts/home_menus_child.da
 import 'package:maral_cosmetics/examples/static_variables.dart';
 
 class HomeMenus extends StatefulWidget {
-  const HomeMenus({super.key});
+  const HomeMenus({super.key, required this.pageController});
+
+  final PageController pageController;
 
   @override
   State<HomeMenus> createState() => _HomeMenusState();
@@ -59,6 +61,7 @@ class _HomeMenusState extends State<HomeMenus> {
           menuKey: menuKeys[index],
           scrollToItem: _scrollToItem,
           isLast: index == homeMenus.length - 1,
+          pageController: widget.pageController,
         ),
         separatorBuilder: (context, index) => const SizedBox(width: 10),
       ),
