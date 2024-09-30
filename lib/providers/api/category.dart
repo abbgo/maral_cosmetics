@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/models/category.dart';
 import 'package:maral_cosmetics/models/default_param.dart';
+import 'package:maral_cosmetics/providers/local_storadge.dart';
 import 'package:maral_cosmetics/providers/pages/categories.dart';
 import 'package:maral_cosmetics/services/api/category.dart';
 
@@ -13,6 +14,7 @@ var fetchCategoriesProvider =
     ResultCategory result = ResultCategory.defaultResult();
 
     try {
+      String lang = await ref.watch(langProvider);
       String search = await ref.watch(categorySearchProvider);
 
       ResultCategory resultBrands =
@@ -20,6 +22,7 @@ var fetchCategoriesProvider =
                 page: arg.page!,
                 pageSize: arg.pageSize!,
                 search: search,
+                lang: lang,
               );
 
       if (search != '') {
