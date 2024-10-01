@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CountNewProducts extends StatelessWidget {
-  const CountNewProducts({super.key});
+class CountProducts extends StatelessWidget {
+  const CountProducts({super.key});
 
   @override
   Widget build(BuildContext context) {
