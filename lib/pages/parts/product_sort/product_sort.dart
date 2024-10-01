@@ -12,6 +12,7 @@ class ProductSort extends StatelessWidget {
       filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
       child: Container(
         margin: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(20)),
