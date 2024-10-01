@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/models/category.dart';
-import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_app_bar_bottom.dart';
+import 'package:maral_cosmetics/pages/parts/product_sort_and_filter.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({super.key, required this.category});
@@ -21,7 +21,7 @@ class CategoryPage extends StatelessWidget {
         ),
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(80),
-          child: DIscountPageAppBarBottom(),
+          child: ProductSortAndFilter(),
         ),
       ),
     );

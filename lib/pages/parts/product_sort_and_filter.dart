@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_filter_button.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_sort_button.dart';
 
-class DIscountPageAppBarBottom extends StatelessWidget {
-  const DIscountPageAppBarBottom({super.key});
+class ProductSortAndFilter extends StatelessWidget {
+  const ProductSortAndFilter({super.key});
 
   @override
   Widget build(BuildContext context) {
