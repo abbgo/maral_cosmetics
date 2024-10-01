@@ -11,7 +11,14 @@ class CategoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(category.name),
+        title: Text(
+          category.name,
+          style: const TextStyle(
+            fontFamily: 'Inter',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(80),
           child: DIscountPageAppBarBottom(),
