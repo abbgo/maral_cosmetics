@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/models/category.dart';
+import 'package:maral_cosmetics/pages/category/category.dart';
 
 class SubCategoryCard extends StatelessWidget {
   const SubCategoryCard({super.key, required this.subcategory});
@@ -9,6 +11,13 @@ class SubCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () => Navigator.push(
+        context,
+        CustomPageRoute(
+          child: CategoryPage(category: subcategory),
+          direction: AxisDirection.left,
+        ),
+      ),
       contentPadding: const EdgeInsets.all(0),
       tileColor: const Color.fromRGBO(255, 255, 255, 1),
       title: Text(
