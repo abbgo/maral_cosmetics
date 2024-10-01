@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/category/parts/result_categories.dart';
+import 'package:maral_cosmetics/pages/categories/parts/result_categories.dart';
 
-class CategoryPage extends StatelessWidget {
-  const CategoryPage({super.key});
+class CategoriesPage extends StatelessWidget {
+  const CategoriesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
