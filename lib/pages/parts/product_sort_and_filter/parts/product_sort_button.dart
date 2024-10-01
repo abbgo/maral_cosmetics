@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DiscountProductsSortButton extends StatelessWidget {
-  const DiscountProductsSortButton({super.key});
+class ProductSortButton extends StatelessWidget {
+  const ProductSortButton({super.key});
 
   @override
   Widget build(BuildContext context) {

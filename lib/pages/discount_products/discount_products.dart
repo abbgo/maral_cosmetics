@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/parts/product_sort_and_filter.dart';
+import 'package:maral_cosmetics/pages/parts/product_sort_and_filter/product_sort_and_filter.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/title_and_timer_part.dart';
 import 'package:maral_cosmetics/pages/parts/products_gridview.dart';
 

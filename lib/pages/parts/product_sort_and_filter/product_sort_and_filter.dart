@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_filter_button.dart';
-import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_sort_button.dart';
+import 'package:maral_cosmetics/pages/parts/product_sort_and_filter/parts/product_filter_button.dart';
+import 'package:maral_cosmetics/pages/parts/product_sort_and_filter/parts/product_sort_button.dart';
 
 class ProductSortAndFilter extends StatelessWidget {
   const ProductSortAndFilter({super.key});
@@ -14,9 +14,9 @@ class ProductSortAndFilter extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              DiscountProductsSortButton(),
+              ProductSortButton(),
               SizedBox(width: 15),
-              DiscountProductsFilterButton(),
+              ProductFilterButton(),
             ],
           ),
           SizedBox(height: 16),

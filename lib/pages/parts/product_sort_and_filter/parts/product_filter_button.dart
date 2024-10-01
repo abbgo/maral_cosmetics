@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DiscountProductsFilterButton extends StatelessWidget {
-  const DiscountProductsFilterButton({super.key});
+class ProductFilterButton extends StatelessWidget {
+  const ProductFilterButton({super.key});
 
   @override
   Widget build(BuildContext context) {

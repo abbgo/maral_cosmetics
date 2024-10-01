@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/models/category.dart';
 import 'package:maral_cosmetics/pages/parts/count_products.dart';
-import 'package:maral_cosmetics/pages/parts/product_sort_and_filter.dart';
+import 'package:maral_cosmetics/pages/parts/product_sort_and_filter/product_sort_and_filter.dart';
 import 'package:maral_cosmetics/pages/parts/products_gridview.dart';
 
 class CategoryPage extends StatelessWidget {
