@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/product_card.dart';
 
-class DiscountProductsGridview extends StatelessWidget {
-  const DiscountProductsGridview({super.key});
+class ProductsGridview extends StatelessWidget {
+  const ProductsGridview({super.key});
 
   @override
   Widget build(BuildContext context) {

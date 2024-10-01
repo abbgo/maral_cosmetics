@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_app_bar_bottom.dart';
-import 'package:maral_cosmetics/pages/discount_products/parts/discount_products_gridview.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/title_and_timer_part.dart';
+import 'package:maral_cosmetics/pages/parts/products_gridview.dart';
 
 class DiscountProductsPage extends StatelessWidget {
   const DiscountProductsPage({super.key});
@@ -22,7 +22,7 @@ class DiscountProductsPage extends StatelessWidget {
           children: [
             TitleAndTimerPart(),
             SizedBox(height: 30),
-            DiscountProductsGridview(),
+            ProductsGridview(),
           ],
         ),
       ),
