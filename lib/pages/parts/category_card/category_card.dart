@@ -15,33 +15,36 @@ class CategoryCard extends StatefulWidget {
 class _CategoryCardState extends State<CategoryCard> {
   @override
   Widget build(BuildContext context) {
-    return ExpansionTile(
-      shape: const Border.symmetric(),
-      tilePadding: const EdgeInsets.all(0),
-      childrenPadding: const EdgeInsets.all(0),
-      backgroundColor: const Color(0xfffffafc),
-      leading: CategoryCardImage(image: widget.category.image),
-      trailing: AnimatedRotation(
-        turns: widget.category.isExpanded ? -0.25 : 0.0,
-        duration: const Duration(milliseconds: 300),
-        child: const Icon(Icons.arrow_drop_down),
-      ),
-      title: Text(
-        widget.category.name,
-        style: const TextStyle(
-          fontFamily: 'Roboto',
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
+    return Container(
+      color:
+          widget.category.isExpanded ? const Color(0xfffffafc) : Colors.white,
+      child: ExpansionTile(
+        shape: const Border.symmetric(),
+        tilePadding: const EdgeInsets.all(0),
+        childrenPadding: const EdgeInsets.all(0),
+        leading: CategoryCardImage(image: widget.category.image),
+        trailing: AnimatedRotation(
+          turns: widget.category.isExpanded ? 0.0 : -0.25,
+          duration: const Duration(milliseconds: 300),
+          child: const Icon(Icons.arrow_drop_down),
         ),
+        title: Text(
+          widget.category.name,
+          style: const TextStyle(
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        ),
+        children: widget.category.subcategories
+            .map((e) => SubCategoryCard(subcategory: e))
+            .toList(),
+        onExpansionChanged: (bool expanded) {
+          setState(() {
+            widget.category.isExpanded = expanded;
+          });
+        },
       ),
-      children: widget.category.subcategories
-          .map((e) => SubCategoryCard(subcategory: e))
-          .toList(),
-      onExpansionChanged: (bool expanded) {
-        setState(() {
-          widget.category.isExpanded = expanded;
-        });
-      },
     );
   }
 }

@@ -8,6 +8,9 @@ class SubCategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(title: Text(subcategory.name));
+    return ListTile(
+      tileColor: Colors.white,
+      title: Text(subcategory.name),
+    );
   }
 }
