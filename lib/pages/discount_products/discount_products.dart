@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/parts/product_sort_and_filter/product_sort_and_filter.dart';
+import 'package:maral_cosmetics/pages/parts/product_sort_and_filter_buttons/product_sort_and_filter_buttons.dart';
 import 'package:maral_cosmetics/pages/discount_products/parts/title_and_timer_part.dart';
 import 'package:maral_cosmetics/pages/parts/products_gridview.dart';
 
@@ -13,7 +13,7 @@ class DiscountProductsPage extends StatelessWidget {
         title: const Text('Arzanladyslar'),
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(80),
-          child: ProductSortAndFilter(),
+          child: ProductSortAndFilterButtons(),
         ),
       ),
       body: const Padding(
