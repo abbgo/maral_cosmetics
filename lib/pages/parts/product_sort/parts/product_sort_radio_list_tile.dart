@@ -24,8 +24,10 @@ class ProductSortRadioListTile extends ConsumerWidget {
       ),
       value: value,
       groupValue: sortProduct,
-      onChanged: (value) =>
-          ref.read(sortProductProvider.notifier).state = value!,
+      onChanged: (value) {
+        ref.read(sortProductProvider.notifier).state = value!;
+        Navigator.pop(context);
+      },
     );
   }
 }
