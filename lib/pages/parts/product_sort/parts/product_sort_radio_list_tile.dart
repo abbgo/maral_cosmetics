@@ -12,7 +12,16 @@ class ProductSortRadioListTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     String sortProduct = ref.watch(sortProductProvider);
     return RadioListTile.adaptive(
-      title: Text(title),
+      contentPadding: const EdgeInsets.all(0),
+      activeColor: const Color(0xffA16F8A),
+      title: Text(
+        title,
+        style: const TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       value: value,
       groupValue: sortProduct,
       onChanged: (value) =>
