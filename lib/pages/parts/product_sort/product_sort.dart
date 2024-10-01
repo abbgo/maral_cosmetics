@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/product_sort/parts/product_sort_title.dart';
 
 class ProductSort extends StatelessWidget {
   const ProductSort({super.key});
@@ -15,25 +16,9 @@ class ProductSort extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(20)),
         ),
-        child: Wrap(
+        child: const Wrap(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Tertiple',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () => Navigator.pop(context),
-                  icon: const Icon(Icons.close),
-                ),
-              ],
-            ),
+            ProductSortTitle(),
           ],
         ),
       ),
