@@ -21,9 +21,7 @@ class SubCategoryCard extends StatelessWidget {
       ),
       trailing: const RotatedBox(
         quarterTurns: 3,
-        child: Icon(
-          Icons.arrow_drop_down,
-        ),
+        child: Icon(Icons.arrow_drop_down),
       ),
     );
   }
