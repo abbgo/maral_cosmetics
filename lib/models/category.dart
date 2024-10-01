@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:maral_cosmetics/models/image.dart';
 
-class CategoryModel extends Equatable {
-  final String id, name;
-  final BlurImage image;
-  final List<CategoryModel> subcategories;
-  final bool isExpanded;
+class CategoryModel {
+  String id, name;
+  BlurImage image;
+  List<CategoryModel> subcategories;
+  bool isExpanded;
 
   CategoryModel({
     required this.id,
@@ -30,25 +30,6 @@ class CategoryModel extends Equatable {
       isExpanded: false,
     );
   }
-
-  CategoryModel copyWith({
-    String? id,
-    String? name,
-    BlurImage? image,
-    List<CategoryModel>? subcategories,
-    bool? isExpanded,
-  }) {
-    return CategoryModel(
-      id: id ?? this.id,
-      name: name ?? this.name,
-      image: image ?? this.image,
-      subcategories: subcategories ?? this.subcategories,
-      isExpanded: isExpanded ?? this.isExpanded,
-    );
-  }
-
-  @override
-  List<Object?> get props => [id, name, image, subcategories, isExpanded];
 }
 
 class ResultCategory extends Equatable {

@@ -15,7 +15,6 @@ class CategoryCard extends StatefulWidget {
 class _CategoryCardState extends State<CategoryCard> {
   @override
   Widget build(BuildContext context) {
-    print('------------------- ${widget.category.isExpanded}');
     return ExpansionTile(
       shape: const Border.symmetric(),
       tilePadding: const EdgeInsets.all(0),
@@ -40,7 +39,7 @@ class _CategoryCardState extends State<CategoryCard> {
           .toList(),
       onExpansionChanged: (bool expanded) {
         setState(() {
-          widget.category.copyWith(isExpanded: expanded);
+          widget.category.isExpanded = expanded;
         });
       },
     );
