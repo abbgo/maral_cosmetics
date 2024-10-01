@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/product_sort/parts/product_sort_radio_list_tile.dart';
 import 'package:maral_cosmetics/pages/parts/product_sort/parts/product_sort_title.dart';
 
 class ProductSort extends StatelessWidget {
@@ -20,6 +21,7 @@ class ProductSort extends StatelessWidget {
         child: const Wrap(
           children: [
             ProductSortTitle(),
+            ProductSortRadioListTile(title: 'Ahlisi', value: ''),
           ],
         ),
       ),
