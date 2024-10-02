@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/product_sort_button.dart';
 import 'package:maral_cosmetics/pages/parts/product_sort_and_filter_buttons/parts/product_filter_or_sort_button.dart';
+import 'package:maral_cosmetics/pages/product_filter/product_filter.dart';
 
 class ProductSortAndFilterButtons extends StatelessWidget {
   const ProductSortAndFilterButtons({super.key});
@@ -8,7 +10,7 @@ class ProductSortAndFilterButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, right: 20),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       child: Column(
         children: [
           Row(
@@ -23,7 +25,13 @@ class ProductSortAndFilterButtons extends StatelessWidget {
               ProductFilterOrSortButton(
                 text: 'Filtrele',
                 image: 'filter.png',
-                onTap: () => showSortBottomSheet(context),
+                onTap: () => Navigator.push(
+                  context,
+                  CustomPageRoute(
+                    child: const ProductFilterPage(),
+                    direction: AxisDirection.left,
+                  ),
+                ),
               ),
             ],
           ),
