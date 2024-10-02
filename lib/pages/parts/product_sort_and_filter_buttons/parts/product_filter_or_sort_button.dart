@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/helpers/methods/parts/product_sort_button.dart';
 
-class ProductSortButton extends StatelessWidget {
-  const ProductSortButton({super.key});
+class ProductFilterOrSortButton extends StatelessWidget {
+  const ProductFilterOrSortButton({
+    super.key,
+    required this.text,
+    required this.image,
+    required this.onTap,
+  });
+
+  final String text, image;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        onTap: () => showSortBottomSheet(context),
+        onTap: onTap,
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 12),
           decoration: BoxDecoration(
@@ -18,11 +25,11 @@ class ProductSortButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/images/sort.png'),
+              Image.asset('assets/images/$image'),
               const SizedBox(width: 10),
-              const Text(
-                'Tertiple',
-                style: TextStyle(
+              Text(
+                text,
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontFamily: 'HeyWowRegular',
                 ),
