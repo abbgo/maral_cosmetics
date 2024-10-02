@@ -30,7 +30,7 @@ class ProductPriceFilterPage extends StatelessWidget {
         ],
       ),
       body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.all(16),
         child: Row(
           children: [
             PriceInput(title: 'Min baha', hintText: '1 man'),
