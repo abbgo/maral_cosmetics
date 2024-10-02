@@ -41,7 +41,7 @@ class ProductsPage extends StatelessWidget {
           ),
         ],
       ),
-      body: const ResultProducts(),
+      body: ResultProducts(categoryID: category?.id, brandID: brand?.id),
     );
   }
 }
