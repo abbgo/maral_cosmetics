@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:maral_cosmetics/models/image.dart';
 
 class Product {
@@ -27,4 +28,19 @@ class Product {
       isLiked: json['isLiked'],
     );
   }
+}
+
+class ResultProduct extends Equatable {
+  final List<Product>? products;
+  final int? pageCount;
+  final String error;
+
+  const ResultProduct({this.products, this.pageCount, required this.error});
+
+  factory ResultProduct.defaultResult() {
+    return const ResultProduct(products: null, pageCount: null, error: '');
+  }
+
+  @override
+  List<Object?> get props => [products, pageCount, error];
 }
