@@ -11,8 +11,15 @@ class ProductFilterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      title: Text(text),
-      trailing: const Icon(Icons.arrow_forward_ios),
+      title: Text(
+        text,
+        style: const TextStyle(
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.bold,
+          fontSize: 14,
+        ),
+      ),
+      trailing: const Icon(Icons.chevron_right),
     );
   }
 }
