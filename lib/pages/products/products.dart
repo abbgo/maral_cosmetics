@@ -35,6 +35,12 @@ class ProductsPage extends StatelessWidget {
           preferredSize: Size.fromHeight(80),
           child: ProductSortAndFilterButtons(),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Image.asset('assets/images/search.png', height: 24),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
