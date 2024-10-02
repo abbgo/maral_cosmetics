@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/models/category.dart';
-import 'package:maral_cosmetics/pages/category/category.dart';
+import 'package:maral_cosmetics/pages/products/products.dart';
 
 class SubCategoryCard extends StatelessWidget {
   const SubCategoryCard({super.key, required this.subcategory});
@@ -14,7 +14,7 @@ class SubCategoryCard extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         CustomPageRoute(
-          child: CategoryPage(category: subcategory),
+          child: ProductsPage(category: subcategory),
           direction: AxisDirection.left,
         ),
       ),
