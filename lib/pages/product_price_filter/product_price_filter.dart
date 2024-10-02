@@ -18,6 +18,16 @@ class ProductPriceFilterPage extends StatelessWidget {
           ),
         ),
         bottom: appBarBottomMethod(),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Image.asset(
+              'assets/images/trash.png',
+              color: Colors.red,
+              height: 24,
+            ),
+          ),
+        ],
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
