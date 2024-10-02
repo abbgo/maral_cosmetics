@@ -7,20 +7,16 @@ import 'package:http/http.dart' as http;
 
 class ProductApiService {
   // fetch products -------------------------------------------------------
-  Future<ResultProduct> fetchProducts({
-    required int page,
-    required int pageSize,
-    required String search,
-  }) async {
-    Uri uri = Uri.parse('$apiUrl/category/brands').replace(
-      queryParameters: {
-        'pageSize': pageSize.toString(),
-        'page': '$page',
-        'search': search,
-      },
-    );
+  Future<ResultProduct> fetchProducts(
+      {required ProductParams productParams}) async {
+    Uri uri = Uri.parse('$apiUrl/products/all');
+
     try {
-      http.Response response = await http.get(uri);
+      http.Response response = await http.post(
+        uri,
+        headers: {'Accept-Language': productParams.lang},
+        body: json.encode(productParams.toJson()),
+      );
       var jsonData = json.decode(response.body);
 
       if (response.statusCode == 200 && jsonData['success']) {
@@ -54,7 +50,7 @@ class ProductParams extends Equatable {
   final List<String> categories;
   final List<String> brands;
   final num? priceFrom, priceTo;
-  final String ordering, search;
+  final String ordering, search, lang;
   final bool? isLiked;
   final int page, pageSize;
 
@@ -68,7 +64,22 @@ class ProductParams extends Equatable {
     required this.page,
     required this.pageSize,
     this.isLiked,
+    required this.lang,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'categories': categories,
+      'brands': brands,
+      'priceFrom': priceFrom,
+      'priceTo': priceTo,
+      'ordering': ordering,
+      'search': search,
+      'page': page,
+      'pageSize': pageSize,
+      'isLiked': isLiked,
+    };
+  }
 
   @override
   List<Object?> get props => [
@@ -81,5 +92,6 @@ class ProductParams extends Equatable {
         page,
         pageSize,
         isLiked,
+        lang,
       ];
 }
