@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/pages/categories/categories.dart';
-import 'package:maral_cosmetics/pages/parts/brands_part.dart';
+import 'package:maral_cosmetics/pages/home/parts/brands_part.dart';
 import 'package:maral_cosmetics/pages/parts/home_brands/home_brands.dart';
 import 'package:maral_cosmetics/pages/home/parts/home_galery.dart';
 import 'package:maral_cosmetics/pages/parts/home_about_cosmetics/home_about_cosmetics.dart';
