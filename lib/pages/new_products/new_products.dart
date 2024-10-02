@@ -13,11 +13,10 @@ class NewProductsPage extends StatelessWidget {
         title: const Text('In taze gosulanlar'),
         bottom: appBarBottomMethod(),
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: ListView(
+          children: const [
             CountProducts(),
             ProductsGridview(),
           ],
