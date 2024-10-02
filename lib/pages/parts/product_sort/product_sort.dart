@@ -11,29 +11,43 @@ class ProductSort extends StatelessWidget {
   Widget build(BuildContext context) {
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
-      child: Container(
-        margin: const EdgeInsets.all(20),
-        padding: const EdgeInsets.all(20),
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-        ),
-        child: const Wrap(
-          children: [
-            ProductSortTitle(),
-            ProductSortRadioListTile(title: 'Ahlisi', value: ''),
-            ProductSortRadioListTile(
-                title: 'Iň meşhurlar', value: 'most_popular'),
-            ProductSortRadioListTile(
-                title: 'Arzandan gymmada', value: 'price_min_to_max'),
-            ProductSortRadioListTile(
-                title: 'Gymmatdan arzana', value: 'price_max_to_min'),
-            ProductSortRadioListTile(
-                title: 'Ady boýunça ( A-Z )', value: 'a_z'),
-            ProductSortRadioListTile(
-                title: 'Ady boýunça ( Z - A )', value: 'z_a'),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            height: 6,
+            width: 56,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(13),
+              color: const Color(0XFFD1D1D1),
+            ),
+          ),
+          Container(
+            margin:
+                const EdgeInsets.only(left: 20, top: 8, right: 20, bottom: 20),
+            padding: const EdgeInsets.all(20),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+            ),
+            child: const Wrap(
+              children: [
+                ProductSortTitle(),
+                ProductSortRadioListTile(title: 'Ahlisi', value: ''),
+                ProductSortRadioListTile(
+                    title: 'Iň meşhurlar', value: 'most_popular'),
+                ProductSortRadioListTile(
+                    title: 'Arzandan gymmada', value: 'price_min_to_max'),
+                ProductSortRadioListTile(
+                    title: 'Gymmatdan arzana', value: 'price_max_to_min'),
+                ProductSortRadioListTile(
+                    title: 'Ady boýunça ( A-Z )', value: 'a_z'),
+                ProductSortRadioListTile(
+                    title: 'Ady boýunça ( Z - A )', value: 'z_a'),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
