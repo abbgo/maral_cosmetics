@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/app_bar.dart';
 import 'package:maral_cosmetics/pages/product_filter/parts/product_filter_button.dart';
+import 'package:maral_cosmetics/pages/product_price_filter/product_price_filter.dart';
 
 class ProductFilterPage extends StatelessWidget {
   const ProductFilterPage({super.key});
@@ -24,7 +26,16 @@ class ProductFilterPage extends StatelessWidget {
         child: Column(
           children: [
             ProductFilterButton(text: 'Brend', onTap: () {}),
-            ProductFilterButton(text: 'Bahasy', onTap: () {}),
+            ProductFilterButton(
+              text: 'Bahasy',
+              onTap: () => Navigator.push(
+                context,
+                CustomPageRoute(
+                  child: const ProductPriceFilterPage(),
+                  direction: AxisDirection.left,
+                ),
+              ),
+            ),
           ],
         ),
       ),
