@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/app_bar.dart';
+import 'package:maral_cosmetics/pages/product_price_filter/parts/price_input.dart';
 
 class ProductPriceFilterPage extends StatelessWidget {
   const ProductPriceFilterPage({super.key});
@@ -18,10 +19,13 @@ class ProductPriceFilterPage extends StatelessWidget {
         ),
         bottom: appBarBottomMethod(),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: Row(
-          children: [],
+          children: [
+            PriceInput(),
+            PriceInput(),
+          ],
         ),
       ),
     );
