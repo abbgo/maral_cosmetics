@@ -23,8 +23,9 @@ class ProductPriceFilterPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            PriceInput(),
-            PriceInput(),
+            PriceInput(title: 'Min baha', hintText: '1 man'),
+            SizedBox(width: 12),
+            PriceInput(title: 'Max baha', hintText: '1000 man'),
           ],
         ),
       ),
