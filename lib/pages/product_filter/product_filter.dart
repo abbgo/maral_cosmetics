@@ -23,7 +23,6 @@ class ProductFilterPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            ProductFilterButton(text: 'Harydyň görnüşi', onTap: () {}),
             ProductFilterButton(text: 'Brend', onTap: () {}),
             ProductFilterButton(text: 'Bahasy', onTap: () {}),
           ],
