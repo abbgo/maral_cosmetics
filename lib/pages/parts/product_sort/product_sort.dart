@@ -33,17 +33,17 @@ class ProductSort extends StatelessWidget {
             child: const Wrap(
               children: [
                 ProductSortTitle(),
-                ProductSortRadioListTile(title: 'Ahlisi', value: ''),
+                ProductSortRadioListTile(title: 'Ahlisi', value: 'all'),
                 ProductSortRadioListTile(
-                    title: 'Iň meşhurlar', value: 'most_popular'),
+                    title: 'Iň meşhurlar', value: 'popular'),
                 ProductSortRadioListTile(
-                    title: 'Arzandan gymmada', value: 'price_min_to_max'),
+                    title: 'Arzandan gymmada', value: 'priceASC'),
                 ProductSortRadioListTile(
-                    title: 'Gymmatdan arzana', value: 'price_max_to_min'),
+                    title: 'Gymmatdan arzana', value: 'priceDESC'),
                 ProductSortRadioListTile(
-                    title: 'Ady boýunça ( A-Z )', value: 'a_z'),
+                    title: 'Ady boýunça ( A-Z )', value: 'nameASC'),
                 ProductSortRadioListTile(
-                    title: 'Ady boýunça ( Z - A )', value: 'z_a'),
+                    title: 'Ady boýunça ( Z - A )', value: 'nameDESC'),
               ],
             ),
           ),
