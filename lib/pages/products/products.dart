@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/models/brand.dart';
 import 'package:maral_cosmetics/models/category.dart';
-import 'package:maral_cosmetics/pages/parts/count_products.dart';
 import 'package:maral_cosmetics/pages/parts/product_sort_and_filter_buttons/product_sort_and_filter_buttons.dart';
-import 'package:maral_cosmetics/pages/parts/products_gridview.dart';
+import 'package:maral_cosmetics/pages/products/parts/result_products.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({super.key, this.category, this.brand});
@@ -42,15 +41,7 @@ class ProductsPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: ListView(
-          children: const [
-            CountProducts(),
-            ProductsGridview(),
-          ],
-        ),
-      ),
+      body: const ResultProducts(),
     );
   }
 }
