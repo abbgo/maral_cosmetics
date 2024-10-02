@@ -47,8 +47,7 @@ class ProductApiService {
 }
 
 class ProductParams extends Equatable {
-  final List<String> categories;
-  final List<String> brands;
+  final List<String> categories, brands;
   final num? priceFrom, priceTo;
   final String ordering, search, lang;
   final bool? isLiked;
