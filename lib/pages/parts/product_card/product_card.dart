@@ -62,3 +62,33 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
+
+class ProductCardStatic extends StatelessWidget {
+  const ProductCardStatic({
+    super.key,
+    this.isFisrt,
+    this.isLast,
+  });
+
+  final bool? isFisrt, isLast;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () =>
+          goToPage(context, const ProductPage(forBasket: false), false),
+      child: Container(
+        width: 160,
+        margin: isFisrt != null && isLast != null
+            ? EdgeInsets.only(left: isFisrt! ? 5 : 0, right: isLast! ? 5 : 0)
+            : null,
+        padding: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: const Center(child: Text('Haryt')),
+      ),
+    );
+  }
+}
