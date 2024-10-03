@@ -10,12 +10,12 @@ class ProductCard extends StatelessWidget {
   const ProductCard({
     super.key,
     required this.product,
-    this.isFisrt,
-    this.isLast,
+    // this.isFisrt,
+    // this.isLast,
   });
 
   final Product product;
-  final bool? isFisrt, isLast;
+  // final bool? isFisrt, isLast;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +24,9 @@ class ProductCard extends StatelessWidget {
           goToPage(context, const ProductPage(forBasket: false), false),
       child: Container(
         width: 160,
-        margin: isFisrt != null && isLast != null
-            ? EdgeInsets.only(left: isFisrt! ? 5 : 0, right: isLast! ? 5 : 0)
-            : null,
+        // margin: isFisrt != null && isLast != null
+        //     ? EdgeInsets.only(left: isFisrt! ? 5 : 0, right: isLast! ? 5 : 0)
+        //     : null,
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           color: Colors.white,
