@@ -19,7 +19,7 @@ class ProductApiService {
       );
       var jsonData = json.decode(response.body);
 
-      if (response.statusCode == 200 && jsonData['success']) {
+      if (jsonData['statusCode'] == 200 && jsonData['success']) {
         int pageCount = jsonData['data']['pageCount'] as int;
 
         if (jsonData['data']['rows'] == []) {
@@ -30,7 +30,7 @@ class ProductApiService {
           );
         }
 
-        var data = jsonData['data']['rows'] as List;
+        List<dynamic> data = jsonData['data']['rows'] as List;
         return ResultProduct(
           products: data
               .map<Product>((propJson) => Product.fromJson(propJson))

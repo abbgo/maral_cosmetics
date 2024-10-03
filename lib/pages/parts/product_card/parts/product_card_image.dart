@@ -5,6 +5,7 @@ import 'package:maral_cosmetics/pages/parts/product_card/parts/product_favorite_
 class ProductCardImage extends StatelessWidget {
   const ProductCardImage({super.key, required this.image});
 
+  // final BlurImage image;
   final String image;
 
   @override
@@ -14,6 +15,16 @@ class ProductCardImage extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Image.asset(image, fit: BoxFit.cover, height: 140),
+          // child: SizedBox(
+          //   height: 140,
+          //   child: BlurHash(
+          //     errorBuilder: (context, error, stackTrace) => loadWidget,
+          //     curve: Curves.easeOut,
+          //     hash: image.hashblur,
+          //     image: '$pathUrl/${image.url}',
+          //     imageFit: BoxFit.cover,
+          //   ),
+          // ),
         ),
         Positioned(
           top: 5,

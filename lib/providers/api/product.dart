@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/models/default_param.dart';
 import 'package:maral_cosmetics/models/product.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
 import 'package:maral_cosmetics/providers/pages/products.dart';
@@ -7,7 +8,7 @@ import 'package:maral_cosmetics/services/api/product.dart';
 final productApiProvider =
     Provider<ProductApiService>((ref) => ProductApiService());
 
-var fetchProductsProvider = FutureProvider.family<ResultProduct, ProductParams>(
+var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
   (ref, arg) async {
     ResultProduct result = ResultProduct.defaultResult();
 
@@ -20,8 +21,8 @@ var fetchProductsProvider = FutureProvider.family<ResultProduct, ProductParams>(
         brands: const [],
         ordering: 'all',
         search: search,
-        page: arg.page,
-        pageSize: arg.pageSize,
+        page: arg.page!,
+        pageSize: arg.pageSize!,
         lang: lang,
       );
 

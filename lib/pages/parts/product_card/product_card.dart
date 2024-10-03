@@ -8,11 +8,13 @@ import 'package:maral_cosmetics/pages/product/product.dart';
 class ProductCard extends StatelessWidget {
   const ProductCard({
     super.key,
+    // required this.product,
     required this.image,
     this.isFisrt,
     this.isLast,
   });
 
+  // final Product product;
   final String image;
   final bool? isFisrt, isLast;
 
@@ -34,6 +36,7 @@ class ProductCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            // ProductCardImage(image: product.images[0]),
             ProductCardImage(image: image),
             const SizedBox(height: 10),
             const Column(
