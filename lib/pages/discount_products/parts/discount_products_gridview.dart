@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/examples/static_variables.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/product_card.dart';
 
 class DiscountProductsGridview extends StatelessWidget {
@@ -16,8 +15,7 @@ class DiscountProductsGridview extends StatelessWidget {
           mainAxisSpacing: 10,
           mainAxisExtent: 275,
         ),
-        itemBuilder: (context, index) =>
-            ProductCard(image: homeDiscountProducts.first),
+        itemBuilder: (context, index) => const ProductCardStatic(),
       ),
     );
   }

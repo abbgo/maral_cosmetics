@@ -12,8 +12,7 @@ class HomeNewProductsResult extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return ProductCard(
-            image: homeDiscountProducts[index],
+          return ProductCardStatic(
             isFisrt: index == 0,
             isLast: index == homeDiscountProducts.length - 1,
           );
