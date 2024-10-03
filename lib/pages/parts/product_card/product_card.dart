@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
+import 'package:maral_cosmetics/models/product.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_card_image.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_order_button.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_star_and_price.dart';
@@ -8,14 +9,12 @@ import 'package:maral_cosmetics/pages/product/product.dart';
 class ProductCard extends StatelessWidget {
   const ProductCard({
     super.key,
-    // required this.product,
-    required this.image,
+    required this.product,
     this.isFisrt,
     this.isLast,
   });
 
-  // final Product product;
-  final String image;
+  final Product product;
   final bool? isFisrt, isLast;
 
   @override
@@ -36,8 +35,7 @@ class ProductCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // ProductCardImage(image: product.images[0]),
-            ProductCardImage(image: image),
+            ProductCardImage(image: product.images[0]),
             const SizedBox(height: 10),
             const Column(
               children: [
