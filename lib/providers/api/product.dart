@@ -15,9 +15,10 @@ var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
     try {
       String lang = await ref.watch(langProvider);
       String search = await ref.watch(productSearchProvider);
+      List<String> categoryIDs = await ref.watch(categoryIDsProvider);
 
       ProductParams productParams = ProductParams(
-        categories: const [],
+        categories: categoryIDs,
         brands: const [],
         ordering: 'all',
         search: search,
