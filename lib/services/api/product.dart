@@ -21,11 +21,13 @@ class ProductApiService {
 
       if (jsonData['statusCode'] == 200 && jsonData['success']) {
         int pageCount = jsonData['data']['pageCount'] as int;
+        int count = jsonData['data']['count'] as int;
 
         if (jsonData['data']['rows'] == []) {
           return ResultProduct(
             products: const [],
             pageCount: pageCount,
+            count: count,
             error: '',
           );
         }
@@ -36,10 +38,16 @@ class ProductApiService {
               .map<Product>((propJson) => Product.fromJson(propJson))
               .toList(),
           pageCount: pageCount,
+          count: count,
           error: '',
         );
       }
-      return const ResultProduct(products: [], pageCount: 0, error: '');
+      return const ResultProduct(
+        products: [],
+        pageCount: 0,
+        count: 0,
+        error: '',
+      );
     } catch (e) {
       rethrow;
     }
