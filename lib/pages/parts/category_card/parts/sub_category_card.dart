@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/models/category.dart';
 import 'package:maral_cosmetics/pages/products/products.dart';
+import 'package:maral_cosmetics/providers/pages/products.dart';
 
-class SubCategoryCard extends StatelessWidget {
+class SubCategoryCard extends ConsumerWidget {
   const SubCategoryCard({super.key, required this.subcategory});
 
   final CategoryModel subcategory;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
-      onTap: () => Navigator.push(
-        context,
-        CustomPageRoute(
-          child: ProductsPage(category: subcategory),
-          direction: AxisDirection.left,
-        ),
-      ),
+      onTap: () async {
+        await ref
+            .read(categoryIDsProvider.notifier)
+            .addCategoryID(subcategory.id);
+        if (context.mounted) {
+          Navigator.push(
+            context,
+            CustomPageRoute(
+              child: ProductsPage(category: subcategory),
+              direction: AxisDirection.left,
+            ),
+          );
+        }
+      },
       contentPadding: const EdgeInsets.all(0),
       tileColor: const Color.fromRGBO(255, 255, 255, 1),
       title: Text(
