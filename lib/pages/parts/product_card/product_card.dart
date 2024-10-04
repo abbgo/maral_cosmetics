@@ -31,13 +31,16 @@ class ProductCard extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  product.name,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontFamily: 'HeyWowRegular',
-                    fontSize: 12,
+                SizedBox(
+                  height: 40,
+                  child: Text(
+                    product.name,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontFamily: 'HeyWowRegular',
+                      fontSize: 12,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 5),
