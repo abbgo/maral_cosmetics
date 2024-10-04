@@ -6,4 +6,9 @@ class CategoryIDsNotifier extends StateNotifier<List<String>> {
   Future<void> addCategoryID(String id) async {
     state = [...state, id];
   }
+
+  Future<void> setCategoryID(String id) async {
+    state = [];
+    state = [...state, id];
+  }
 }

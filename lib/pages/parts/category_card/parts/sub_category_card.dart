@@ -16,7 +16,7 @@ class SubCategoryCard extends ConsumerWidget {
       onTap: () async {
         await ref
             .read(categoryIDsProvider.notifier)
-            .addCategoryID(subcategory.id);
+            .setCategoryID(subcategory.id);
         if (context.mounted) {
           Navigator.push(
             context,

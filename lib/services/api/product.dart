@@ -11,6 +11,9 @@ class ProductApiService {
       {required ProductParams productParams}) async {
     Uri uri = Uri.parse('$apiUrl/products/all');
 
+    print('=========================================');
+    print(productParams.toJson());
+
     try {
       http.Response response = await http.post(
         uri,
