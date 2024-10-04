@@ -8,3 +8,6 @@ final loadProductsProvider = StateProvider<bool>((ref) => true);
 var categoryIDsProvider =
     StateNotifierProvider<CategoryIDsNotifier, List<String>>(
         (ref) => CategoryIDsNotifier());
+
+var brandIDsProvider = StateNotifierProvider<BrandIDsNotifier, List<String>>(
+    (ref) => BrandIDsNotifier());
