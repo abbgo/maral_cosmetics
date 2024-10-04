@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/models/product.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_categories_and_star.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_description.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image.dart';
@@ -7,9 +8,11 @@ import 'package:maral_cosmetics/pages/product/parts/product_price_and_order_butt
 import 'package:maral_cosmetics/pages/product/parts/similar_products.dart';
 
 class ProductPage extends StatelessWidget {
-  const ProductPage({super.key, required this.forBasket});
+  const ProductPage(
+      {super.key, required this.forBasket, required this.product});
 
   final bool forBasket;
+  final Product product;
 
   @override
   Widget build(BuildContext context) {

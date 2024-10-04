@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_data.dart';
 import 'package:maral_cosmetics/pages/favorites/parts/favorite_product_images_slider.dart';
-import 'package:maral_cosmetics/pages/product/product.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
 class BasketProductCard extends StatelessWidget {
@@ -13,7 +11,7 @@ class BasketProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => goToPage(context, const ProductPage(forBasket: true), false),
+      onTap: () => print('ProductPage sahypa gitmeli'),
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
