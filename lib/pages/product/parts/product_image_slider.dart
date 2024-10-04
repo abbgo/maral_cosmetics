@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:maral_cosmetics/examples/static_variables.dart';
+import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
+import 'package:maral_cosmetics/helpers/static_data.dart';
+import 'package:maral_cosmetics/models/image.dart';
 import 'package:maral_cosmetics/providers/pages/product.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductImageSlider extends ConsumerStatefulWidget {
-  const ProductImageSlider({super.key});
+  const ProductImageSlider({super.key, required this.images});
+
+  final List<BlurImage> images;
 
   @override
   ConsumerState<ProductImageSlider> createState() => _ProductImageSliderState();
@@ -38,9 +43,17 @@ class _ProductImageSliderState extends ConsumerState<ProductImageSlider> {
                   ref.read(selectedProductImageProvider.notifier).state = value,
               controller: _pageController,
               pageSnapping: true,
-              itemCount: productSliders.length,
-              itemBuilder: (context, index) =>
-                  Image.asset(productSliders[index], fit: BoxFit.cover),
+              itemCount: widget.images.length,
+              itemBuilder: (context, index) {
+                BlurImage image = widget.images[index];
+                return BlurHash(
+                  errorBuilder: (context, error, stackTrace) => loadWidget,
+                  curve: Curves.easeOut,
+                  hash: image.hashblur,
+                  image: '$pathUrl/${image.url}',
+                  imageFit: BoxFit.cover,
+                );
+              },
             ),
           ),
           Container(
@@ -51,7 +64,7 @@ class _ProductImageSliderState extends ConsumerState<ProductImageSlider> {
             ),
             child: SmoothPageIndicator(
               controller: _pageController,
-              count: productSliders.length,
+              count: widget.images.length,
               effect: WormEffect(
                 dotColor: Colors.white,
                 dotHeight: 8,

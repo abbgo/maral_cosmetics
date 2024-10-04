@@ -20,13 +20,13 @@ class ProductPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
-          children: const [
-            ProductPageAppBar(),
-            ProductImage(),
-            SizedBox(height: 12),
-            ProductCategoriesAndStar(),
-            SizedBox(height: 12),
-            Text(
+          children: [
+            const ProductPageAppBar(),
+            ProductImage(product: product),
+            const SizedBox(height: 12),
+            const ProductCategoriesAndStar(),
+            const SizedBox(height: 12),
+            const Text(
               'FLORMAR Göz üçin galam Eyeliner Pencil (Ultra Black)',
               style: TextStyle(
                 fontFamily: 'Inter',
@@ -34,15 +34,15 @@ class ProductPage extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            SizedBox(height: 12),
-            ProductPriceAndOrderButton(),
-            SizedBox(height: 12),
-            ProductDescription(
+            const SizedBox(height: 12),
+            const ProductPriceAndOrderButton(),
+            const SizedBox(height: 12),
+            const ProductDescription(
               title: 'Barada',
               description:
                   'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. ',
             ),
-            SimilarProducts(),
+            const SimilarProducts(),
           ],
         ),
       ),

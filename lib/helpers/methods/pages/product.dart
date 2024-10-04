@@ -32,7 +32,7 @@ showProductImages(BuildContext context) {
                 ),
               ),
               const SizedBox(height: 160),
-              const ProductImageSlider(),
+              const ProductImageSlider(images: []),
             ],
           ),
         ),
