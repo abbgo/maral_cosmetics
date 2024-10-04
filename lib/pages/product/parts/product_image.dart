@@ -13,7 +13,7 @@ class ProductImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ProductImageSlider(images: product.images),
+        ProductImageSlider(images: product.images, forZoom: false),
         const ProductFavoriteButton(top: 10, right: 10),
         ProductImageZoomButton(images: product.images),
       ],

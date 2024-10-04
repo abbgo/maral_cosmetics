@@ -9,9 +9,11 @@ import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductImageSlider extends ConsumerStatefulWidget {
-  const ProductImageSlider({super.key, required this.images});
+  const ProductImageSlider(
+      {super.key, required this.images, required this.forZoom});
 
   final List<BlurImage> images;
+  final bool forZoom;
 
   @override
   ConsumerState<ProductImageSlider> createState() => _ProductImageSliderState();
@@ -46,13 +48,27 @@ class _ProductImageSliderState extends ConsumerState<ProductImageSlider> {
               itemCount: widget.images.length,
               itemBuilder: (context, index) {
                 BlurImage image = widget.images[index];
-                return BlurHash(
-                  errorBuilder: (context, error, stackTrace) => loadWidget,
-                  curve: Curves.easeOut,
-                  hash: image.hashblur,
-                  image: '$pathUrl/${image.url}',
-                  imageFit: BoxFit.cover,
-                );
+                return widget.forZoom
+                    ? InteractiveViewer(
+                        minScale: 0.5,
+                        maxScale: 2,
+                        child: BlurHash(
+                          errorBuilder: (context, error, stackTrace) =>
+                              loadWidget,
+                          curve: Curves.easeOut,
+                          hash: image.hashblur,
+                          image: '$pathUrl/${image.url}',
+                          imageFit: BoxFit.cover,
+                        ),
+                      )
+                    : BlurHash(
+                        errorBuilder: (context, error, stackTrace) =>
+                            loadWidget,
+                        curve: Curves.easeOut,
+                        hash: image.hashblur,
+                        image: '$pathUrl/${image.url}',
+                        imageFit: BoxFit.cover,
+                      );
               },
             ),
           ),

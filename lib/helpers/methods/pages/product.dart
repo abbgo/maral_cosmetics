@@ -33,7 +33,7 @@ showProductImages(BuildContext context, List<BlurImage> images) {
                 ),
               ),
               const SizedBox(height: 160),
-              ProductImageSlider(images: images),
+              ProductImageSlider(images: images, forZoom: true),
             ],
           ),
         ),
