@@ -7,15 +7,9 @@ import 'package:maral_cosmetics/pages/parts/product_card/parts/product_star_and_
 import 'package:maral_cosmetics/pages/product/product.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({
-    super.key,
-    required this.product,
-    // this.isFisrt,
-    // this.isLast,
-  });
+  const ProductCard({super.key, required this.product});
 
   final Product product;
-  // final bool? isFisrt, isLast;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +18,6 @@ class ProductCard extends StatelessWidget {
           goToPage(context, const ProductPage(forBasket: false), false),
       child: Container(
         width: 160,
-        // margin: isFisrt != null && isLast != null
-        //     ? EdgeInsets.only(left: isFisrt! ? 5 : 0, right: isLast! ? 5 : 0)
-        //     : null,
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -37,21 +28,25 @@ class ProductCard extends StatelessWidget {
           children: [
             ProductCardImage(image: product.images[0]),
             const SizedBox(height: 10),
-            const Column(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'FLORMAR Göz üçin galam Eyeliner Pencil (Ultra Black)',
+                  product.name,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontFamily: 'HeyWowRegular', fontSize: 12),
+                  style: const TextStyle(
+                    fontFamily: 'HeyWowRegular',
+                    fontSize: 12,
+                  ),
                 ),
-                SizedBox(height: 5),
-                ProductStarAndPrice(
+                const SizedBox(height: 5),
+                const ProductStarAndPrice(
                   fontSizePrice: 12,
                   fontSizeOldPrice: 8,
                 ),
-                SizedBox(height: 5),
-                ProductOrderButton(),
+                const SizedBox(height: 5),
+                const ProductOrderButton(),
               ],
             ),
           ],
