@@ -26,7 +26,7 @@ class ProductCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ProductCardImage(image: product.images[0]),
+            ProductCardImage(images: product.images),
             const SizedBox(height: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
