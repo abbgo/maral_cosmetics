@@ -15,7 +15,7 @@ class ProductImage extends StatelessWidget {
       children: [
         ProductImageSlider(images: product.images),
         const ProductFavoriteButton(top: 10, right: 10),
-        const ProductImageZoomButton(),
+        ProductImageZoomButton(images: product.images),
       ],
     );
   }

@@ -1,10 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/models/image.dart';
 import 'package:maral_cosmetics/pages/product/parts/product_image_slider.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 
-showProductImages(BuildContext context) {
+showProductImages(BuildContext context, List<BlurImage> images) {
   showDialog(
     context: context,
     builder: (context) {
@@ -32,7 +33,7 @@ showProductImages(BuildContext context) {
                 ),
               ),
               const SizedBox(height: 160),
-              const ProductImageSlider(images: []),
+              ProductImageSlider(images: images),
             ],
           ),
         ),
