@@ -14,7 +14,10 @@ class ProductApiService {
     try {
       http.Response response = await http.post(
         uri,
-        headers: {'Accept-Language': productParams.lang},
+        headers: {
+          'Accept-Language': productParams.lang,
+          'Content-Type': 'application/json',
+        },
         body: json.encode(productParams.toJson()),
       );
       var jsonData = json.decode(response.body);
