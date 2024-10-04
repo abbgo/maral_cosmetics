@@ -7,6 +7,10 @@ class CategoryIDsNotifier extends StateNotifier<List<String>> {
     state = [];
     state = [...state, id];
   }
+
+  Future<void> removeAll() async {
+    state = [];
+  }
 }
 
 class BrandIDsNotifier extends StateNotifier<List<String>> {
@@ -15,5 +19,9 @@ class BrandIDsNotifier extends StateNotifier<List<String>> {
   Future<void> setBrandID(String id) async {
     state = [];
     state = [...state, id];
+  }
+
+  Future<void> removeAll() async {
+    state = [];
   }
 }
