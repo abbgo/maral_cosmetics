@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:maral_cosmetics/pages/search_product/parts/result_search_product.dart';
+import 'package:maral_cosmetics/pages/products/parts/result_products.dart';
 import 'package:maral_cosmetics/pages/search_product/parts/search_history.dart';
 import 'package:maral_cosmetics/pages/search_product/parts/search_input.dart';
 import 'package:maral_cosmetics/providers/pages/search_product.dart';
@@ -23,13 +23,9 @@ class SearchProductPage extends StatelessWidget {
       body: Consumer(
         builder: (context, ref, child) {
           bool openSearchHistory = ref.watch(openSearchHistoryProvider);
-
-          return Padding(
-            padding: const EdgeInsets.only(left: 20, top: 12, right: 20),
-            child: openSearchHistory
-                ? const SearchHistory()
-                : const ResultSearchProduct(),
-          );
+          return openSearchHistory
+              ? const SearchHistory()
+              : const ResultProducts();
         },
       ),
     );
