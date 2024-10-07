@@ -4,7 +4,7 @@ import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/default_param.dart';
 import 'package:maral_cosmetics/models/product.dart';
-import 'package:maral_cosmetics/pages/parts/no_result.dart';
+import 'package:maral_cosmetics/pages/parts/no_product.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/product_card.dart';
 import 'package:maral_cosmetics/providers/api/product.dart';
 import 'package:maral_cosmetics/providers/pages/products.dart';
@@ -18,7 +18,7 @@ class ProductsGridview extends ConsumerWidget {
     final bool loading = ref.watch(loadProductsProvider);
 
     return !hasData
-        ? const SliverFillRemaining(hasScrollBody: true, child: NoResult())
+        ? const SliverFillRemaining(hasScrollBody: true, child: NoProduct())
         : SliverGrid.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
