@@ -10,14 +10,14 @@ class SearchInput extends StatelessWidget {
       borderSide: BorderSide(color: Color(0xfff2ebee)),
     );
 
-    return const SizedBox(
+    return SizedBox(
       height: 40,
       child: TextField(
         autofocus: true,
         textInputAction: TextInputAction.search,
-        cursorColor: Color(0xffCCCCCC),
+        cursorColor: const Color(0xffCCCCCC),
         keyboardType: TextInputType.text,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           fillColor: Color(0xfff6f1f3),
           enabledBorder: outlineInputBorder,
           focusedBorder: outlineInputBorder,
@@ -29,6 +29,9 @@ class SearchInput extends StatelessWidget {
             color: Color(0xffA16F8A),
           ),
         ),
+        onSubmitted: (value) {
+          print('-------------- $value');
+        },
       ),
     );
   }
