@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/providers/database/search.dart';
+import 'package:maral_cosmetics/providers/pages/search_product.dart';
 
 class SearchInput extends StatefulWidget {
   const SearchInput({super.key});
@@ -50,7 +51,12 @@ class _SearchInputState extends State<SearchInput> {
               suffixIcon: openClear
                   ? GestureDetector(
                       onTap: () {
-                        searchCtrl.clear();
+                        setState(() {
+                          searchCtrl.clear();
+                          openClear = false;
+                          ref.read(openSearchHistoryProvider.notifier).state =
+                              true;
+                        });
                       },
                       child: const Icon(
                         Icons.cancel,
@@ -63,13 +69,17 @@ class _SearchInputState extends State<SearchInput> {
               setState(() {
                 if (value.isNotEmpty) {
                   openClear = true;
+                  ref.read(openSearchHistoryProvider.notifier).state = true;
                 } else {
                   openClear = false;
                 }
               });
             },
             onSubmitted: (value) async {
-              await ref.read(createSearchProvider(value).future);
+              if (value.isNotEmpty) {
+                await ref.read(createSearchProvider(value).future);
+                ref.read(openSearchHistoryProvider.notifier).state = false;
+              }
             },
           ),
         );
