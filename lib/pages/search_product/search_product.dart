@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/pages/search_product/parts/search_history.dart';
 import 'package:maral_cosmetics/pages/search_product/parts/search_input.dart';
+import 'package:maral_cosmetics/providers/pages/products.dart';
 
 class SearchProductPage extends StatelessWidget {
   const SearchProductPage({super.key});
@@ -18,9 +20,15 @@ class SearchProductPage extends StatelessWidget {
         backgroundColor: const Color(0xffFAF8F9),
       ),
       // body: const ResultSearchProduct(),
-      body: const Padding(
-        padding: EdgeInsets.only(left: 20, top: 12, right: 20),
-        child: SearchHistory(),
+      body: Consumer(
+        builder: (context, ref, child) {
+          bool hasData = ref.watch(hasProductsProvider);
+
+          return Padding(
+            padding: EdgeInsets.only(left: 20, top: 12, right: 20),
+            child: SearchHistory(),
+          );
+        },
       ),
     );
   }
