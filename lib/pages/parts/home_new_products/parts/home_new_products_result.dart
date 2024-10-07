@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/examples/static_variables.dart';
+import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/product_card.dart';
 
 class HomeNewProductsResult extends StatelessWidget {
@@ -8,7 +9,7 @@ class HomeNewProductsResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 275,
+      height: productCardHeight,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {

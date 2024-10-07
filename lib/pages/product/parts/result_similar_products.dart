@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
+import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/product.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/product_card.dart';
 import 'package:maral_cosmetics/providers/api/product.dart';
@@ -22,7 +23,7 @@ class ResultSimilarProducts extends ConsumerWidget {
         }
 
         return SizedBox(
-          height: 275,
+          height: productCardHeight,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: response.products!.length,

@@ -24,7 +24,7 @@ class ProductsGridview extends ConsumerWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
-              mainAxisExtent: 275,
+              mainAxisExtent: productCardHeight,
             ),
             itemBuilder: (context, index) {
               final page = index ~/ pageSize + 1;
