@@ -21,12 +21,15 @@ class ResultSimilarProducts extends ConsumerWidget {
           return const SizedBox.shrink();
         }
 
-        return Expanded(
-          child: ListView.builder(
+        return SizedBox(
+          height: 275,
+          child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: response.products!.length,
             itemBuilder: (context, index) =>
                 ProductCard(product: response.products![index]),
+            separatorBuilder: (BuildContext context, int index) =>
+                const SizedBox(width: 10),
           ),
         );
       },
