@@ -41,7 +41,7 @@ class ProductPage extends StatelessWidget {
               title: 'Barada',
               description: product.description,
             ),
-            const SimilarProducts(),
+            SimilarProducts(productID: product.id),
           ],
         ),
       ),
