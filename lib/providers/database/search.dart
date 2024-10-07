@@ -12,3 +12,10 @@ final getSearchsProvider = FutureProvider.autoDispose<List<String>>(
     return await getSearchs();
   },
 );
+
+final removeSearchProvider = FutureProvider.autoDispose.family<void, String>(
+  (ref, arg) async {
+    await removeSearch(arg);
+    ref.invalidate(getSearchsProvider);
+  },
+);
