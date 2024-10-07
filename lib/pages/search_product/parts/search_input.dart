@@ -14,11 +14,17 @@ class SearchInput extends ConsumerWidget {
       borderSide: BorderSide(color: Color(0xfff2ebee)),
     );
 
-    bool openClearButton = ref.watch(openClearButtonProvider);
+    String searchText = ref.watch(searchTextProvider);
 
     return SizedBox(
       height: 40,
       child: TextField(
+        controller: TextEditingController.fromValue(
+          TextEditingValue(
+            text: searchText,
+            selection: TextSelection.collapsed(offset: searchText.length),
+          ),
+        ),
         autofocus: true,
         textInputAction: TextInputAction.search,
         cursorColor: const Color(0xffCCCCCC),
@@ -34,11 +40,11 @@ class SearchInput extends ConsumerWidget {
             size: 22,
             color: Color(0xffA16F8A),
           ),
-          suffixIcon: openClearButton
+          suffixIcon: searchText.isNotEmpty
               ? GestureDetector(
                   onTap: () {
-                    ref.read(openClearButtonProvider.notifier).state = false;
                     ref.read(productSearchProvider.notifier).state = '';
+                    ref.read(searchTextProvider.notifier).state = '';
                     ref.read(openSearchHistoryProvider.notifier).state = true;
                   },
                   child: const Icon(
@@ -49,11 +55,9 @@ class SearchInput extends ConsumerWidget {
               : null,
         ),
         onChanged: (value) {
+          ref.read(searchTextProvider.notifier).state = value;
           if (value.isNotEmpty) {
-            ref.read(openClearButtonProvider.notifier).state = true;
             ref.read(openSearchHistoryProvider.notifier).state = true;
-          } else {
-            ref.read(openClearButtonProvider.notifier).state = false;
           }
         },
         onSubmitted: (value) async {
@@ -65,6 +69,5 @@ class SearchInput extends ConsumerWidget {
         },
       ),
     );
-    ;
   }
 }

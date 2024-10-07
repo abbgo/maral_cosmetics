@@ -13,6 +13,7 @@ class SearchHistoryListTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
       onTap: () {
+        ref.read(searchTextProvider.notifier).state = search;
         ref.read(productSearchProvider.notifier).state = search;
         ref.read(openSearchHistoryProvider.notifier).state = false;
       },
