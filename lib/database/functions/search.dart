@@ -10,3 +10,20 @@ Future<void> createSearch(String search) async {
     );
   }
 }
+
+Future<List<String>> getSearchs(int type) async {
+  if (db.isOpen) {
+    List<String> searchs = [];
+
+    List<Map<String, dynamic>>? maps =
+        await db.rawQuery("SELECT search FROM searchs");
+
+    for (var map in maps) {
+      String id = map['search'] as String;
+      searchs.add(id);
+    }
+
+    return searchs;
+  }
+  return [];
+}

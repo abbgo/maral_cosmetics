@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/providers/database/search.dart';
 
-class SearchInput extends StatelessWidget {
+class SearchInput extends ConsumerWidget {
   const SearchInput({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     const outlineInputBorder = OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(5)),
       borderSide: BorderSide(color: Color(0xfff2ebee)),
@@ -29,7 +31,8 @@ class SearchInput extends StatelessWidget {
             color: Color(0xffA16F8A),
           ),
         ),
-        onSubmitted: (value) {
+        onSubmitted: (value) async {
+          await ref.read(createSearchProvider(value).future);
           print('-------------- $value');
         },
       ),
