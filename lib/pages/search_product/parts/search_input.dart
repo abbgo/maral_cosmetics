@@ -13,6 +13,8 @@ class SearchInput extends StatelessWidget {
     return const SizedBox(
       height: 40,
       child: TextField(
+        autofocus: true,
+        textInputAction: TextInputAction.search,
         cursorColor: Color(0xffCCCCCC),
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
