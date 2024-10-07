@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/models/brand.dart';
 import 'package:maral_cosmetics/models/category.dart';
 import 'package:maral_cosmetics/pages/parts/product_sort_and_filter_buttons/product_sort_and_filter_buttons.dart';
 import 'package:maral_cosmetics/pages/products/parts/result_products.dart';
+import 'package:maral_cosmetics/pages/search_product/search_product.dart';
 import 'package:maral_cosmetics/providers/pages/products.dart';
 
 class ProductsPage extends ConsumerWidget {
@@ -47,7 +49,13 @@ class ProductsPage extends ConsumerWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                context,
+                CustomPageRoute(
+                  child: const SearchProductPage(),
+                  direction: AxisDirection.left,
+                ),
+              ),
               icon: Image.asset('assets/images/search.png', height: 24),
             ),
           ],
