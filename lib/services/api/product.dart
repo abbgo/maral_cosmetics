@@ -64,42 +64,24 @@ class ProductApiService {
     try {
       http.Response response = await http.get(
         uri,
-        headers: {
-          'Accept-Language': lang,
-          'Content-Type': 'application/json',
-        },
+        headers: {'Accept-Language': lang},
       );
       var jsonData = json.decode(response.body);
 
       if (jsonData['statusCode'] == 200 && jsonData['success']) {
-        int pageCount = jsonData['data']['pageCount'] as int;
-        int count = jsonData['data']['count'] as int;
-
-        if (jsonData['data']['rows'] == []) {
-          return ResultProduct(
-            products: const [],
-            pageCount: pageCount,
-            count: count,
-            error: '',
-          );
+        if (jsonData['data']['similaryProducts'] == []) {
+          return const ResultProduct(products: [], error: '');
         }
 
-        List<dynamic> data = jsonData['data']['rows'] as List;
+        List<dynamic> data = jsonData['data']['similaryProducts'] as List;
         return ResultProduct(
           products: data
               .map<Product>((propJson) => Product.fromJson(propJson))
               .toList(),
-          pageCount: pageCount,
-          count: count,
           error: '',
         );
       }
-      return const ResultProduct(
-        products: [],
-        pageCount: 0,
-        count: 0,
-        error: '',
-      );
+      return const ResultProduct(products: [], error: '');
     } catch (e) {
       rethrow;
     }

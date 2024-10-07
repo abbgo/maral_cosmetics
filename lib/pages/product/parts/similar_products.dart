@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/product_card.dart';
 
-class SimilarProducts extends StatelessWidget {
+class SimilarProducts extends ConsumerWidget {
   const SimilarProducts({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 25),
       child: Column(
