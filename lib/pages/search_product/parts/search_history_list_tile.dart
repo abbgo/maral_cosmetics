@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/providers/database/search.dart';
 
 class SearchHistoryListTile extends StatelessWidget {
   const SearchHistoryListTile({super.key, required this.search});
@@ -22,11 +24,13 @@ class SearchHistoryListTile extends StatelessWidget {
           color: Color(0xff666666),
         ),
       ),
-      trailing: IconButton(
-        onPressed: () {},
-        icon: const Icon(
-          Icons.close,
-          color: Color(0xffE0E0E0),
+      trailing: Consumer(
+        builder: (context, ref, child) => IconButton(
+          onPressed: () => ref.read(removeSearchProvider(search)),
+          icon: const Icon(
+            Icons.close,
+            color: Color(0xffE0E0E0),
+          ),
         ),
       ),
     );

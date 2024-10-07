@@ -30,6 +30,6 @@ Future<List<String>> getSearchs() async {
 
 Future<void> removeSearch(String search) async {
   if (db.isOpen) {
-    await db.rawDelete("DELETE FROM searchs WHERE search='search'");
+    await db.rawDelete("DELETE FROM searchs WHERE search='$search'");
   }
 }
