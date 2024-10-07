@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/search_product/parts/search_input.dart';
 
 class SearchProductPage extends StatelessWidget {
   const SearchProductPage({super.key});
@@ -6,7 +7,7 @@ class SearchProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const SearchInput()),
       body: const Center(
         child: Text('Search Product'),
       ),
