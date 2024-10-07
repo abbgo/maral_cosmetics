@@ -52,7 +52,10 @@ class _SearchInputState extends State<SearchInput> {
                       onTap: () {
                         searchCtrl.clear();
                       },
-                      child: const Icon(Icons.close),
+                      child: const Icon(
+                        Icons.cancel,
+                        color: Color(0xffADADAD),
+                      ),
                     )
                   : null,
             ),
