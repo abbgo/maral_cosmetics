@@ -11,9 +11,6 @@ class ProductApiService {
       {required ProductParams productParams}) async {
     Uri uri = Uri.parse('$apiUrl/products/all');
 
-    print('=========================================');
-    print(productParams.toJson());
-
     try {
       http.Response response = await http.post(
         uri,
@@ -22,6 +19,55 @@ class ProductApiService {
           'Content-Type': 'application/json',
         },
         body: json.encode(productParams.toJson()),
+      );
+      var jsonData = json.decode(response.body);
+
+      if (jsonData['statusCode'] == 200 && jsonData['success']) {
+        int pageCount = jsonData['data']['pageCount'] as int;
+        int count = jsonData['data']['count'] as int;
+
+        if (jsonData['data']['rows'] == []) {
+          return ResultProduct(
+            products: const [],
+            pageCount: pageCount,
+            count: count,
+            error: '',
+          );
+        }
+
+        List<dynamic> data = jsonData['data']['rows'] as List;
+        return ResultProduct(
+          products: data
+              .map<Product>((propJson) => Product.fromJson(propJson))
+              .toList(),
+          pageCount: pageCount,
+          count: count,
+          error: '',
+        );
+      }
+      return const ResultProduct(
+        products: [],
+        pageCount: 0,
+        count: 0,
+        error: '',
+      );
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+// fetch similar products -------------------------------------------------------
+  Future<ResultProduct> fetchSimilarProducts(
+      {required String lang, required String productID}) async {
+    Uri uri = Uri.parse('$apiUrl/products/$productID');
+
+    try {
+      http.Response response = await http.get(
+        uri,
+        headers: {
+          'Accept-Language': lang,
+          'Content-Type': 'application/json',
+        },
       );
       var jsonData = json.decode(response.body);
 
