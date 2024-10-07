@@ -10,7 +10,7 @@ class SearchProductPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           style: IconButton.styleFrom(backgroundColor: const Color(0xffFAF8F9)),
-          onPressed: () {},
+          onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.adaptive.arrow_back),
         ),
         title: const SearchInput(),
