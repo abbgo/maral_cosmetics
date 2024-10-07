@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/providers/database/search.dart';
+import 'package:maral_cosmetics/providers/pages/products.dart';
 import 'package:maral_cosmetics/providers/pages/search_product.dart';
 
 class SearchInput extends StatefulWidget {
@@ -54,6 +55,7 @@ class _SearchInputState extends State<SearchInput> {
                         setState(() {
                           searchCtrl.clear();
                           openClear = false;
+                          ref.read(productSearchProvider.notifier).state = '';
                           ref.read(openSearchHistoryProvider.notifier).state =
                               true;
                         });
@@ -78,6 +80,7 @@ class _SearchInputState extends State<SearchInput> {
             onSubmitted: (value) async {
               if (value.isNotEmpty) {
                 await ref.read(createSearchProvider(value).future);
+                ref.read(productSearchProvider.notifier).state = value;
                 ref.read(openSearchHistoryProvider.notifier).state = false;
               }
             },
