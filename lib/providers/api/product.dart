@@ -34,8 +34,10 @@ var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
           .read(productApiProvider)
           .fetchProducts(productParams: productParams);
 
-      ref.read(hasProductsProvider.notifier).state =
-          resultProducts.products!.isNotEmpty;
+      if (arg.page == 1) {
+        ref.read(hasProductsProvider.notifier).state =
+            resultProducts.products!.isNotEmpty;
+      }
 
       result = resultProducts;
     } catch (e) {
