@@ -6,3 +6,9 @@ final createSearchProvider = FutureProvider.autoDispose.family<void, String>(
     await createSearch(arg);
   },
 );
+
+final getSearchsProvider = FutureProvider.autoDispose<List<String>>(
+  (ref) async {
+    return await getSearchs();
+  },
+);

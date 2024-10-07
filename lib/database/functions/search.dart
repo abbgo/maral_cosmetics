@@ -11,7 +11,7 @@ Future<void> createSearch(String search) async {
   }
 }
 
-Future<List<String>> getSearchs(int type) async {
+Future<List<String>> getSearchs() async {
   if (db.isOpen) {
     List<String> searchs = [];
 
