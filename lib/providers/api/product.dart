@@ -48,3 +48,24 @@ var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
     return result;
   },
 );
+
+var fetchSimilarProductsProvider = FutureProvider.family<ResultProduct, String>(
+  (ref, arg) async {
+    ResultProduct result = ResultProduct.defaultResult();
+
+    try {
+      String lang = await ref.watch(langProvider);
+
+      ResultProduct resultProducts = await ref
+          .read(productApiProvider)
+          .fetchSimilarProducts(lang: lang, productID: arg);
+
+      result = resultProducts;
+    } catch (e) {
+      result = ResultProduct(error: e.toString());
+    }
+
+    ref.read(loadProductsProvider.notifier).state = false;
+    return result;
+  },
+);
