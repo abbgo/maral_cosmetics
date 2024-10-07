@@ -27,3 +27,9 @@ Future<List<String>> getSearchs() async {
   }
   return [];
 }
+
+Future<void> removeSearch(String search) async {
+  if (db.isOpen) {
+    await db.rawDelete("DELETE FROM searchs WHERE search='search'");
+  }
+}

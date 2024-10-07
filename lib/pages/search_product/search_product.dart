@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/search_product/parts/result_search_product.dart';
 import 'package:maral_cosmetics/pages/search_product/parts/search_history.dart';
 import 'package:maral_cosmetics/pages/search_product/parts/search_input.dart';
 
