@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/search_product/parts/result_search_product.dart';
 import 'package:maral_cosmetics/pages/search_product/parts/search_input.dart';
 
 class SearchProductPage extends StatelessWidget {
@@ -16,9 +17,7 @@ class SearchProductPage extends StatelessWidget {
         title: const SearchInput(),
         backgroundColor: const Color(0xffFAF8F9),
       ),
-      body: const Center(
-        child: Text('Search Product'),
-      ),
+      body: const ResultSearchProduct(),
     );
   }
 }
