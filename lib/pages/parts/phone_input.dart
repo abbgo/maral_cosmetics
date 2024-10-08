@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+
+class PhoneInput extends StatelessWidget {
+  const PhoneInput({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    const outlineInputBorder = OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(5)),
+    );
+
+    return TextFormField(
+      cursorColor: Colors.black,
+      decoration: const InputDecoration(
+        enabledBorder: outlineInputBorder,
+        focusedBorder: outlineInputBorder,
+        labelText: ' Telefon belgi ',
+        labelStyle: TextStyle(color: Colors.black, fontFamily: 'Inter'),
+        prefixText: '+993',
+        prefixStyle: TextStyle(fontFamily: 'Inter'),
+      ),
+    );
+  }
+}
