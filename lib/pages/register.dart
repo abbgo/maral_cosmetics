@@ -17,11 +17,15 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final GlobalKey<FormState> registerFormKey = GlobalKey<FormState>();
   final TextEditingController phoneCtrl = TextEditingController();
+  final TextEditingController fullNameCtrl = TextEditingController();
   final TextEditingController passwordCtrl = TextEditingController();
+  final TextEditingController confirmPasswordCtrl = TextEditingController();
 
   @override
   void dispose() {
     phoneCtrl.dispose();
+    fullNameCtrl.dispose();
+    confirmPasswordCtrl.dispose();
     passwordCtrl.dispose();
     super.dispose();
   }
