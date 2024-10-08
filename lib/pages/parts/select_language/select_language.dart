@@ -7,29 +7,33 @@ class SelectLanguage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      decoration: const BoxDecoration(
-        color: Color(0xffF8F2F5),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
-        ),
-      ),
+      margin: const EdgeInsets.only(left: 12, right: 12, bottom: 12),
       child: Wrap(
         alignment: WrapAlignment.center,
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 10),
-            width: 40,
-            height: 4,
+            height: 6,
+            width: 56,
             decoration: BoxDecoration(
-              color: const Color(0xff824D6A),
-              borderRadius: BorderRadius.circular(60),
+              borderRadius: BorderRadius.circular(13),
+              color: const Color(0XFFD1D1D1),
             ),
           ),
-          const LanguageListTile(text: 'Turkmen dili'),
-          const Divider(color: Color(0xffD9D9D9)),
-          const LanguageListTile(text: 'Rus dili'),
+          Container(
+            padding: const EdgeInsets.all(20),
+            margin: const EdgeInsets.only(top: 8),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: const Column(
+              children: [
+                LanguageListTile(text: 'Turkmen dili'),
+                Divider(color: Color(0xffD9D9D9)),
+                LanguageListTile(text: 'Rus dili'),
+              ],
+            ),
+          ),
         ],
       ),
     );
