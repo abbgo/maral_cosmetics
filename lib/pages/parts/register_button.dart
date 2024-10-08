@@ -3,9 +3,22 @@ import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/register.dart';
 
 class RegisterButton extends StatelessWidget {
-  const RegisterButton({super.key, required this.forLogin});
+  const RegisterButton({
+    super.key,
+    required this.forLogin,
+    this.registerFormKey,
+    this.phoneCtrl,
+    this.fullNameCtrl,
+    this.passwordCtrl,
+    this.confirmPasswordCtrl,
+  });
 
   final bool forLogin;
+  final GlobalKey<FormState>? registerFormKey;
+  final TextEditingController? phoneCtrl;
+  final TextEditingController? fullNameCtrl;
+  final TextEditingController? passwordCtrl;
+  final TextEditingController? confirmPasswordCtrl;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +34,19 @@ class RegisterButton extends StatelessWidget {
           ),
           backgroundColor: forLogin ? Colors.white : const Color(0xffA16F8A),
         ),
-        onPressed: () => forLogin
-            ? goToPage(context, const RegisterPage(), true)
-            : print('registrasiya funksiya'),
+        onPressed: () {
+          if (forLogin) {
+            goToPage(context, const RegisterPage(), true);
+            return;
+          }
+
+          if (registerFormKey?.currentState?.validate() == true) {
+            print('phone: ${phoneCtrl!.text}');
+            print('fullName: ${fullNameCtrl!.text}');
+            print('password: ${passwordCtrl!.text}');
+            print('confirmPassword: ${confirmPasswordCtrl!.text}');
+          }
+        },
         child: Text(
           'Hasaba durmak',
           style: TextStyle(
