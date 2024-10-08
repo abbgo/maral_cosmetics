@@ -48,7 +48,12 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 20),
                     PasswordInput(passwordCtrl: passwordCtrl),
                     const SizedBox(height: 80),
-                    const LoginButton(forLogin: true),
+                    LoginButton(
+                      forLogin: true,
+                      loginFormKey: loginFormKey,
+                      phoneCtrl: phoneCtrl,
+                      passwordCtrl: passwordCtrl,
+                    ),
                     const SizedBox(height: 10),
                     const RegisterButton(forLogin: true),
                     const SizedBox(height: 20),

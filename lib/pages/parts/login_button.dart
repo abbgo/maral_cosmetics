@@ -6,15 +6,15 @@ class LoginButton extends StatelessWidget {
   const LoginButton({
     super.key,
     required this.forLogin,
-    required this.loginFormKey,
-    required this.phoneCtrl,
-    required this.passwordCtrl,
+    this.loginFormKey,
+    this.phoneCtrl,
+    this.passwordCtrl,
   });
 
   final bool forLogin;
-  final GlobalKey<FormState> loginFormKey;
-  final TextEditingController phoneCtrl;
-  final TextEditingController passwordCtrl;
+  final GlobalKey<FormState>? loginFormKey;
+  final TextEditingController? phoneCtrl;
+  final TextEditingController? passwordCtrl;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +36,9 @@ class LoginButton extends StatelessWidget {
             return;
           }
 
-          if (loginFormKey.currentState?.validate() == true) {
-            print('phone: ${phoneCtrl.text}');
-            print('password: ${passwordCtrl.text}');
+          if (loginFormKey?.currentState?.validate() == true) {
+            print('phone: ${phoneCtrl!.text}');
+            print('password: ${passwordCtrl!.text}');
           }
         },
         child: Text(
