@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
+import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/pages/register.dart';
 
 class RegisterButton extends StatelessWidget {
@@ -40,12 +41,15 @@ class RegisterButton extends StatelessWidget {
             return;
           }
 
-          if (registerFormKey?.currentState?.validate() == true) {
-            print('phone: ${phoneCtrl!.text}');
-            print('fullName: ${fullNameCtrl!.text}');
-            print('password: ${passwordCtrl!.text}');
-            print('confirmPassword: ${confirmPasswordCtrl!.text}');
+          if (registerFormKey?.currentState?.validate() == false) {
+            showInputErrorMethod(context, 'Ýalňyşlyk ýüze çykdy !');
+            return;
           }
+
+          print('phone: ${phoneCtrl!.text}');
+          print('fullName: ${fullNameCtrl!.text}');
+          print('password: ${passwordCtrl!.text}');
+          print('confirmPassword: ${confirmPasswordCtrl!.text}');
         },
         child: Text(
           'Hasaba durmak',
