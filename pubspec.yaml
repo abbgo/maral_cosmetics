@@ -52,6 +52,7 @@ dependencies:
   url_launcher: ^6.3.0
   expandable_text: ^2.3.0
   sqflite: ^2.3.3+2
+  top_snackbar_flutter: ^3.1.0
 
 dev_dependencies:
   flutter_test:
