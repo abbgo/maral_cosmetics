@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
                     SizedBox(height: 20),
                     PasswordInput(),
                     SizedBox(height: 80),
-                    LoginButton(),
+                    LoginButton(forLogin: true),
                     SizedBox(height: 10),
                     RegisterButton(forLogin: true),
                     SizedBox(height: 20),

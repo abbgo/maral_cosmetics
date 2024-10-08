@@ -39,7 +39,7 @@ class RegisterPage extends StatelessWidget {
                     SizedBox(height: 80),
                     RegisterButton(forLogin: false),
                     SizedBox(height: 10),
-                    LoginButton(),
+                    LoginButton(forLogin: false),
                     SizedBox(height: 20),
                     SelectLanguageButton(),
                   ],
