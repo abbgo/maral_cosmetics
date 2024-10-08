@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
+import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/pages/login.dart';
 
 class LoginButton extends StatelessWidget {
@@ -36,10 +37,13 @@ class LoginButton extends StatelessWidget {
             return;
           }
 
-          if (loginFormKey?.currentState?.validate() == true) {
-            print('phone: ${phoneCtrl!.text}');
-            print('password: ${passwordCtrl!.text}');
+          if (loginFormKey?.currentState?.validate() == false) {
+            showInputErrorMethod(context, 'Ýalňyşlyk ýüze çykdy !');
+            return;
           }
+
+          print('phone: ${phoneCtrl!.text}');
+          print('password: ${passwordCtrl!.text}');
         },
         child: Text(
           'Ulgama girmek',
