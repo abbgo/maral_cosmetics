@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/login_button.dart';
 import 'package:maral_cosmetics/pages/parts/register_button.dart';
 import 'package:maral_cosmetics/pages/parts/phone_input.dart';
+import 'package:maral_cosmetics/pages/parts/select_language_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -29,6 +30,8 @@ class LoginPage extends StatelessWidget {
                     LoginButton(),
                     SizedBox(height: 10),
                     RegisterButton(),
+                    SizedBox(height: 20),
+                    SelectLanguageButton(),
                   ],
                 ),
               ),
