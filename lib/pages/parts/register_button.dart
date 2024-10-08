@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/navigation.dart';
+import 'package:maral_cosmetics/pages/register.dart';
 
 class RegisterButton extends StatelessWidget {
   const RegisterButton({super.key});
@@ -15,7 +17,7 @@ class RegisterButton extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
         ),
-        onPressed: () {},
+        onPressed: () => goToPage(context, const RegisterPage(), false),
         child: const Text(
           'Hasaba durmak',
           style: TextStyle(color: Color(0xffA16F8A)),
