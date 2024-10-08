@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/fullname_input.dart';
 import 'package:maral_cosmetics/pages/parts/login_button.dart';
 import 'package:maral_cosmetics/pages/parts/password_input.dart';
 import 'package:maral_cosmetics/pages/parts/register_button.dart';
@@ -26,8 +27,10 @@ class RegisterPage extends StatelessWidget {
                       'Hasaba durmak',
                       style: TextStyle(fontSize: 20, color: Color(0xff824D6A)),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: 30),
                     PhoneInput(),
+                    SizedBox(height: 20),
+                    FullnameInput(),
                     SizedBox(height: 20),
                     PasswordInput(),
                     SizedBox(height: 80),
