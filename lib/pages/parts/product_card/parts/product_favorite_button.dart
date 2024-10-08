@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
-import 'package:maral_cosmetics/pages/login/login.dart';
+import 'package:maral_cosmetics/pages/login.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
 
 class ProductFavoriteButton extends ConsumerWidget {
