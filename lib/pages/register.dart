@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/confirm_password_input.dart';
 import 'package:maral_cosmetics/pages/parts/fullname_input.dart';
 import 'package:maral_cosmetics/pages/parts/login_button.dart';
 import 'package:maral_cosmetics/pages/parts/password_input.dart';
@@ -33,6 +34,8 @@ class RegisterPage extends StatelessWidget {
                     FullnameInput(),
                     SizedBox(height: 20),
                     PasswordInput(),
+                    SizedBox(height: 20),
+                    ConfirmPasswordInput(),
                     SizedBox(height: 80),
                     LoginButton(),
                     SizedBox(height: 10),
