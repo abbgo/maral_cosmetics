@@ -11,6 +11,7 @@ class FullnameInput extends StatelessWidget {
     return TextFormField(
       controller: fullNameCtrl,
       cursorColor: Colors.black,
+      style: const TextStyle(fontFamily: 'Inter'),
       decoration: const InputDecoration(
         errorBorder: errorBorder,
         focusedErrorBorder: errorBorder,
