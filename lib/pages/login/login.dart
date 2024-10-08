@@ -10,40 +10,37 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset("assets/images/logo.jpg"),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Form(
-                  child: Column(
-                    children: [
-                      Text(
-                        'Ulgama girmek',
-                        style:
-                            TextStyle(fontSize: 20, color: Color(0xff824D6A)),
-                      ),
-                      SizedBox(height: 40),
-                      PhoneInput(),
-                      SizedBox(height: 20),
-                      PasswordInput(),
-                      SizedBox(height: 80),
-                      LoginButton(),
-                      SizedBox(height: 10),
-                      RegisterButton(),
-                      SizedBox(height: 20),
-                      SelectLanguageButton(),
-                    ],
-                  ),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset("assets/images/logo.jpg"),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Form(
+                child: Column(
+                  children: [
+                    Text(
+                      'Ulgama girmek',
+                      style: TextStyle(fontSize: 20, color: Color(0xff824D6A)),
+                    ),
+                    SizedBox(height: 40),
+                    PhoneInput(),
+                    SizedBox(height: 20),
+                    PasswordInput(),
+                    SizedBox(height: 80),
+                    LoginButton(),
+                    SizedBox(height: 10),
+                    RegisterButton(),
+                    SizedBox(height: 20),
+                    SelectLanguageButton(),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
