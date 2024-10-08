@@ -5,6 +5,7 @@ import 'package:maral_cosmetics/pages/parts/select_language/select_language.dart
 
 showLanguageBottomSheet(BuildContext context) {
   showModalBottomSheet(
+    backgroundColor: Colors.transparent,
     context: context,
     builder: (context) => const SelectLanguage(),
   );
