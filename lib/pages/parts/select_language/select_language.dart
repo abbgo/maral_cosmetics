@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/select_language/parts/language_list_tile.dart';
+import 'package:maral_cosmetics/pages/parts/select_language/parts/select_language_title.dart';
 
 class SelectLanguage extends StatelessWidget {
   const SelectLanguage({super.key});
@@ -28,6 +29,7 @@ class SelectLanguage extends StatelessWidget {
             ),
             child: const Column(
               children: [
+                SelectLanguageTitle(),
                 LanguageListTile(text: 'Turkmen', lang: 'tk'),
                 LanguageListTile(text: 'Русский', lang: 'ru'),
               ],
