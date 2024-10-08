@@ -23,6 +23,9 @@ class PasswordInput extends ConsumerWidget {
         focusedErrorBorder: errorBorder,
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
+        errorStyle: emptyTextStyle,
+        helperStyle: emptyTextStyle,
+        helperText: '',
         labelText: ' Açar söz ',
         labelStyle: const TextStyle(color: Colors.black, fontFamily: 'Inter'),
         suffixIcon: GestureDetector(
