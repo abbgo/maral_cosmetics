@@ -9,13 +9,18 @@ class SelectLanguageTitle extends StatelessWidget {
       onPressed: () => Navigator.pop(context),
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             'Dil',
             style: TextStyle(
-                fontFamily: 'Inter', fontSize: 18, fontWeight: FontWeight.bold),
+              fontFamily: 'Inter',
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
           ),
-          Icon(Icons.close),
+          Icon(Icons.close, color: Colors.black, size: 24),
         ],
       ),
     );
