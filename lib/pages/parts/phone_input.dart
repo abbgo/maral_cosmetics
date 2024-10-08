@@ -17,21 +17,17 @@ class PhoneInput extends StatelessWidget {
         focusedBorder: outlineInputBorder,
         labelText: ' Telefon belgi ',
         labelStyle: TextStyle(color: Colors.black, fontFamily: 'Inter'),
-        prefix: Row(
-          children: [
-            Text.rich(
+        prefix: Text.rich(
+          TextSpan(
+            text: '+993',
+            style: TextStyle(fontFamily: 'Inter'),
+            children: [
               TextSpan(
-                text: '+993',
-                style: TextStyle(fontFamily: 'Inter'),
-                children: [
-                  TextSpan(
-                    text: ' | ',
-                    style: TextStyle(color: Color(0xff9D9D9D)),
-                  ),
-                ],
+                text: ' | ',
+                style: TextStyle(color: Color(0xff9D9D9D)),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -26,7 +26,7 @@ class _CategoryCardState extends State<CategoryCard> {
         trailing: AnimatedRotation(
           turns: widget.category.isExpanded ? 0.0 : -0.25,
           duration: const Duration(milliseconds: 300),
-          child: const Icon(Icons.arrow_drop_down),
+          child: const Icon(Icons.arrow_drop_down, color: Colors.black),
         ),
         title: Text(
           widget.category.name,
