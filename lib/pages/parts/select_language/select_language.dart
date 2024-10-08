@@ -28,8 +28,8 @@ class SelectLanguage extends StatelessWidget {
             ),
             child: const Column(
               children: [
-                LanguageListTile(text: 'Turkmen'),
-                LanguageListTile(text: 'Русский'),
+                LanguageListTile(text: 'Turkmen', lang: 'tk'),
+                LanguageListTile(text: 'Русский', lang: 'ru'),
               ],
             ),
           ),
