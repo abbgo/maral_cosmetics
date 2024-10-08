@@ -12,6 +12,9 @@ class PasswordInput extends StatelessWidget {
 
     return TextFormField(
       cursorColor: Colors.black,
+      style: const TextStyle(fontFamily: 'Inter'),
+      obscureText: true,
+      obscuringCharacter: '*',
       decoration: const InputDecoration(
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
