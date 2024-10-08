@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/providers/parts/password_input.dart';
 
 class ConfirmPasswordInput extends ConsumerWidget {
@@ -7,11 +8,6 @@ class ConfirmPasswordInput extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    const outlineInputBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(5)),
-      borderSide: BorderSide(color: Color(0xff79747E)),
-    );
-
     bool showPassword = ref.watch(showConfirmPasswordProvider);
 
     return TextFormField(
@@ -20,6 +16,8 @@ class ConfirmPasswordInput extends ConsumerWidget {
       obscureText: !showPassword,
       obscuringCharacter: '*',
       decoration: InputDecoration(
+        errorBorder: errorBorder,
+        focusedErrorBorder: errorBorder,
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
         labelText: ' Açar sözi tasyklaň ',

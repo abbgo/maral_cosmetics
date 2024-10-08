@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 
 class PhoneInput extends StatelessWidget {
   const PhoneInput({super.key, required this.phoneCtrl});
@@ -8,11 +9,6 @@ class PhoneInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const outlineInputBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(5)),
-      borderSide: BorderSide(color: Color(0xff79747E)),
-    );
-
     return TextFormField(
       controller: phoneCtrl,
       maxLength: 8,
@@ -23,6 +19,8 @@ class PhoneInput extends StatelessWidget {
       cursorColor: Colors.black,
       style: const TextStyle(fontFamily: 'Inter'),
       decoration: const InputDecoration(
+        errorBorder: errorBorder,
+        focusedErrorBorder: errorBorder,
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
         counterText: '',
@@ -42,7 +40,9 @@ class PhoneInput extends StatelessWidget {
         ),
       ),
       validator: (value) {
-        if (value == null || value.length < 8) {}
+        if (value == null || value.length < 8) {
+          return '';
+        }
         return null;
       },
     );
