@@ -7,6 +7,7 @@ class PhoneInput extends StatelessWidget {
   Widget build(BuildContext context) {
     const outlineInputBorder = OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(5)),
+      borderSide: BorderSide(color: Color(0xff79747E)),
     );
 
     return TextFormField(
