@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class PhoneInput extends StatelessWidget {
   const PhoneInput({super.key});
@@ -11,16 +12,23 @@ class PhoneInput extends StatelessWidget {
     );
 
     return TextFormField(
+      maxLength: 8,
+      keyboardType: TextInputType.number,
+      inputFormatters: <TextInputFormatter>[
+        FilteringTextInputFormatter.digitsOnly
+      ],
       cursorColor: Colors.black,
+      style: const TextStyle(fontFamily: 'Inter'),
       decoration: const InputDecoration(
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
+        counterText: '',
         labelText: ' Telefon belgi ',
-        labelStyle: TextStyle(color: Colors.black, fontFamily: 'Inter'),
+        labelStyle: TextStyle(fontFamily: 'Inter', color: Colors.black),
         prefix: Text.rich(
           TextSpan(
             text: '+993',
-            style: TextStyle(fontFamily: 'Inter'),
+            style: TextStyle(fontWeight: FontWeight.normal),
             children: [
               TextSpan(
                 text: ' | ',
