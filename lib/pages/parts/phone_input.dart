@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class PhoneInput extends StatelessWidget {
-  const PhoneInput({super.key});
+  const PhoneInput({super.key, required this.phoneCtrl});
+
+  final TextEditingController phoneCtrl;
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +14,7 @@ class PhoneInput extends StatelessWidget {
     );
 
     return TextFormField(
+      controller: phoneCtrl,
       maxLength: 8,
       keyboardType: TextInputType.number,
       inputFormatters: <TextInputFormatter>[
@@ -38,6 +41,10 @@ class PhoneInput extends StatelessWidget {
           ),
         ),
       ),
+      validator: (value) {
+        if (value == null || value.length < 8) {}
+        return null;
+      },
     );
   }
 }

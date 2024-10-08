@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/providers/parts/password_input.dart';
 
 class PasswordInput extends ConsumerWidget {
-  const PasswordInput({super.key});
+  const PasswordInput({super.key, required this.passwordCtrl});
+
+  final TextEditingController passwordCtrl;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -15,6 +17,7 @@ class PasswordInput extends ConsumerWidget {
     bool showPassword = ref.watch(showPasswordProvider);
 
     return TextFormField(
+      controller: passwordCtrl,
       cursorColor: Colors.black,
       style: const TextStyle(fontFamily: 'Inter'),
       obscureText: !showPassword,
@@ -33,6 +36,10 @@ class PasswordInput extends ConsumerWidget {
           ),
         ),
       ),
+      validator: (value) {
+        if (value == null || value.isEmpty) {}
+        return null;
+      },
     );
   }
 }
