@@ -19,11 +19,19 @@ class PasswordInput extends ConsumerWidget {
       style: const TextStyle(fontFamily: 'Inter'),
       obscureText: !showPassword,
       obscuringCharacter: '*',
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
         labelText: ' Açar söz ',
-        labelStyle: TextStyle(color: Colors.black, fontFamily: 'Inter'),
+        labelStyle: const TextStyle(color: Colors.black, fontFamily: 'Inter'),
+        suffixIcon: GestureDetector(
+          onTap: () =>
+              ref.read(showPasswordProvider.notifier).state = !showPassword,
+          child: Icon(
+            showPassword ? Icons.visibility : Icons.visibility_off,
+            color: const Color(0xff9D9D9D),
+          ),
+        ),
       ),
     );
   }
