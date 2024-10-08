@@ -38,6 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Form(
+                key: registerFormKey,
                 child: Column(
                   children: [
                     const Text(

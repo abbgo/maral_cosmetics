@@ -3,9 +3,18 @@ import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/login.dart';
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({super.key, required this.forLogin});
+  const LoginButton({
+    super.key,
+    required this.forLogin,
+    required this.loginFormKey,
+    required this.phoneCtrl,
+    required this.passwordCtrl,
+  });
 
   final bool forLogin;
+  final GlobalKey<FormState> loginFormKey;
+  final TextEditingController phoneCtrl;
+  final TextEditingController passwordCtrl;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +30,17 @@ class LoginButton extends StatelessWidget {
           ),
           backgroundColor: forLogin ? const Color(0xffA16F8A) : Colors.white,
         ),
-        onPressed: () => forLogin
-            ? print('login funksiya')
-            : goToPage(context, const LoginPage(), true),
+        onPressed: () {
+          if (!forLogin) {
+            goToPage(context, const LoginPage(), true);
+            return;
+          }
+
+          if (loginFormKey.currentState?.validate() == true) {
+            print('phone: ${phoneCtrl.text}');
+            print('password: ${passwordCtrl.text}');
+          }
+        },
         child: Text(
           'Ulgama girmek',
           style: TextStyle(
