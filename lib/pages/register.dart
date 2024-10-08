@@ -52,7 +52,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 30),
                     PhoneInput(phoneCtrl: phoneCtrl),
                     const SizedBox(height: 20),
-                    const FullnameInput(),
+                    FullnameInput(fullNameCtrl: fullNameCtrl),
                     const SizedBox(height: 20),
                     PasswordInput(passwordCtrl: passwordCtrl),
                     const SizedBox(height: 20),
