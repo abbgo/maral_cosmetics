@@ -22,7 +22,7 @@ class RegisterButton extends StatelessWidget {
           backgroundColor: forLogin ? Colors.white : const Color(0xffA16F8A),
         ),
         onPressed: () => forLogin
-            ? goToPage(context, const RegisterPage(), false)
+            ? goToPage(context, const RegisterPage(), true)
             : print('registrasiya funksiya'),
         child: Text(
           'Hasaba durmak',

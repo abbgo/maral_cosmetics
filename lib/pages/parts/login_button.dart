@@ -23,7 +23,7 @@ class LoginButton extends StatelessWidget {
         ),
         onPressed: () => forLogin
             ? print('login funksiya')
-            : goToPage(context, const LoginPage(), false),
+            : goToPage(context, const LoginPage(), true),
         child: Text(
           'Ulgama girmek',
           style: TextStyle(
