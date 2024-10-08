@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/helpers/methods/bottom_sheets.dart';
 
 class SelectLanguageButton extends StatelessWidget {
   const SelectLanguageButton({super.key});
@@ -6,7 +7,7 @@ class SelectLanguageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () => showLanguageBottomSheet(context),
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
