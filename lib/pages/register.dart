@@ -37,7 +37,7 @@ class RegisterPage extends StatelessWidget {
                     SizedBox(height: 20),
                     ConfirmPasswordInput(),
                     SizedBox(height: 80),
-                    RegisterButton(),
+                    RegisterButton(forLogin: false),
                     SizedBox(height: 10),
                     LoginButton(),
                     SizedBox(height: 20),

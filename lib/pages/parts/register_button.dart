@@ -3,7 +3,9 @@ import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/register.dart';
 
 class RegisterButton extends StatelessWidget {
-  const RegisterButton({super.key});
+  const RegisterButton({super.key, required this.forLogin});
+
+  final bool forLogin;
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +15,20 @@ class RegisterButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(60),
-            side: const BorderSide(color: Color(0xff79747E)),
+            side: forLogin
+                ? const BorderSide(color: Color(0xff79747E))
+                : BorderSide.none,
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: forLogin ? Colors.white : const Color(0xffA16F8A),
         ),
-        onPressed: () => goToPage(context, const RegisterPage(), false),
-        child: const Text(
+        onPressed: () => forLogin
+            ? goToPage(context, const RegisterPage(), false)
+            : print('registrasiya funksiya'),
+        child: Text(
           'Hasaba durmak',
-          style: TextStyle(color: Color(0xffA16F8A)),
+          style: TextStyle(
+            color: forLogin ? const Color(0xffA16F8A) : Colors.white,
+          ),
         ),
       ),
     );

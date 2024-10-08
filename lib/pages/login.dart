@@ -33,7 +33,7 @@ class LoginPage extends StatelessWidget {
                     SizedBox(height: 80),
                     LoginButton(),
                     SizedBox(height: 10),
-                    RegisterButton(),
+                    RegisterButton(forLogin: true),
                     SizedBox(height: 20),
                     SelectLanguageButton(),
                   ],
