@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/pages/login/parts/login_button.dart';
-import 'package:maral_cosmetics/pages/login/parts/register_button.dart';
+import 'package:maral_cosmetics/pages/parts/login_button.dart';
+import 'package:maral_cosmetics/pages/parts/register_button.dart';
 import 'package:maral_cosmetics/pages/parts/phone_input.dart';
 
 class LoginPage extends StatelessWidget {
@@ -27,6 +27,7 @@ class LoginPage extends StatelessWidget {
                     PhoneInput(),
                     SizedBox(height: 80),
                     LoginButton(),
+                    SizedBox(height: 10),
                     RegisterButton(),
                   ],
                 ),
