@@ -16,6 +16,7 @@ class LanguageListTile extends ConsumerWidget {
         border: Border(bottom: BorderSide(color: Color(0xfff5f5f5), width: 1)),
       ),
       child: RadioListTile<String>.adaptive(
+        contentPadding: const EdgeInsets.only(left: 0),
         activeColor: const Color(0xffA16F8A),
         title: Text(
           text,
