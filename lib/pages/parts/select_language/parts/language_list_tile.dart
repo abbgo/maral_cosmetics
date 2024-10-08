@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:maral_cosmetics/styles/colors.dart';
 
 class LanguageListTile extends StatelessWidget {
   const LanguageListTile({super.key, required this.text});
@@ -8,13 +7,21 @@ class LanguageListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      dense: false,
-      title: Text(
-        text,
-        style: TextStyle(fontFamily: 'HeyWowRegular', color: defaultColor),
+    return Container(
+      decoration: const BoxDecoration(
+        border: Border(bottom: BorderSide(color: Color(0xfff5f5f5), width: 1)),
       ),
-      trailing: Icon(Icons.check, color: defaultColor),
+      child: RadioListTile.adaptive(
+        activeColor: const Color(0xffA16F8A),
+        title: Text(
+          text,
+          style:
+              const TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold),
+        ),
+        value: null,
+        groupValue: null,
+        onChanged: (Null? value) {},
+      ),
     );
   }
 }
