@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/select_language/parts/language_list_tile.dart';
 import 'package:maral_cosmetics/pages/parts/select_language/parts/select_language_title.dart';
 import 'package:maral_cosmetics/pages/parts/top_widget_of_bottom_navigation.dart';
+import 'package:maral_cosmetics/styles/margin_styles.dart';
 
 class SelectLanguage extends StatelessWidget {
   const SelectLanguage({super.key});
@@ -9,7 +10,7 @@ class SelectLanguage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 12, right: 12, bottom: 12),
+      margin: bottomNavigationEdgeInsets,
       child: Wrap(
         alignment: WrapAlignment.center,
         children: [
