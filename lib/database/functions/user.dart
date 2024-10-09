@@ -22,3 +22,19 @@ Future<void> createOrUpdateUser(User user) async {
     );
   }
 }
+
+Future<User?> getUser() async {
+  if (db.isOpen) {
+    List<Map<String, dynamic>>? maps =
+        await db.rawQuery("SELECT * FROM user LIMIT 1");
+
+    List<User> users =
+        List.generate(maps.length, (index) => User.fromJson(maps[index]));
+
+    if (users.isNotEmpty) {
+      return users.first;
+    }
+    return null;
+  }
+  return null;
+}
