@@ -30,7 +30,7 @@ class UserApiService {
   }
 
   // check otp ------------------------------------------------------------
-  Future<bool> checkOTP(OtpModel otp) async {
+  Future<ResponseUser> checkOTP(OtpModel otp) async {
     Uri uri = Uri.parse('$apiUrl/users/auth/check-otp');
 
     try {
@@ -42,9 +42,13 @@ class UserApiService {
 
       dynamic jsonData = json.decode(response.body);
       if (jsonData['statusCode'] == 200 && jsonData['success']) {
-        return true;
+        return ResponseUser(
+          user: User.fromJson(jsonData['data']['user']),
+          accessToken: jsonData['data']['token']['access'],
+          error: '',
+        );
       }
-      return false;
+      return ResponseUser(user: User.defaultUser(), accessToken: '', error: '');
     } catch (e) {
       rethrow;
     }
