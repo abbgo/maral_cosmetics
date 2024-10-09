@@ -19,13 +19,13 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController phoneCtrl = TextEditingController();
   final TextEditingController fullNameCtrl = TextEditingController();
   final TextEditingController passwordCtrl = TextEditingController();
-  final TextEditingController confirmPasswordCtrl = TextEditingController();
+  // final TextEditingController confirmPasswordCtrl = TextEditingController();
 
   @override
   void dispose() {
     phoneCtrl.dispose();
     fullNameCtrl.dispose();
-    confirmPasswordCtrl.dispose();
+    // confirmPasswordCtrl.dispose();
     passwordCtrl.dispose();
     super.dispose();
   }
@@ -57,7 +57,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     PasswordInput(passwordCtrl: passwordCtrl),
                     const SizedBox(height: 20),
                     ConfirmPasswordInput(
-                      confirmPasswordCtrl: confirmPasswordCtrl,
+                      // confirmPasswordCtrl: confirmPasswordCtrl,
                       passwordCtrl: passwordCtrl,
                     ),
                     const SizedBox(height: 80),
@@ -67,7 +67,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       phoneCtrl: phoneCtrl,
                       fullNameCtrl: fullNameCtrl,
                       passwordCtrl: passwordCtrl,
-                      confirmPasswordCtrl: confirmPasswordCtrl,
                     ),
                     const SizedBox(height: 10),
                     const LoginButton(forLogin: false),

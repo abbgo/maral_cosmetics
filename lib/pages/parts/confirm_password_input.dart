@@ -6,18 +6,18 @@ import 'package:maral_cosmetics/providers/parts/password_input.dart';
 class ConfirmPasswordInput extends ConsumerWidget {
   const ConfirmPasswordInput({
     super.key,
-    required this.confirmPasswordCtrl,
+    // required this.confirmPasswordCtrl,
     required this.passwordCtrl,
   });
 
-  final TextEditingController confirmPasswordCtrl, passwordCtrl;
+  final TextEditingController passwordCtrl; /* confirmPasswordCtrl */
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     bool showPassword = ref.watch(showConfirmPasswordProvider);
 
     return TextFormField(
-      controller: confirmPasswordCtrl,
+      // controller: confirmPasswordCtrl,
       cursorColor: Colors.black,
       style: const TextStyle(fontFamily: 'Inter'),
       obscureText: !showPassword,

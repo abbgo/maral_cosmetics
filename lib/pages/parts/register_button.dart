@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
+import 'package:maral_cosmetics/models/user.dart';
 import 'package:maral_cosmetics/pages/register.dart';
 import 'package:maral_cosmetics/providers/pages/login_and_register.dart';
 
@@ -13,7 +14,6 @@ class RegisterButton extends ConsumerWidget {
     this.phoneCtrl,
     this.fullNameCtrl,
     this.passwordCtrl,
-    this.confirmPasswordCtrl,
   });
 
   final bool forLogin;
@@ -21,7 +21,6 @@ class RegisterButton extends ConsumerWidget {
   final TextEditingController? phoneCtrl;
   final TextEditingController? fullNameCtrl;
   final TextEditingController? passwordCtrl;
-  final TextEditingController? confirmPasswordCtrl;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -50,10 +49,12 @@ class RegisterButton extends ConsumerWidget {
 
           ref.read(buttonPressProvider.notifier).state = true;
 
-          print('phone: ${phoneCtrl!.text}');
-          print('fullName: ${fullNameCtrl!.text}');
-          print('password: ${passwordCtrl!.text}');
-          print('confirmPassword: ${confirmPasswordCtrl!.text}');
+          User arg = User(
+            name: fullNameCtrl!.text,
+            phone: '+993${phoneCtrl?.text}',
+            password: passwordCtrl!.text,
+            context: context,
+          );
         },
         child: Text(
           'Hasaba durmak',
