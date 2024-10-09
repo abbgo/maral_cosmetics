@@ -78,7 +78,7 @@ class RegisterButton extends ConsumerWidget {
                   Navigator.push(
                     context,
                     CustomPageRoute(
-                      child: const CheckOtpPage(),
+                      child: CheckOtpPage(phone: '+993 ${phoneCtrl?.text}'),
                       direction: AxisDirection.left,
                     ),
                   );
