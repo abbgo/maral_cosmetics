@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/database/functions/user.dart';
 import 'package:maral_cosmetics/helpers/functions/screen.dart';
-import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
+import 'package:maral_cosmetics/helpers/methods/snackbars.dart';
 import 'package:maral_cosmetics/models/otp_model.dart';
 import 'package:maral_cosmetics/models/user.dart';
 import 'package:maral_cosmetics/pages/home.dart';
