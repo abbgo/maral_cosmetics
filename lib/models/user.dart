@@ -1,17 +1,25 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 class User extends Equatable {
-  final String name, phone, password;
-  final BuildContext context;
+  final String? id, password;
+  final String name, phone;
 
   const User({
+    required this.id,
     required this.name,
     required this.phone,
     required this.password,
-    required this.context,
   });
 
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      id: json['id'] ?? '',
+      name: json['name'],
+      phone: json['phone'],
+      password: '',
+    );
+  }
+
   @override
-  List<Object?> get props => [name, phone, password, context];
+  List<Object?> get props => [name, phone, password];
 }
