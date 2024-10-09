@@ -43,7 +43,7 @@ class RegisterButton extends ConsumerWidget {
           }
 
           if (registerFormKey?.currentState?.validate() == false) {
-            showInputErrorMethod(context, 'Ýalňyşlyk ýüze çykdy !');
+            showErrorSnackbar(context, 'Ýalňyşlyk ýüze çykdy !');
             return;
           }
 

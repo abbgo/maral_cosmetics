@@ -14,7 +14,7 @@ const errorBorder = OutlineInputBorder(
 
 const emptyTextStyle = TextStyle(fontSize: 0, height: 0);
 
-void showInputErrorMethod(BuildContext context, String text) {
+void showErrorSnackbar(BuildContext context, String text) {
   return showTopSnackBar(
     Overlay.of(context),
     CustomSnackBar.error(
