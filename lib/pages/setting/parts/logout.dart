@@ -7,8 +7,11 @@ class LogoutPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: const Color(0xfffee7e8),
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xfff3dede),
+        borderRadius: BorderRadius.circular(4),
+      ),
       child: ListTile(
         onTap: () => showLogOutBottomSheet(context),
         leading: Icon(Icons.logout, color: defaultColor),
