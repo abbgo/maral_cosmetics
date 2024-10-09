@@ -53,6 +53,31 @@ class UserApiService {
       rethrow;
     }
   }
+
+  // login user ------------------------------------------------------------
+  Future<ResponseUser> loginUser(User user) async {
+    Uri uri = Uri.parse('$apiUrl/users/auth/sign-in');
+
+    try {
+      http.Response response = await http.post(
+        uri,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(user.toJson()),
+      );
+
+      dynamic jsonData = json.decode(response.body);
+      if (jsonData['statusCode'] == 200 && jsonData['success']) {
+        return ResponseUser(
+          user: User.fromJson(jsonData['data']['user']),
+          accessToken: jsonData['data']['token']['access'],
+          error: '',
+        );
+      }
+      return ResponseUser.defaultResponse();
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
 
 class UserParams extends Equatable {
