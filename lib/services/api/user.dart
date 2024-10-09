@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/user.dart';
@@ -25,4 +27,14 @@ class UserApiService {
       rethrow;
     }
   }
+}
+
+class UserParams extends Equatable {
+  final User user;
+  final BuildContext context;
+
+  const UserParams({required this.user, required this.context});
+
+  @override
+  List<Object?> get props => [user, context];
 }
