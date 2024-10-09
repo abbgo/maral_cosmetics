@@ -5,10 +5,10 @@ class User extends Equatable {
   final String name, phone;
 
   const User({
-    required this.id,
+    this.id,
     required this.name,
     required this.phone,
-    required this.password,
+    this.password,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
@@ -16,7 +16,6 @@ class User extends Equatable {
       id: json['id'] ?? '',
       name: json['name'],
       phone: json['phone'],
-      password: '',
     );
   }
 

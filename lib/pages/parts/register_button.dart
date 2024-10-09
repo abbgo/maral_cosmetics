@@ -53,7 +53,6 @@ class RegisterButton extends ConsumerWidget {
             name: fullNameCtrl!.text,
             phone: '+993${phoneCtrl?.text}',
             password: passwordCtrl!.text,
-            context: context,
           );
         },
         child: Text(
