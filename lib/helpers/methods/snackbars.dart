@@ -5,7 +5,7 @@ void showIntConnErr(BuildContext context) {
   var snackBar = SnackBar(
     content: Text(
       AppLocalizations.of(context)!.noIntConn,
-      style: const TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white, fontFamily: 'Inter'),
     ),
     duration: const Duration(seconds: 3),
     backgroundColor: Colors.red,
