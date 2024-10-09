@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/models/user.dart';
+import 'package:maral_cosmetics/pages/check_otp/check_otp.dart';
 import 'package:maral_cosmetics/pages/register.dart';
 import 'package:maral_cosmetics/providers/api/user.dart';
 import 'package:maral_cosmetics/providers/pages/login_and_register.dart';
@@ -71,8 +72,17 @@ class RegisterButton extends ConsumerWidget {
                   }
                   return;
                 }
+
                 ref.read(buttonPressProvider.notifier).state = false;
-                print('===================== check otp');
+                if (context.mounted) {
+                  Navigator.push(
+                    context,
+                    CustomPageRoute(
+                      child: const CheckOtpPage(),
+                      direction: AxisDirection.left,
+                    ),
+                  );
+                }
               },
         child: Text(
           'Hasaba durmak',
