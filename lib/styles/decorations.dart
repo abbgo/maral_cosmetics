@@ -28,3 +28,8 @@ OutlineInputBorder errorBorder = const OutlineInputBorder(
   borderRadius: BorderRadius.all(Radius.circular(5)),
   borderSide: BorderSide(color: Color(0xffFF3C3C)),
 );
+
+BoxDecoration bottomNavigationBoxDecoration = BoxDecoration(
+  color: Colors.white,
+  borderRadius: BorderRadius.circular(24),
+);

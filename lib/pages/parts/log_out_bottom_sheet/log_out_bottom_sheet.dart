@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/top_widget_of_bottom_navigation.dart';
+import 'package:maral_cosmetics/styles/decorations.dart';
 import 'package:maral_cosmetics/styles/margin_styles.dart';
 
 class LogOutBottomSheet extends StatelessWidget {
@@ -16,10 +17,7 @@ class LogOutBottomSheet extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20),
             margin: const EdgeInsets.only(top: 8),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(24),
-            ),
+            decoration: bottomNavigationBoxDecoration,
             child: Column(
               children: [
                 const Text(
