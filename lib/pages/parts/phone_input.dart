@@ -19,7 +19,7 @@ class PhoneInput extends StatelessWidget {
       ],
       cursorColor: Colors.black,
       style: const TextStyle(fontFamily: 'Inter'),
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         errorBorder: errorBorder,
         focusedErrorBorder: errorBorder,
         enabledBorder: outlineInputBorder,
@@ -29,8 +29,8 @@ class PhoneInput extends StatelessWidget {
         helperText: '',
         counterText: '',
         labelText: ' Telefon belgi ',
-        labelStyle: TextStyle(fontFamily: 'Inter', color: Colors.black),
-        prefix: Text.rich(
+        labelStyle: const TextStyle(fontFamily: 'Inter', color: Colors.black),
+        prefix: const Text.rich(
           TextSpan(
             text: '+993',
             style: TextStyle(fontWeight: FontWeight.normal),

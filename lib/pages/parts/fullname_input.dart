@@ -13,7 +13,7 @@ class FullnameInput extends StatelessWidget {
       controller: fullNameCtrl,
       cursorColor: Colors.black,
       style: const TextStyle(fontFamily: 'Inter'),
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         errorBorder: errorBorder,
         focusedErrorBorder: errorBorder,
         enabledBorder: outlineInputBorder,
@@ -22,7 +22,7 @@ class FullnameInput extends StatelessWidget {
         helperStyle: emptyTextStyle,
         helperText: '',
         labelText: ' Ady ',
-        labelStyle: TextStyle(color: Colors.black, fontFamily: 'Inter'),
+        labelStyle: const TextStyle(color: Colors.black, fontFamily: 'Inter'),
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {

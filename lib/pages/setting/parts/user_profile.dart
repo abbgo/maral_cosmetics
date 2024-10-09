@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
+import 'package:maral_cosmetics/styles/style_borders.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
@@ -7,7 +8,7 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      shape: const Border(bottom: BorderSide(color: Color(0xffEDEDED))),
+      shape: bottomBorder,
       leading: Icon(Icons.account_circle, color: defaultColor, size: 50),
       title: Text(
         'Ahmet',

@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-const emptyTextStyle = TextStyle(fontSize: 0, height: 0);
+TextStyle emptyTextStyle = const TextStyle(fontSize: 0, height: 0);
