@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/styles/decorations.dart';
-import 'package:maral_cosmetics/styles/text_style.dart';
+import 'package:maral_cosmetics/styles/text_styles.dart';
 
 class FullnameInput extends StatelessWidget {
   const FullnameInput({super.key, required this.fullNameCtrl});

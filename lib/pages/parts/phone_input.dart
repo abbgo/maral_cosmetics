@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:maral_cosmetics/styles/decorations.dart';
-import 'package:maral_cosmetics/styles/text_style.dart';
+import 'package:maral_cosmetics/styles/text_styles.dart';
 
 class PhoneInput extends StatelessWidget {
   const PhoneInput({super.key, required this.phoneCtrl});
