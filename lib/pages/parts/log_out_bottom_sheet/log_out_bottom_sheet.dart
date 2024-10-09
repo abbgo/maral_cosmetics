@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/log_out_bottom_sheet/parts/log_out_bottom_sheet_title.dart';
 import 'package:maral_cosmetics/pages/parts/top_widget_of_bottom_navigation.dart';
 import 'package:maral_cosmetics/styles/decorations.dart';
 import 'package:maral_cosmetics/styles/margin_styles.dart';
@@ -20,11 +21,7 @@ class LogOutBottomSheet extends StatelessWidget {
             decoration: bottomNavigationBoxDecoration,
             child: Column(
               children: [
-                const Text(
-                  'Siz hakykyatdanam cykmak isleyanizmi?',
-                  style: TextStyle(
-                      color: Color(0xff824D6A), fontFamily: 'HeyWowRegular'),
-                ),
+                const LogOutBottomSheetTitle(),
                 const SizedBox(height: 40),
                 Row(
                   mainAxisSize: MainAxisSize.max,
