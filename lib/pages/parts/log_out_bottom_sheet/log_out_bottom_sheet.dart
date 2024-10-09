@@ -6,14 +6,15 @@ class LogOutBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 40),
-      decoration: const BoxDecoration(
-        color: Color(0xffF8F2F5),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
-        ),
-      ),
+      // padding: const EdgeInsets.symmetric(horizontal: 40),
+      // decoration: const BoxDecoration(
+      //   color: Color(0xffF8F2F5),
+      //   borderRadius: BorderRadius.only(
+      //     topLeft: Radius.circular(10),
+      //     topRight: Radius.circular(10),
+      //   ),
+      // ),
+      margin: const EdgeInsets.only(left: 12, right: 12, bottom: 12),
       child: Wrap(
         alignment: WrapAlignment.center,
         children: [

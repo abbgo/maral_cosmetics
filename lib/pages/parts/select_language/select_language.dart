@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/select_language/parts/language_list_tile.dart';
 import 'package:maral_cosmetics/pages/parts/select_language/parts/select_language_title.dart';
+import 'package:maral_cosmetics/pages/parts/top_widget_of_bottom_navigation.dart';
 
 class SelectLanguage extends StatelessWidget {
   const SelectLanguage({super.key});
@@ -12,14 +13,7 @@ class SelectLanguage extends StatelessWidget {
       child: Wrap(
         alignment: WrapAlignment.center,
         children: [
-          Container(
-            height: 6,
-            width: 56,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(13),
-              color: const Color(0XFFD1D1D1),
-            ),
-          ),
+          const TopWidgetOfBottomNavigation(),
           Container(
             padding: const EdgeInsets.all(20),
             margin: const EdgeInsets.only(top: 8),
