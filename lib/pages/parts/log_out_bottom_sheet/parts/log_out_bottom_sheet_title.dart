@@ -6,10 +6,12 @@ class LogOutBottomSheetTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
-      'Siz hakykyatdanam cykmak isleyanizmi?',
+      'Siz hakykyatdanam cykmak isleyanizmi ?',
+      textAlign: TextAlign.center,
       style: TextStyle(
-        color: Color(0xff824D6A),
         fontFamily: 'HeyWowRegular',
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
       ),
     );
   }
