@@ -4,7 +4,9 @@ import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/models/user.dart';
 import 'package:maral_cosmetics/pages/register.dart';
+import 'package:maral_cosmetics/providers/api/user.dart';
 import 'package:maral_cosmetics/providers/pages/login_and_register.dart';
+import 'package:maral_cosmetics/services/api/user.dart';
 
 class RegisterButton extends ConsumerWidget {
   const RegisterButton({
@@ -24,6 +26,8 @@ class RegisterButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    bool buttonPress = ref.watch(buttonPressProvider);
+
     return SizedBox(
       width: double.maxFinite,
       child: ElevatedButton(
@@ -36,25 +40,40 @@ class RegisterButton extends ConsumerWidget {
           ),
           backgroundColor: forLogin ? Colors.white : const Color(0xffA16F8A),
         ),
-        onPressed: () {
-          if (forLogin) {
-            goToPage(context, const RegisterPage(), true);
-            return;
-          }
+        onPressed: buttonPress
+            ? null
+            : () async {
+                if (forLogin) {
+                  goToPage(context, const RegisterPage(), true);
+                  return;
+                }
 
-          if (registerFormKey?.currentState?.validate() == false) {
-            showErrorSnackbar(context, 'Ýalňyşlyk ýüze çykdy !');
-            return;
-          }
+                if (registerFormKey?.currentState?.validate() == false) {
+                  showErrorSnackbar(context, 'Ýalňyşlyk ýüze çykdy !');
+                  return;
+                }
 
-          ref.read(buttonPressProvider.notifier).state = true;
+                ref.read(buttonPressProvider.notifier).state = true;
 
-          User arg = User(
-            name: fullNameCtrl!.text,
-            phone: '+993${phoneCtrl?.text}',
-            password: passwordCtrl!.text,
-          );
-        },
+                UserParams arg = UserParams(
+                  user: User(
+                    name: fullNameCtrl!.text,
+                    phone: '+993${phoneCtrl?.text}',
+                    password: passwordCtrl!.text,
+                  ),
+                  context: context,
+                );
+
+                if (!await ref.read(registerUserProvider(arg).future)) {
+                  if (context.mounted) {
+                    showErrorSnackbar(context, 'Ýalňyşlyk ýüze çykdy !');
+                    ref.read(buttonPressProvider.notifier).state = false;
+                  }
+                  return;
+                }
+                ref.read(buttonPressProvider.notifier).state = false;
+                print('===================== check otp');
+              },
         child: Text(
           'Hasaba durmak',
           style: TextStyle(

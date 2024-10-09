@@ -38,7 +38,7 @@ class LoginButton extends StatelessWidget {
           }
 
           if (loginFormKey?.currentState?.validate() == false) {
-            showInputErrorMethod(context, 'Ýalňyşlyk ýüze çykdy !');
+            showErrorSnackbar(context, 'Ýalňyşlyk ýüze çykdy !');
             return;
           }
 
