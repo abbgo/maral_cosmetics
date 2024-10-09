@@ -78,6 +78,26 @@ class UserApiService {
       rethrow;
     }
   }
+
+  // logout user ------------------------------------------------------------
+  Future<bool> logOutUser(String accessToken) async {
+    Uri uri = Uri.parse('$apiUrl/users/auth/remove');
+
+    try {
+      http.Response response = await http.post(
+        uri,
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      dynamic jsonData = json.decode(response.body);
+      if (jsonData['statusCode'] == 200 && jsonData['success']) {
+        return true;
+      }
+      return false;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
 
 class UserParams extends Equatable {
