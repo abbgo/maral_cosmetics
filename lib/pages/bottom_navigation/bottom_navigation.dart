@@ -36,7 +36,10 @@ class BottomNavigationPage extends ConsumerWidget {
         titleWidget = const FavoriteAppBarTitle();
         break;
       case 3:
-        titleWidget = const Text('Sazlamalar');
+        titleWidget = const Text(
+          'Sazlamalar',
+          style: TextStyle(color: Color(0xff824D6A)),
+        );
         break;
       default:
     }
