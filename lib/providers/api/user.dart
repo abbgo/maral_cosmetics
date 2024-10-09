@@ -41,3 +41,22 @@ var checkOTPProvider =
     return result;
   },
 );
+
+var loginUserProvider =
+    FutureProvider.autoDispose.family<ResponseUser, UserParams>(
+  (ref, arg) async {
+    ResponseUser result = ResponseUser.defaultResponse();
+
+    try {
+      bool hasInternert =
+          await ref.read(checkInternetConnProvider(arg.context).future);
+
+      if (hasInternert) {
+        result = await ref.read(userApiServiceProvider).loginUser(arg.user!);
+      }
+    } catch (e) {
+      result = ResponseUser.defaultResponse();
+    }
+    return result;
+  },
+);
