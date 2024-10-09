@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/pages/login.dart';
+import 'package:maral_cosmetics/providers/pages/login_and_register.dart';
 
-class LoginButton extends StatelessWidget {
+class LoginButton extends ConsumerWidget {
   const LoginButton({
     super.key,
     required this.forLogin,
@@ -18,7 +20,9 @@ class LoginButton extends StatelessWidget {
   final TextEditingController? passwordCtrl;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    bool buttonPress = ref.watch(buttonPressProvider);
+
     return SizedBox(
       width: double.maxFinite,
       child: ElevatedButton(
@@ -31,20 +35,22 @@ class LoginButton extends StatelessWidget {
           ),
           backgroundColor: forLogin ? const Color(0xffA16F8A) : Colors.white,
         ),
-        onPressed: () {
-          if (!forLogin) {
-            goToPage(context, const LoginPage(), true);
-            return;
-          }
+        onPressed: buttonPress
+            ? null
+            : () async {
+                if (!forLogin) {
+                  goToPage(context, const LoginPage(), true);
+                  return;
+                }
 
-          if (loginFormKey?.currentState?.validate() == false) {
-            showErrorSnackbar(context, 'Ýalňyşlyk ýüze çykdy !');
-            return;
-          }
+                if (loginFormKey?.currentState?.validate() == false) {
+                  showErrorSnackbar(context, 'Ýalňyşlyk ýüze çykdy !');
+                  return;
+                }
 
-          print('phone: ${phoneCtrl!.text}');
-          print('password: ${passwordCtrl!.text}');
-        },
+                print('phone: ${phoneCtrl!.text}');
+                print('password: ${passwordCtrl!.text}');
+              },
         child: Text(
           'Ulgama girmek',
           style: TextStyle(
