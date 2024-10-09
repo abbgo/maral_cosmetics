@@ -9,6 +9,7 @@ Future<void> createDB() async {
 
   db = await openDatabase(path, version: 1, onCreate: (db, version) {
     db.execute(searchsTable);
+    db.execute(userTable);
     return;
   });
 }
