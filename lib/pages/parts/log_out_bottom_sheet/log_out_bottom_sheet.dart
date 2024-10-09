@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maral_cosmetics/pages/parts/log_out_bottom_sheet/parts/log_out_bottom_sheet_no_button.dart';
 import 'package:maral_cosmetics/pages/parts/log_out_bottom_sheet/parts/log_out_bottom_sheet_title.dart';
 import 'package:maral_cosmetics/pages/parts/top_widget_of_bottom_navigation.dart';
 import 'package:maral_cosmetics/styles/decorations.dart';
@@ -22,23 +23,12 @@ class LogOutBottomSheet extends StatelessWidget {
             child: Column(
               children: [
                 const LogOutBottomSheetTitle(),
-                const SizedBox(height: 40),
+                const SizedBox(height: 16),
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xffc2a1b3),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 55),
-                      ),
-                      onPressed: () => Navigator.pop(context),
-                      child: const Text(
-                        'Yok',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                    const LogOutBottomSheetNoButton(),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff824D6A),
