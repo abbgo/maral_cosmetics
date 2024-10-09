@@ -11,10 +11,6 @@ class User extends Equatable {
     this.password,
   });
 
-  factory User.defaultUser() {
-    return const User(id: '', name: '', phone: '', password: '');
-  }
-
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       id: json['id'] ?? '',
@@ -36,14 +32,14 @@ class User extends Equatable {
 }
 
 class ResponseUser extends Equatable {
-  final User user;
+  final User? user;
   final String accessToken, error;
 
   const ResponseUser(
       {required this.user, required this.accessToken, required this.error});
 
   factory ResponseUser.defaultResponse() {
-    return ResponseUser(user: User.defaultUser(), accessToken: '', error: '');
+    return const ResponseUser(user: null, accessToken: '', error: '');
   }
 
   @override

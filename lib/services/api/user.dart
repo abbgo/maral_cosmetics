@@ -48,7 +48,7 @@ class UserApiService {
           error: '',
         );
       }
-      return ResponseUser(user: User.defaultUser(), accessToken: '', error: '');
+      return ResponseUser.defaultResponse();
     } catch (e) {
       rethrow;
     }
