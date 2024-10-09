@@ -4,9 +4,13 @@ import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/providers/parts/password_input.dart';
 
 class ConfirmPasswordInput extends ConsumerWidget {
-  const ConfirmPasswordInput({super.key, required this.confirmPasswordCtrl});
+  const ConfirmPasswordInput({
+    super.key,
+    required this.confirmPasswordCtrl,
+    required this.passwordCtrl,
+  });
 
-  final TextEditingController confirmPasswordCtrl;
+  final TextEditingController confirmPasswordCtrl, passwordCtrl;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -38,7 +42,7 @@ class ConfirmPasswordInput extends ConsumerWidget {
         ),
       ),
       validator: (value) {
-        if (value == null || value.isEmpty) {
+        if (value == null || value.isEmpty || value != passwordCtrl.text) {
           return '';
         }
         return null;

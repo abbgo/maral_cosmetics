@@ -57,7 +57,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     PasswordInput(passwordCtrl: passwordCtrl),
                     const SizedBox(height: 20),
                     ConfirmPasswordInput(
-                        confirmPasswordCtrl: confirmPasswordCtrl),
+                      confirmPasswordCtrl: confirmPasswordCtrl,
+                      passwordCtrl: passwordCtrl,
+                    ),
                     const SizedBox(height: 80),
                     RegisterButton(
                       forLogin: false,
