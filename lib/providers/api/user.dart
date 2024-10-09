@@ -1,28 +1,24 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/providers/internet.dart';
 import 'package:maral_cosmetics/services/api/user.dart';
 
 final userApiServiceProvider =
     Provider<UserApiService>((ref) => UserApiService());
 
-var registerUserProvider = FutureProvider.autoDispose
-    .family<ResultLoginShopOwner, LoginShopOwnerParams>((ref, arg) async {
-  ResultLoginShopOwner result = ResultLoginShopOwner.defaultResult();
+var registerUserProvider = FutureProvider.autoDispose.family<bool, UserParams>(
+  (ref, arg) async {
+    bool result;
+    try {
+      bool hasInternert =
+          await ref.read(checkInternetConnProvider(arg.context).future);
 
-  try {
-    bool hasInternert =
-        await ref.read(checkInternetConnProvider(arg.context).future);
-
-    if (hasInternert) {
-      ResponseLoginShopOwner responseLoginShopOwner = await ref
-          .read(shopOwnerApiServiceProvider)
-          .loginShopOwner(arg.phoneNumber, arg.password);
-
-      result = ResultLoginShopOwner(
-          error: '', responseLoginShopOwner: responseLoginShopOwner);
+      if (hasInternert) {
+        result = await ref.read(userApiServiceProvider).registerUser(arg.user);
+      }
+      result = false;
+    } catch (e) {
+      result = false;
     }
-  } catch (e) {
-    result = ResultLoginShopOwner(error: e.toString());
-  }
-
-  return result;
-});
+    return result;
+  },
+);
