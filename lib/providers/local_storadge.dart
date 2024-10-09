@@ -15,8 +15,8 @@ final isFirstTimeProvider = createPrefProvider<bool>(
   defaultValue: true,
 );
 
-final refreshTokenProvider = createPrefProvider<String>(
+final accessTokenProvider = createPrefProvider<String>(
   prefs: (_) => prefs,
-  prefKey: "refresh_token",
+  prefKey: "access_token",
   defaultValue: '',
 );

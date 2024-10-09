@@ -33,9 +33,6 @@ class UserApiService {
   Future<ResponseUser> checkOTP(OtpModel otp) async {
     Uri uri = Uri.parse('$apiUrl/users/auth/check-otp');
 
-    print('============================= ');
-    print(otp.toJson());
-
     try {
       http.Response response = await http.post(
         uri,

@@ -5,6 +5,7 @@ import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/models/otp_model.dart';
 import 'package:maral_cosmetics/models/user.dart';
 import 'package:maral_cosmetics/providers/api/user.dart';
+import 'package:maral_cosmetics/providers/local_storadge.dart';
 import 'package:maral_cosmetics/providers/pages/login_and_register.dart';
 import 'package:maral_cosmetics/services/api/user.dart';
 import 'package:pinput/pinput.dart';
@@ -91,8 +92,10 @@ class CheckOtpPage extends ConsumerWidget {
                   return;
                 }
 
+                await ref
+                    .read(accessTokenProvider.notifier)
+                    .update(responseUser.accessToken);
                 ref.read(loadOTPProvider.notifier).state = false;
-                print('================ ustunlikli otp boldy');
               },
             ),
           ],

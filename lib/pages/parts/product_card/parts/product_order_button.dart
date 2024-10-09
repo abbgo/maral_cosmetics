@@ -11,7 +11,7 @@ class ProductOrderButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    String refreshToken = ref.watch(refreshTokenProvider);
+    String accessToken = ref.watch(accessTokenProvider);
 
     return SizedBox(
       height: buttonHeight ?? 30,
@@ -21,7 +21,7 @@ class ProductOrderButton extends ConsumerWidget {
           backgroundColor: const Color(0xffA16F8A),
         ),
         onPressed: () {
-          if (refreshToken.isEmpty) {
+          if (accessToken.isEmpty) {
             Navigator.push(
               context,
               CustomPageRoute(
