@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/providers/parts/password_input.dart';
 import 'package:maral_cosmetics/styles/decorations.dart';
+import 'package:maral_cosmetics/styles/text_style.dart';
 
 class PasswordInput extends ConsumerWidget {
   const PasswordInput({super.key, required this.passwordCtrl});
