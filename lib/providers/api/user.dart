@@ -13,7 +13,7 @@ var registerUserProvider = FutureProvider.autoDispose.family<bool, UserParams>(
           await ref.read(checkInternetConnProvider(arg.context).future);
 
       if (hasInternert) {
-        result = await ref.read(userApiServiceProvider).registerUser(arg.user);
+        result = await ref.read(userApiServiceProvider).registerUser(arg.user!);
       }
     } catch (e) {
       result = false;

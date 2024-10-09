@@ -30,14 +30,14 @@ class UserApiService {
   }
 
   // check otp ------------------------------------------------------------
-  Future<bool> checkOTP(User user) async {
+  Future<bool> checkOTP(OtpModel otp) async {
     Uri uri = Uri.parse('$apiUrl/users/auth/check-otp');
 
     try {
       http.Response response = await http.post(
         uri,
         headers: {'Content-Type': 'application/json'},
-        body: json.encode(user.toJson()),
+        body: json.encode(otp.toJson()),
       );
 
       dynamic jsonData = json.decode(response.body);
