@@ -20,6 +20,7 @@ showPhonesBottomSheet(BuildContext context) {
 
 showLogOutBottomSheet(BuildContext context) {
   showModalBottomSheet(
+    backgroundColor: Colors.transparent,
     context: context,
     builder: (context) => const LogOutBottomSheet(),
   );
