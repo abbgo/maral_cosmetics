@@ -27,13 +27,34 @@ class UserApiService {
       rethrow;
     }
   }
+
+  // check otp ------------------------------------------------------------
+  Future<bool> checkOTP(User user) async {
+    Uri uri = Uri.parse('$apiUrl/users/auth/check-otp');
+
+    try {
+      http.Response response = await http.post(
+        uri,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(user.toJson()),
+      );
+
+      dynamic jsonData = json.decode(response.body);
+      if (jsonData['statusCode'] == 200 && jsonData['success']) {
+        return true;
+      }
+      return false;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
 
 class UserParams extends Equatable {
-  final User user;
+  final User? user;
   final BuildContext context;
 
-  const UserParams({required this.user, required this.context});
+  const UserParams({this.user, required this.context});
 
   @override
   List<Object?> get props => [user, context];
