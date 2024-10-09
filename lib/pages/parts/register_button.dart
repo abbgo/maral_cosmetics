@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/pages/register.dart';
+import 'package:maral_cosmetics/providers/pages/login_and_register.dart';
 
-class RegisterButton extends StatelessWidget {
+class RegisterButton extends ConsumerWidget {
   const RegisterButton({
     super.key,
     required this.forLogin,
@@ -22,7 +24,7 @@ class RegisterButton extends StatelessWidget {
   final TextEditingController? confirmPasswordCtrl;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
       width: double.maxFinite,
       child: ElevatedButton(
@@ -45,6 +47,8 @@ class RegisterButton extends StatelessWidget {
             showInputErrorMethod(context, 'Ýalňyşlyk ýüze çykdy !');
             return;
           }
+
+          ref.read(buttonPressProvider.notifier).state = true;
 
           print('phone: ${phoneCtrl!.text}');
           print('fullName: ${fullNameCtrl!.text}');
