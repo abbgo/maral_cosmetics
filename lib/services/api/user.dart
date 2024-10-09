@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:maral_cosmetics/helpers/static_data.dart';
+import 'package:maral_cosmetics/models/otp_model.dart';
 import 'package:maral_cosmetics/models/user.dart';
 
 class UserApiService {
@@ -52,10 +53,11 @@ class UserApiService {
 
 class UserParams extends Equatable {
   final User? user;
+  final OtpModel? otp;
   final BuildContext context;
 
-  const UserParams({this.user, required this.context});
+  const UserParams({this.user, this.otp, required this.context});
 
   @override
-  List<Object?> get props => [user, context];
+  List<Object?> get props => [user, otp, context];
 }
