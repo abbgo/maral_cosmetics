@@ -19,12 +19,12 @@ class User extends Equatable {
     );
   }
 
+  Map<String, dynamic> toJsonForDB() {
+    return {'id': id, 'name': name, 'phone': phone};
+  }
+
   Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'phone': phone,
-      'password': password,
-    };
+    return {'password': password, 'name': name, 'phone': phone};
   }
 
   @override

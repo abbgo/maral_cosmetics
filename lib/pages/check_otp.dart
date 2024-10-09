@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/database/functions/user.dart';
 import 'package:maral_cosmetics/helpers/functions/screen.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/inputs.dart';
 import 'package:maral_cosmetics/models/otp_model.dart';
 import 'package:maral_cosmetics/models/user.dart';
+import 'package:maral_cosmetics/pages/home.dart';
 import 'package:maral_cosmetics/providers/api/user.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
+import 'package:maral_cosmetics/providers/pages/bottom_navigation.dart';
 import 'package:maral_cosmetics/providers/pages/login_and_register.dart';
 import 'package:maral_cosmetics/services/api/user.dart';
 import 'package:pinput/pinput.dart';
@@ -92,10 +95,19 @@ class CheckOtpPage extends ConsumerWidget {
                   return;
                 }
 
+                await createOrUpdateUser(responseUser.user!);
                 await ref
                     .read(accessTokenProvider.notifier)
                     .update(responseUser.accessToken);
+                ref.read(selectedBottomIndexProvider.notifier).state = 3;
                 ref.read(loadOTPProvider.notifier).state = false;
+                if (context.mounted) {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePage()),
+                    (Route<dynamic> route) => false,
+                  );
+                }
               },
             ),
           ],
