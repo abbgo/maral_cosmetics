@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/product_sort/parts/product_sort_radio_list_tile.dart';
 import 'package:maral_cosmetics/pages/parts/product_sort/parts/product_sort_title.dart';
+import 'package:maral_cosmetics/pages/parts/top_widget_of_bottom_navigation.dart';
 
 class ProductSort extends StatelessWidget {
   const ProductSort({super.key});
@@ -14,14 +15,7 @@ class ProductSort extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Container(
-            height: 6,
-            width: 56,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(13),
-              color: const Color(0XFFD1D1D1),
-            ),
-          ),
+          const TopWidgetOfBottomNavigation(),
           Container(
             margin:
                 const EdgeInsets.only(left: 20, top: 8, right: 20, bottom: 20),
