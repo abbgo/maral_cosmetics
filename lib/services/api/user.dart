@@ -62,7 +62,7 @@ class UserApiService {
       http.Response response = await http.post(
         uri,
         headers: {'Content-Type': 'application/json'},
-        body: json.encode(user.toJson()),
+        body: json.encode(user.toJsonForLogin()),
       );
 
       dynamic jsonData = json.decode(response.body);
