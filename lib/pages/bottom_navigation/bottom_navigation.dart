@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/helpers/methods/pages/basket.dart';
+import 'package:maral_cosmetics/helpers/methods/pages/home.dart';
+import 'package:maral_cosmetics/helpers/methods/pages/products.dart';
+import 'package:maral_cosmetics/helpers/methods/pages/setting.dart';
 import 'package:maral_cosmetics/pages/basket/basket.dart';
-import 'package:maral_cosmetics/pages/bottom_navigation/parts/basket_app_bar_title.dart';
 import 'package:maral_cosmetics/pages/bottom_navigation/parts/bottom_navigation_bar.dart';
-import 'package:maral_cosmetics/pages/bottom_navigation/parts/favorite_app_bar_title.dart';
-import 'package:maral_cosmetics/pages/bottom_navigation/parts/home_app_bar_title.dart';
-import 'package:maral_cosmetics/pages/favorites/favorites.dart';
 import 'package:maral_cosmetics/pages/home/home_body.dart';
+import 'package:maral_cosmetics/pages/products/parts/result_products.dart';
 import 'package:maral_cosmetics/pages/setting/setting.dart';
 import 'package:maral_cosmetics/providers/pages/bottom_navigation.dart';
 
@@ -15,38 +16,35 @@ class BottomNavigationPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Widget? titleWidget;
+    AppBar appBarWidget = AppBar();
     int selectedIndex = ref.watch(selectedBottomIndexProvider);
 
     List<Widget> pages = [
       const HomeBody(),
       const BasketPage(),
-      const FavoritesPage(),
+      const ResultProducts(),
       const SettingPage(),
     ];
 
     switch (selectedIndex) {
       case 0:
-        titleWidget = const HomeAppBarTitle();
+        appBarWidget = homePageAppBar();
         break;
       case 1:
-        titleWidget = const BasketAppBarTitle();
+        appBarWidget = basketPageAppBar();
         break;
       case 2:
-        titleWidget = const FavoriteAppBarTitle();
+        appBarWidget = productsPageAppBar('Foverim', context);
         break;
       case 3:
-        titleWidget = const Text(
-          'Sazlamalar',
-          style: TextStyle(color: Color(0xff824D6A)),
-        );
+        appBarWidget = settingPageAppBar();
         break;
       default:
     }
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(title: titleWidget, centerTitle: false, leading: null),
+      appBar: appBarWidget,
       body: IndexedStack(
         index: selectedIndex,
         children: pages,

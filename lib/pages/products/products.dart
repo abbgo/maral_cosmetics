@@ -5,7 +5,6 @@ import 'package:maral_cosmetics/models/brand.dart';
 import 'package:maral_cosmetics/models/category.dart';
 import 'package:maral_cosmetics/pages/products/parts/result_products.dart';
 import 'package:maral_cosmetics/providers/pages/products.dart';
-import 'package:maral_cosmetics/providers/parts/product_sort_and_filter.dart';
 
 class ProductsPage extends ConsumerWidget {
   const ProductsPage({super.key, this.category, this.brand});
@@ -16,14 +15,11 @@ class ProductsPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     String title = '';
-    bool? isLiked = ref.watch(isLikedProvider);
 
     if (category != null) {
       title = category!.name;
     } else if (brand != null) {
       title = brand!.name;
-    } else if (isLiked != null && isLiked) {
-      title = 'Foverim';
     }
 
     return PopScope(
