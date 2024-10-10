@@ -4,6 +4,7 @@ import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/models/product.dart';
 import 'package:maral_cosmetics/pages/login.dart';
 import 'package:maral_cosmetics/providers/api/favorite.dart';
+import 'package:maral_cosmetics/providers/api/product.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
 import 'package:maral_cosmetics/services/api/favorite.dart';
 
@@ -43,7 +44,9 @@ class ProductFavoriteButton extends ConsumerWidget {
             productID: product.id,
           );
           bool result = await ref.read(addOrRemoveFavoriteProvider(arg).future);
-          print('------------------------------ $result');
+          if (result) {
+            ref.invalidate(fetchProductsProvider);
+          }
         },
         child: Container(
           padding: const EdgeInsets.all(2),
@@ -51,9 +54,9 @@ class ProductFavoriteButton extends ConsumerWidget {
             color: Colors.white,
             borderRadius: BorderRadius.circular(5),
           ),
-          child: const Icon(
-            Icons.favorite_outline,
-            color: Color(0xff824D6A),
+          child: Icon(
+            product.isLiked ? Icons.favorite : Icons.favorite_outline,
+            color: const Color(0xff824D6A),
             size: 22,
           ),
         ),
