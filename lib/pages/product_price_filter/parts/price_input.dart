@@ -39,6 +39,7 @@ class PriceInput extends StatelessWidget {
             inputFormatters: <TextInputFormatter>[
               FilteringTextInputFormatter.digitsOnly
             ],
+            style: const TextStyle(fontFamily: 'Inter'),
             decoration: InputDecoration(
               enabledBorder: outlineInputBorder,
               focusedBorder: outlineInputBorder,

@@ -18,7 +18,11 @@ class SaveProductPriceFilterButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xff824D6A),
         ),
-        onPressed: () {},
+        onPressed: () async {
+          print('======================================');
+          print('minPrice: ${minPriceCtrl.text}');
+          print('maxPrice: ${maxPriceCtrl.text}');
+        },
         child: const Text(
           'OK',
           style: TextStyle(fontFamily: 'inter'),
