@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
+import 'package:maral_cosmetics/models/product.dart';
 import 'package:maral_cosmetics/pages/login.dart';
+import 'package:maral_cosmetics/providers/api/favorite.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
 import 'package:maral_cosmetics/services/api/favorite.dart';
 
@@ -10,11 +12,11 @@ class ProductFavoriteButton extends ConsumerWidget {
     super.key,
     required this.right,
     required this.top,
-    required this.productID,
+    required this.product,
   });
 
   final double right, top;
-  final String productID;
+  final Product product;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -38,8 +40,10 @@ class ProductFavoriteButton extends ConsumerWidget {
 
           FavoriteParams arg = FavoriteParams(
             context: context,
-            productID: productID,
+            productID: product.id,
           );
+          bool result = await ref.read(addOrRemoveFavoriteProvider(arg).future);
+          print('------------------------------ $result');
         },
         child: Container(
           padding: const EdgeInsets.all(2),

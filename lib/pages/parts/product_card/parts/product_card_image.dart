@@ -82,7 +82,7 @@ class _ProductCardImageState extends State<ProductCardImage> {
             ],
           ),
         ),
-        ProductFavoriteButton(top: 5, right: 5, productID: widget.product.id),
+        ProductFavoriteButton(top: 5, right: 5, product: widget.product),
       ],
     );
   }
