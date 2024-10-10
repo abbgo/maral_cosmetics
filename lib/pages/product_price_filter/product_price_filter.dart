@@ -38,7 +38,7 @@ class _ProductPriceFilterPageState extends State<ProductPriceFilterPage> {
         actions: const [ClearProductPriceButton()],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

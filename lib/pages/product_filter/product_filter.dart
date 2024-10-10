@@ -22,20 +22,38 @@ class ProductFilterPage extends StatelessWidget {
         bottom: appBarBottomMethod(),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            ProductFilterButton(text: 'Brend', onTap: () {}),
-            ProductFilterButton(
-              text: 'Bahasy',
-              onTap: () => Navigator.push(
-                context,
-                CustomPageRoute(
-                  child: const ProductPriceFilterPage(),
-                  direction: AxisDirection.left,
+            Column(
+              children: [
+                ProductFilterButton(text: 'Brend', onTap: () {}),
+                ProductFilterButton(
+                  text: 'Bahasy',
+                  onTap: () => Navigator.push(
+                    context,
+                    CustomPageRoute(
+                      child: const ProductPriceFilterPage(),
+                      direction: AxisDirection.left,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff824D6A),
+                ),
+                onPressed: () => Navigator.pop(context),
+                child: const Text(
+                  'OK',
+                  style: TextStyle(fontFamily: 'inter'),
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
