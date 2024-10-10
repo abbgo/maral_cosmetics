@@ -83,6 +83,8 @@ class UserApiService {
   Future<bool> logOutUser(String accessToken) async {
     Uri uri = Uri.parse('$apiUrl/users/auth/remove');
 
+    print('-------------- $accessToken');
+
     try {
       http.Response response = await http.post(
         uri,
