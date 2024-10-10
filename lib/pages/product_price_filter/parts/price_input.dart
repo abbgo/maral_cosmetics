@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class PriceInput extends StatelessWidget {
-  const PriceInput({super.key, required this.title, required this.hintText});
+  const PriceInput({
+    super.key,
+    required this.title,
+    required this.hintText,
+    required this.ctrl,
+  });
 
   final String title, hintText;
+  final TextEditingController ctrl;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +33,7 @@ class PriceInput extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           TextField(
+            controller: ctrl,
             cursorColor: const Color(0xffCCCCCC),
             keyboardType: TextInputType.number,
             inputFormatters: <TextInputFormatter>[

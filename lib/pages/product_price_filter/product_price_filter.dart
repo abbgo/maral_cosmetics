@@ -12,8 +12,8 @@ class ProductPriceFilterPage extends StatefulWidget {
 }
 
 class _ProductPriceFilterPageState extends State<ProductPriceFilterPage> {
-  TextEditingController minPriceCtrl = TextEditingController();
-  TextEditingController maxPriceCtrl = TextEditingController();
+  final TextEditingController minPriceCtrl = TextEditingController();
+  final TextEditingController maxPriceCtrl = TextEditingController();
 
   @override
   void dispose() {
@@ -37,19 +37,27 @@ class _ProductPriceFilterPageState extends State<ProductPriceFilterPage> {
         bottom: appBarBottomMethod(),
         actions: const [ClearProductPriceButton()],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
-                PriceInput(title: 'Min baha', hintText: '1 man'),
-                SizedBox(width: 12),
-                PriceInput(title: 'Max baha', hintText: '1000 man'),
+                PriceInput(
+                  title: 'Min baha',
+                  hintText: '1 man',
+                  ctrl: minPriceCtrl,
+                ),
+                const SizedBox(width: 12),
+                PriceInput(
+                  title: 'Max baha',
+                  hintText: '1000 man',
+                  ctrl: maxPriceCtrl,
+                ),
               ],
             ),
-            SaveProductPriceFilterButton(),
+            const SaveProductPriceFilterButton(),
           ],
         ),
       ),
