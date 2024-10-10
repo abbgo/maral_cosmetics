@@ -38,3 +38,9 @@ Future<User?> getUser() async {
   }
   return null;
 }
+
+Future<void> removeUser() async {
+  if (db.isOpen) {
+    await db.rawDelete("DELETE FROM user;");
+  }
+}
