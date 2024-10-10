@@ -22,7 +22,7 @@ class SelectLanguage extends StatelessWidget {
             decoration: bottomNavigationBoxDecoration,
             child: const Column(
               children: [
-                BottomSheetTitle(),
+                BottomSheetTitle(text: 'Dil'),
                 LanguageListTile(text: 'Turkmen', lang: 'tk'),
                 LanguageListTile(text: 'Русский', lang: 'ru'),
               ],
