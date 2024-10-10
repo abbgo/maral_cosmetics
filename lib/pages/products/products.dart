@@ -60,7 +60,7 @@ class ProductsPage extends ConsumerWidget {
             ),
           ],
         ),
-        body: ResultProducts(categoryID: category?.id, brandID: brand?.id),
+        body: const ResultProducts(),
       ),
     );
   }

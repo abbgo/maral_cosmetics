@@ -6,9 +6,7 @@ import 'package:maral_cosmetics/pages/parts/products_gridview.dart';
 import 'package:maral_cosmetics/providers/pages/products.dart';
 
 class ResultProducts extends ConsumerWidget {
-  const ResultProducts({super.key, this.categoryID, this.brandID});
-
-  final String? categoryID, brandID;
+  const ResultProducts({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
