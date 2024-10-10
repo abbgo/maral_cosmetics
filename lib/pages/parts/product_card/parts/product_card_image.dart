@@ -4,14 +4,16 @@ import 'package:maral_cosmetics/helpers/methods/parts/product_image.dart';
 import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:maral_cosmetics/models/image.dart';
+import 'package:maral_cosmetics/models/product.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_favorite_button.dart';
 import 'package:maral_cosmetics/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProductCardImage extends StatefulWidget {
-  const ProductCardImage({super.key, required this.images});
+  const ProductCardImage({super.key, required this.product});
 
-  final List<BlurImage> images;
+  // final List<BlurImage> images;
+  final Product product;
 
   @override
   State<ProductCardImage> createState() => _ProductCardImageState();
@@ -38,9 +40,9 @@ class _ProductCardImageState extends State<ProductCardImage> {
             child: PageView.builder(
               pageSnapping: true,
               controller: _pageController,
-              itemCount: widget.images.length,
+              itemCount: widget.product.images.length,
               itemBuilder: (context, index) {
-                BlurImage image = widget.images[index];
+                BlurImage image = widget.product.images[index];
                 return BlurHash(
                   errorBuilder: (context, error, stackTrace) => loadWidget,
                   curve: Curves.easeOut,
@@ -60,7 +62,7 @@ class _ProductCardImageState extends State<ProductCardImage> {
           ),
           child: SmoothPageIndicator(
             controller: _pageController,
-            count: widget.images.length,
+            count: widget.product.images.length,
             effect: WormEffect(
               dotColor: Colors.white,
               dotHeight: 8,
@@ -80,7 +82,7 @@ class _ProductCardImageState extends State<ProductCardImage> {
             ],
           ),
         ),
-        const ProductFavoriteButton(top: 5, right: 5),
+        ProductFavoriteButton(top: 5, right: 5, productID: widget.product.id),
       ],
     );
   }

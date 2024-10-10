@@ -14,7 +14,7 @@ class ProductImage extends StatelessWidget {
     return Stack(
       children: [
         ProductImageSlider(images: product.images, forZoom: false),
-        const ProductFavoriteButton(top: 10, right: 10),
+        ProductFavoriteButton(top: 10, right: 10, productID: product.id),
         ProductImageZoomButton(images: product.images),
       ],
     );

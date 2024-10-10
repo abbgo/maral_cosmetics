@@ -3,12 +3,18 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/navigation.dart';
 import 'package:maral_cosmetics/pages/login.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
+import 'package:maral_cosmetics/services/api/favorite.dart';
 
 class ProductFavoriteButton extends ConsumerWidget {
-  const ProductFavoriteButton(
-      {super.key, required this.right, required this.top});
+  const ProductFavoriteButton({
+    super.key,
+    required this.right,
+    required this.top,
+    required this.productID,
+  });
 
   final double right, top;
+  final String productID;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,7 +24,7 @@ class ProductFavoriteButton extends ConsumerWidget {
       right: right,
       top: top,
       child: GestureDetector(
-        onTap: () {
+        onTap: () async {
           if (accessToken.isEmpty) {
             Navigator.push(
               context,
@@ -29,6 +35,11 @@ class ProductFavoriteButton extends ConsumerWidget {
             );
             return;
           }
+
+          FavoriteParams arg = FavoriteParams(
+            context: context,
+            productID: productID,
+          );
         },
         child: Container(
           padding: const EdgeInsets.all(2),
