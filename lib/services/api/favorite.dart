@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/static_data.dart';
 import 'package:http/http.dart' as http;
 
@@ -26,4 +28,14 @@ class FavoriteApiService {
       rethrow;
     }
   }
+}
+
+class FavoriteParams extends Equatable {
+  final BuildContext context;
+  final String productID;
+
+  const FavoriteParams({required this.context, required this.productID});
+
+  @override
+  List<Object?> get props => [context, productID];
 }
