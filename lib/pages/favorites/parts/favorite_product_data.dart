@@ -24,7 +24,7 @@ class FavoriteProductData extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          const ProductStarAndPrice(fontSizePrice: 10, fontSizeOldPrice: 8),
+          // const ProductStarAndPrice(fontSizePrice: 10, fontSizeOldPrice: 8),
           const SizedBox(height: 10),
           forFavorite
               ? const FavoriteProductButtons()

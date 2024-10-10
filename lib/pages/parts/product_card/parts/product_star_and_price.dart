@@ -24,6 +24,7 @@ class ProductStarAndPrice extends StatelessWidget {
         ProductPrices(
           fontSizePrice: fontSizePrice,
           fontSizeOldPrice: fontSizeOldPrice,
+          product: product,
         ),
       ],
     );

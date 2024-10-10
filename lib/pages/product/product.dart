@@ -35,7 +35,7 @@ class ProductPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            const ProductPriceAndOrderButton(),
+            ProductPriceAndOrderButton(product: product),
             const SizedBox(height: 12),
             ProductDescription(
               title: 'Barada',

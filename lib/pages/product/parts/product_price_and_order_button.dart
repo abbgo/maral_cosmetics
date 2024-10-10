@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/product_image.dart';
+import 'package:maral_cosmetics/models/product.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_order_button.dart';
 import 'package:maral_cosmetics/pages/parts/product_card/parts/product_prices.dart';
 
 class ProductPriceAndOrderButton extends StatelessWidget {
-  const ProductPriceAndOrderButton({super.key});
+  const ProductPriceAndOrderButton({super.key, required this.product});
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,11 @@ class ProductPriceAndOrderButton extends StatelessWidget {
         children: [
           Row(
             children: [
-              const ProductPrices(fontSizePrice: 20, fontSizeOldPrice: 16),
+              ProductPrices(
+                fontSizePrice: 20,
+                fontSizeOldPrice: 16,
+                product: product,
+              ),
               const SizedBox(width: 10),
               imageIconMethod('54%', Colors.red, 14),
             ],
