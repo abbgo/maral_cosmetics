@@ -57,7 +57,10 @@ class _ProductPriceFilterPageState extends State<ProductPriceFilterPage> {
                 ),
               ],
             ),
-            const SaveProductPriceFilterButton(),
+            SaveProductPriceFilterButton(
+              minPriceCtrl: minPriceCtrl,
+              maxPriceCtrl: maxPriceCtrl,
+            ),
           ],
         ),
       ),

@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class SaveProductPriceFilterButton extends StatelessWidget {
-  const SaveProductPriceFilterButton({super.key});
+  const SaveProductPriceFilterButton({
+    super.key,
+    required this.minPriceCtrl,
+    required this.maxPriceCtrl,
+  });
+
+  final TextEditingController minPriceCtrl;
+  final TextEditingController maxPriceCtrl;
 
   @override
   Widget build(BuildContext context) {
