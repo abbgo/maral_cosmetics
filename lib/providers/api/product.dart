@@ -21,6 +21,7 @@ var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
       String sortProduct = await ref.watch(sortProductProvider);
       String? minPrice = await ref.watch(minPriceProvider);
       String? maxPrice = await ref.watch(maxPriceProvider);
+      bool? isLiked = await ref.watch(isLikedProvider);
 
       ProductParams productParams = ProductParams(
         categories: categoryIDs,
@@ -32,6 +33,7 @@ var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
         lang: lang,
         priceFrom: minPrice == null ? null : num.tryParse(minPrice),
         priceTo: maxPrice == null ? null : num.tryParse(maxPrice),
+        isLiked: isLiked,
       );
 
       ResultProduct resultProducts = await ref
