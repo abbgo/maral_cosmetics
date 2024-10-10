@@ -13,6 +13,7 @@ showLanguageBottomSheet(BuildContext context) {
 
 showPhonesBottomSheet(BuildContext context) {
   showModalBottomSheet(
+    backgroundColor: Colors.transparent,
     context: context,
     builder: (context) => const ContactPhones(),
   );
