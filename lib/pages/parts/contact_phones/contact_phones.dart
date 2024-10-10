@@ -24,7 +24,6 @@ class ContactPhones extends StatelessWidget {
               children: [
                 BottomSheetTitle(text: 'Habarlasmak'),
                 ContactPhonesListTile(text: '+993 62674323'),
-                Divider(color: Color(0xffD9D9D9)),
                 ContactPhonesListTile(text: '+993 63345623'),
               ],
             ),
