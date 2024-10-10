@@ -19,7 +19,6 @@ var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
       List<String> categoryIDs = await ref.watch(categoryIDsProvider);
       List<String> brandIDs = await ref.watch(brandIDsProvider);
       String sortProduct = await ref.watch(sortProductProvider);
-
       String? minPrice = await ref.watch(minPriceProvider);
       String? maxPrice = await ref.watch(maxPriceProvider);
 
