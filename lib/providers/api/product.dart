@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/models/default_param.dart';
 import 'package:maral_cosmetics/models/product.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
+import 'package:maral_cosmetics/providers/pages/bottom_navigation.dart';
 import 'package:maral_cosmetics/providers/pages/products.dart';
 import 'package:maral_cosmetics/providers/parts/product_sort_and_filter.dart';
 import 'package:maral_cosmetics/services/api/product.dart';
@@ -9,7 +10,8 @@ import 'package:maral_cosmetics/services/api/product.dart';
 final productApiProvider =
     Provider<ProductApiService>((ref) => ProductApiService());
 
-var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
+var fetchProductsProvider =
+    FutureProvider.autoDispose.family<ResultProduct, DefaultParams>(
   (ref, arg) async {
     ResultProduct result = ResultProduct.defaultResult();
 
@@ -21,7 +23,7 @@ var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
       String sortProduct = await ref.watch(sortProductProvider);
       String? minPrice = await ref.watch(minPriceProvider);
       String? maxPrice = await ref.watch(maxPriceProvider);
-      bool? isLiked = await ref.watch(isLikedProvider);
+      int isLiked = await ref.watch(selectedBottomIndexProvider);
 
       ProductParams productParams = ProductParams(
         categories: categoryIDs,
@@ -33,7 +35,7 @@ var fetchProductsProvider = FutureProvider.family<ResultProduct, DefaultParams>(
         lang: lang,
         priceFrom: minPrice == null ? null : num.tryParse(minPrice),
         priceTo: maxPrice == null ? null : num.tryParse(maxPrice),
-        isLiked: isLiked,
+        isLiked: isLiked == 2,
       );
 
       ResultProduct resultProducts = await ref
