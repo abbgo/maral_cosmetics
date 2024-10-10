@@ -28,7 +28,7 @@ class LogOutBottomSheetYesButton extends ConsumerWidget {
               if (context.mounted) Navigator.pop(context);
             },
       child: load
-          ? loadWidget
+          ? SizedBox(height: 25, width: 25, child: loadWidget)
           : const Text(
               'Hawa',
               style: TextStyle(fontWeight: FontWeight.bold),
