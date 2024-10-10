@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:maral_cosmetics/providers/parts/product_sort_and_filter.dart';
 
-class SaveProductPriceFilterButton extends StatelessWidget {
+class SaveProductPriceFilterButton extends ConsumerWidget {
   const SaveProductPriceFilterButton({
     super.key,
     required this.minPriceCtrl,
@@ -11,7 +13,7 @@ class SaveProductPriceFilterButton extends StatelessWidget {
   final TextEditingController maxPriceCtrl;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
@@ -19,9 +21,8 @@ class SaveProductPriceFilterButton extends StatelessWidget {
           backgroundColor: const Color(0xff824D6A),
         ),
         onPressed: () async {
-          print('======================================');
-          print('minPrice: ${minPriceCtrl.text}');
-          print('maxPrice: ${maxPriceCtrl.text}');
+          ref.read(minPriceProvider.notifier).state = minPriceCtrl.text;
+          ref.read(maxPriceProvider.notifier).state = maxPriceCtrl.text;
         },
         child: const Text(
           'OK',
