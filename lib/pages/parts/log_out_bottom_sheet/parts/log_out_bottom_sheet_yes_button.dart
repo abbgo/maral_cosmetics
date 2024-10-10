@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/database/functions/user.dart';
 import 'package:maral_cosmetics/helpers/methods/static_methods.dart';
+import 'package:maral_cosmetics/providers/database/user.dart';
 import 'package:maral_cosmetics/providers/local_storadge.dart';
 import 'package:maral_cosmetics/providers/pages/login_and_register.dart';
 
@@ -24,6 +25,7 @@ class LogOutBottomSheetYesButton extends ConsumerWidget {
               ref.read(loadLogOutProvider.notifier).state = true;
               await ref.read(accessTokenProvider.notifier).update('');
               await removeUser();
+              ref.invalidate(getUserProvider);
               ref.read(loadLogOutProvider.notifier).state = false;
               if (context.mounted) Navigator.pop(context);
             },

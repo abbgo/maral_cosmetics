@@ -83,8 +83,6 @@ class UserApiService {
   Future<bool> logOutUser(String accessToken) async {
     Uri uri = Uri.parse('$apiUrl/users/auth/remove');
 
-    print('-------------- $accessToken');
-
     try {
       http.Response response = await http.post(
         uri,
@@ -95,7 +93,6 @@ class UserApiService {
       );
 
       dynamic jsonData = json.decode(response.body);
-      print(response.body);
       if (jsonData['statusCode'] == 200 && jsonData['success']) {
         return true;
       }
