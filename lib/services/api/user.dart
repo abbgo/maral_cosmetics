@@ -86,7 +86,10 @@ class UserApiService {
     try {
       http.Response response = await http.post(
         uri,
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Authorization': 'Bearer $accessToken',
+          'Content-Type': 'application/json',
+        },
       );
 
       dynamic jsonData = json.decode(response.body);
