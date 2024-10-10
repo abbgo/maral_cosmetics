@@ -35,7 +35,12 @@ class _ProductPriceFilterPageState extends State<ProductPriceFilterPage> {
           ),
         ),
         bottom: appBarBottomMethod(),
-        actions: const [ClearProductPriceButton()],
+        actions: [
+          ClearProductPriceButton(
+            minPriceCtrl: minPriceCtrl,
+            maxPriceCtrl: maxPriceCtrl,
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
