@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maral_cosmetics/pages/parts/bottom_sheet_title.dart';
-import 'package:maral_cosmetics/pages/parts/contact_phones/parts/contact_phones_list_tile.dart';
+import 'package:maral_cosmetics/pages/parts/contact_phones/parts/result_contact_phones.dart';
 import 'package:maral_cosmetics/pages/parts/top_widget_of_bottom_navigation.dart';
 import 'package:maral_cosmetics/styles/decorations.dart';
 import 'package:maral_cosmetics/styles/margin_styles.dart';
@@ -12,8 +12,8 @@ class ContactPhones extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: bottomNavigationEdgeInsets,
-      child: Wrap(
-        alignment: WrapAlignment.center,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           const TopWidgetOfBottomNavigation(),
           Container(
@@ -21,10 +21,10 @@ class ContactPhones extends StatelessWidget {
             margin: const EdgeInsets.only(top: 8),
             decoration: bottomNavigationBoxDecoration,
             child: const Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 BottomSheetTitle(text: 'Habarlasmak'),
-                ContactPhonesListTile(text: '+993 62674323'),
-                ContactPhonesListTile(text: '+993 63345623'),
+                ResultContactPhones(),
               ],
             ),
           ),

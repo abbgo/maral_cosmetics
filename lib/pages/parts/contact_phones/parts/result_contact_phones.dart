@@ -22,12 +22,15 @@ class ResultContactPhones extends ConsumerWidget {
 
         List<PhoneModel> phones = response.phones!;
 
-        return ListView.builder(
-          itemCount: phones.length,
-          itemBuilder: (context, index) {
-            PhoneModel phone = phones[index];
-            return ContactPhonesListTile(text: phone.phone);
-          },
+        return SizedBox(
+          height: (60 * phones.length).toDouble(),
+          child: ListView.builder(
+            itemCount: phones.length,
+            itemBuilder: (context, index) {
+              PhoneModel phone = phones[index];
+              return ContactPhonesListTile(text: phone.phone);
+            },
+          ),
         );
       },
       error: (error, stackTrace) => errorMethod(error),
