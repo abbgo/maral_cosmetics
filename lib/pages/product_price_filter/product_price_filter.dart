@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:maral_cosmetics/helpers/methods/parts/app_bar.dart';
 import 'package:maral_cosmetics/pages/product_price_filter/parts/clear_product_price_button.dart';
 import 'package:maral_cosmetics/pages/product_price_filter/parts/price_input.dart';
 import 'package:maral_cosmetics/pages/product_price_filter/parts/save_product_price_filter_button.dart';
+import 'package:maral_cosmetics/providers/parts/product_sort_and_filter.dart';
 
-class ProductPriceFilterPage extends StatefulWidget {
+class ProductPriceFilterPage extends ConsumerStatefulWidget {
   const ProductPriceFilterPage({super.key});
 
   @override
-  State<ProductPriceFilterPage> createState() => _ProductPriceFilterPageState();
+  ConsumerState<ProductPriceFilterPage> createState() =>
+      _ProductPriceFilterPageState();
 }
 
-class _ProductPriceFilterPageState extends State<ProductPriceFilterPage> {
+class _ProductPriceFilterPageState
+    extends ConsumerState<ProductPriceFilterPage> {
   final TextEditingController minPriceCtrl = TextEditingController();
   final TextEditingController maxPriceCtrl = TextEditingController();
 
@@ -24,6 +28,11 @@ class _ProductPriceFilterPageState extends State<ProductPriceFilterPage> {
 
   @override
   Widget build(BuildContext context) {
+    String? minPrice = ref.watch(minPriceProvider);
+    String? maxPrice = ref.watch(maxPriceProvider);
+    minPriceCtrl.text = minPrice ?? '';
+    maxPriceCtrl.text = maxPrice ?? '';
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
