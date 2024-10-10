@@ -19,6 +19,7 @@ class LogOutBottomSheetYesButton extends ConsumerWidget {
         if (await ref.read(logOutUserProvider(context).future)) {
           await ref.read(accessTokenProvider.notifier).update('');
           await removeUser();
+          if (context.mounted) Navigator.pop(context);
         }
       },
       child: const Text(
