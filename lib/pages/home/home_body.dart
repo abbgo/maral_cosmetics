@@ -12,15 +12,15 @@ import 'package:maral_cosmetics/pages/parts/home_menus/home_menus.dart';
 import 'package:maral_cosmetics/pages/parts/home_news/home_news.dart';
 import 'package:maral_cosmetics/providers/pages/home.dart';
 
-class HomeBody extends StatefulWidget {
+class HomeBody extends ConsumerStatefulWidget {
   const HomeBody({super.key});
 
   @override
-  State<HomeBody> createState() => _HomeBodyState();
+  ConsumerState<HomeBody> createState() => _HomeBodyState();
 }
 
-class _HomeBodyState extends State<HomeBody> {
-  PageController pageController = PageController();
+class _HomeBodyState extends ConsumerState<HomeBody> {
+  late PageController pageController = PageController();
 
   @override
   void dispose() {
@@ -30,6 +30,9 @@ class _HomeBodyState extends State<HomeBody> {
 
   @override
   Widget build(BuildContext context) {
+    pageController =
+        PageController(initialPage: ref.watch(selectedHomeMenuProvider));
+
     return Column(
       children: [
         HomeMenus(pageController: pageController),
