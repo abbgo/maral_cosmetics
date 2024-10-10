@@ -20,9 +20,10 @@ class SaveProductPriceFilterButton extends ConsumerWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xff824D6A),
         ),
-        onPressed: () async {
+        onPressed: () {
           ref.read(minPriceProvider.notifier).state = minPriceCtrl.text;
           ref.read(maxPriceProvider.notifier).state = maxPriceCtrl.text;
+          Navigator.pop(context);
         },
         child: const Text(
           'OK',
