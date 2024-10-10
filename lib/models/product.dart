@@ -6,6 +6,7 @@ class Product {
   final List<BlurImage> images;
   final int quantity;
   final bool isLiked;
+  final num price;
 
   Product({
     required this.id,
@@ -14,6 +15,7 @@ class Product {
     required this.images,
     required this.quantity,
     required this.isLiked,
+    required this.price,
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -26,6 +28,7 @@ class Product {
       ),
       quantity: json['quantity'],
       isLiked: json['isLiked'],
+      price: json['price'],
     );
   }
 }
