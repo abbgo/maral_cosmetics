@@ -44,9 +44,10 @@ class ProductCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
-                const ProductStarAndPrice(
+                ProductStarAndPrice(
                   fontSizePrice: 12,
                   fontSizeOldPrice: 8,
+                  product: product,
                 ),
                 const SizedBox(height: 5),
                 const ProductOrderButton(),
