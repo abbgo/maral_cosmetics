@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SelectLanguageTitle extends StatelessWidget {
-  const SelectLanguageTitle({super.key});
+class BottomSheetTitle extends StatelessWidget {
+  const BottomSheetTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
