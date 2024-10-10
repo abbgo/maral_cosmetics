@@ -17,6 +17,7 @@ class LogOutBottomSheetYesButton extends ConsumerWidget {
       ),
       onPressed: () async {
         if (await ref.read(logOutUserProvider(context).future)) {
+          print('======================== true');
           await ref.read(accessTokenProvider.notifier).update('');
           await removeUser();
           if (context.mounted) Navigator.pop(context);
