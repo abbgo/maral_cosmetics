@@ -4,7 +4,8 @@ import 'package:maral_cosmetics/services/api/phone.dart';
 
 final phoneApiProvider = Provider<PhoneApiService>((ref) => PhoneApiService());
 
-var fetchPhonesProvider = FutureProvider.family<ResultPhone, String>(
+var fetchPhonesProvider =
+    FutureProvider.autoDispose.family<ResultPhone, String>(
   (ref, arg) async {
     ResultPhone result = ResultPhone.defaultResult();
 
