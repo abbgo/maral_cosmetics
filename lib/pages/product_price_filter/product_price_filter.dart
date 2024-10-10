@@ -4,8 +4,23 @@ import 'package:maral_cosmetics/pages/product_price_filter/parts/clear_product_p
 import 'package:maral_cosmetics/pages/product_price_filter/parts/price_input.dart';
 import 'package:maral_cosmetics/pages/product_price_filter/parts/save_product_price_filter_button.dart';
 
-class ProductPriceFilterPage extends StatelessWidget {
+class ProductPriceFilterPage extends StatefulWidget {
   const ProductPriceFilterPage({super.key});
+
+  @override
+  State<ProductPriceFilterPage> createState() => _ProductPriceFilterPageState();
+}
+
+class _ProductPriceFilterPageState extends State<ProductPriceFilterPage> {
+  TextEditingController minPriceCtrl = TextEditingController();
+  TextEditingController maxPriceCtrl = TextEditingController();
+
+  @override
+  void dispose() {
+    minPriceCtrl.dispose();
+    maxPriceCtrl.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
